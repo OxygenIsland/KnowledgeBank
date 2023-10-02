@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "292730e4b20b3976",
+        "id": "ee7e22abfcfadea3",
         "type": "tabs",
         "children": [
           {
-            "id": "cdeb584e6e919efb",
+            "id": "c82d9856c26e99ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/Clearing, rendering order and overdraw.md",
+                "file": "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/Clearing, rendering order and overdraw.md",
+                "file": "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/Clearing, rendering order and overdraw.md",
+                "file": "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/Clearing, rendering order and overdraw.md"
+                "file": "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md"
               }
             }
           },
@@ -167,19 +167,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "audio-recorder:Start/stop recording": false,
-      "workspaces:Manage workspace layouts": false
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "audio-recorder:开始/结束录音": false,
+      "workspaces:管理工作区布局": false
     }
   },
-  "active": "cdeb584e6e919efb",
+  "active": "c82d9856c26e99ce",
   "lastOpenFiles": [
+    "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md",
+    "unity3D/Unity的渲染/URP/Clearing, rendering order and overdraw.md",
+    "MacOS探索",
     "unity3D/Unity的渲染/Render Type.md",
     "unity3D/山谷大叔基础教程/1、服务器和客户端.md",
     "unity3D/工作整理/SerializeField.md",
@@ -188,7 +191,6 @@
     "unity3D/工作整理/2、射线Ray.md",
     "unity3D/工作整理/1、Camera组件.md",
     "unity3D/Unity的渲染/基础知识.md",
-    "unity3D/Unity的渲染/URP/Clearing, rendering order and overdraw.md",
     "unity3D/Unity的渲染/URP/1、URP多相机.md",
     "Camera Stack.md",
     "CSharp开发/LINQ.md",
@@ -211,7 +213,6 @@
     "CSharp开发/设计模式/attachments/Pasted image 20230823205456.png",
     "CSharp开发/设计模式/attachments/Pasted image 20230823203028.png",
     "CSharp开发/设计模式/attachments",
-    "unity3D/OpenCVForUnity/Mat-基本图像容器.md",
     "CSharp开发/attachments/Pasted image 20230820172818.png",
     "unity3D/工作整理/attachments/Pasted image 20230820174208.png",
     "unity3D/工作整理/attachments/Pasted image 20230820174121.png",
@@ -220,7 +221,6 @@
     "CSharp开发/attachments",
     "unity3D/OpenCVForUnity",
     "CSharp开发/设计模式",
-    "未命名",
     "unity3D/工作整理/attachments",
     "unity3D/工作整理",
     "计算机图形学",
