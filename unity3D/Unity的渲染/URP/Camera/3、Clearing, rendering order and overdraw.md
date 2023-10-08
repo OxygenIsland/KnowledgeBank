@@ -27,7 +27,7 @@ Depth Buffer
 ## 2、Camera clearing and rendering order
 如果 URP 场景包含多个摄像机，Unity 每帧执行一次以下操作：
 1. Unity 获取场景中所有激活的 base camera的列表。
-2. Unity 将激活的 base camera 组织成 2 组：一组摄像机 [[2、Render Type#Rendering to a Render Texture|将其视图渲染到渲染纹理]] ，另一组摄像机将其视图渲染到屏幕。
+2. Unity 将激活的 base camera 组织成 2 组：一组摄像机[[2、Render Type#Rendering to a Render Texture|将其视图渲染到渲染纹理]] ，另一组摄像机将其视图渲染到屏幕。
 3. Unity 按照 **Priority** 顺序对渲染到渲染纹理的 base camera进行排序，因此具有更高 **Priority** 值的摄像机将最后绘制。
 4. 对于渲染到渲染纹理的每个 base camera，Unity 执行以下步骤：
     1. 剔除基础摄像机
