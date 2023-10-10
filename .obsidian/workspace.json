@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "02792f4d47c8d96e",
+        "id": "5048325f7df3bab3",
         "type": "tabs",
         "children": [
           {
-            "id": "050a231a194ddae4",
+            "id": "b9f48c634df0ffac",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSharp开发/设计模式/3、一些设计原则.md",
+                "file": "unity3D/工作整理/11、延迟调用和周期性调用.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSharp开发/设计模式/3、一些设计原则.md",
+                "file": "unity3D/工作整理/11、延迟调用和周期性调用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSharp开发/设计模式/3、一些设计原则.md",
+                "file": "unity3D/工作整理/11、延迟调用和周期性调用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSharp开发/设计模式/3、一些设计原则.md"
+                "file": "unity3D/工作整理/11、延迟调用和周期性调用.md"
               }
             }
           },
@@ -179,17 +179,24 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "050a231a194ddae4",
+  "active": "b9f48c634df0ffac",
   "lastOpenFiles": [
+    "unity3D/工作整理/9、资源加载.md",
+    "unity3D/工作整理/8、协同程序Coroutine.md",
+    "unity3D/工作整理/11、延迟调用和周期性调用.md",
+    "unity3D/工作整理/SourceTree使用教程.md",
+    "unity3D/工作整理/SerializeField.md",
+    "unity3D/Unity的渲染/URP/Camera/2、Render Type.md",
+    "unity3D/Unity的渲染/URP/Camera/3、Clearing, rendering order and overdraw.md",
+    "unity3D/Unity的渲染/URP/Camera/1、Universal Additional Camera Data 组件.md",
+    "unity3D/基础/Quad(四边形).md",
+    "CSharp开发/设计模式/3、一些设计原则.md",
+    "unity3D/基础",
     "CSharp开发/设计模式/attachments/Screen Shot 2023-10-08 at 20.08.36.png",
     "CSharp开发/设计模式/2、策略模式.md",
-    "CSharp开发/设计模式/3、一些设计原则.md",
     "CSharp开发/设计模式/1、简单工厂模式.md",
     "unity3D/山谷大叔基础教程/1、服务器和客户端.md",
     "计算机图形学/Overview of computer graphics.md",
-    "unity3D/Unity的渲染/URP/Camera/3、Clearing, rendering order and overdraw.md",
-    "unity3D/Unity的渲染/URP/Camera/2、Render Type.md",
-    "unity3D/Unity的渲染/URP/Camera/1、Universal Additional Camera Data 组件.md",
     "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md",
     "README.md",
     "UProject/视频脚本/国庆黑苹果视频.md",
@@ -204,11 +211,6 @@
     "经济/kk大神说房产/7、物价进入持续上涨期.md",
     "经济/kk大神说房产/6、无耻-提通过税收调节房价、收入.md",
     "经济/kk大神说房产/5、政府为什么要调控.md",
-    "经济/kk大神说房产/4、房屋垄断.md",
-    "经济/kk大神说房产/3、房地产游戏的模式.md",
-    "经济/kk大神说房产/1、总论.md",
-    "经济/kk大神说房产/2、调控房地产，防范金融风险.md",
-    "经济/kk大神说房产/0、2010年房地产调控政策汇总.md",
     "unity3D/Unity的渲染/URP/Camera",
     "MacOS探索",
     "CSharp开发/设计模式/attachments/Pasted image 20230910002412.png",
@@ -221,11 +223,9 @@
     "unity3D/工作整理/attachments/Pasted image 20230820174208.png",
     "unity3D/工作整理/attachments/Pasted image 20230820174121.png",
     "unity3D/工作整理/attachments/Pasted image 20230820173513.png",
-    "unity3D/工作整理/attachments/Pasted image 20230820173358.png",
     "CSharp开发/attachments",
     "unity3D/OpenCVForUnity",
     "CSharp开发/设计模式",
-    "unity3D/工作整理/attachments",
-    "unity3D/工作整理"
+    "unity3D/工作整理/attachments"
   ]
 }
