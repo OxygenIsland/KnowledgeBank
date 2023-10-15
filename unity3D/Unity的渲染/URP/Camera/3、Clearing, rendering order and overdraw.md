@@ -32,7 +32,7 @@ Depth Buffer
 4. 对于渲染到渲染纹理的每个 base camera，Unity 执行以下步骤：
     1. 剔除基础摄像机
     2. 将基础摄像机渲染到渲染纹理
-    3. 对于基础摄像机的 [[1、URP多相机#^367b65|Camera Stack]]中的每个 overlay camera，按照在摄像机堆叠中定义的顺序：
+    3. 对于基础摄像机的 [[2、Render Type#Camera stacking|Camera stacking]] 中的每个 overlay camera，按照在摄像机堆叠中定义的顺序：
         1. 剔除 overlay camera
         2. 将 overlay camera渲染到渲染纹理
 5. Unity 按照 **Priority** 顺序对渲染到屏幕的基础摄像机进行排序，因此具有更高 **Priority** 值的摄像机将最后绘制。

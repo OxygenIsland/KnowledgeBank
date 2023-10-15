@@ -25,7 +25,7 @@ public class delegateFanyoy : MonoBehaviour
 ```
 很简单，首先利用 EventDelegate 为按钮的 OnClick 事件绑定一个方法，用来测试我们上面提到的问早安的功能。
 结果如下：
-![[Pasted image 20230727222306.png]]
+![[Pasted image 20230727222306.png|700]]
 那么问题来了，小匹夫可是堂堂中国人啊，怎么能不说中文反而天天鼓捣英语呢？所以刚刚实现问早的方法 GoodMoring ()就不能用咯，还要新写一个方法，要输出中文早安，然后再和点击按钮的事件绑定。这样是不是很麻烦呢？
 如果有小伙伴觉得不麻烦，那小匹夫只能演示一种小匹夫认为不使用委托的前提下最直接的一种写法了。这时候，GoodMoring 就需要改一改了，肯定要根据不同的人来选择不同的问候语咯。这里为了方便，定义一个枚举 Language 作为判断的依据：
 ```c#
@@ -168,7 +168,7 @@ private void IntDelegateTest()
 // 返回值为2，当委托存在返回值时，就只会返回最后加进去的函数的返回值
 ```
 输出结果：
-![[Pasted image 20230820170326.png]]
+![[Pasted image 20230820170326.png|288]]
 ### 2.6 补充
 #### 2.6.1 多播委托
 在 CSharp语言中多播委托是指在一个委托中注册多个方法，在注册方法时可以在委托中使用加号运算符或者减号运算符来实现添加或撤销方法。
@@ -268,7 +268,7 @@ private void VoidEventTest()
 }
 ```
 输出结果：
-![[Pasted image 20230820171152.png]]
+![[Pasted image 20230820171152.png|351]]
 事件与委托的区别：
 - 委托创建时会定义方法的类型（是否有无参数、有无返回值）
 - 事件的创建需要一个委托才能声明（因为事件就是委托的实例）
@@ -342,7 +342,7 @@ private void ActionTest()
 }
 ```
 输出结果：
-![[Pasted image 20230820171651.png]]
+![[Pasted image 20230820171651.png|347]]
 ## 5. Func
 Func 可以理解为系统定义好的带泛型的 delegate，**Func 是有返回值的**
 要使用 Func 需要引用头文件 `using System`
@@ -359,4 +359,4 @@ private void FuncTest()
 }
 ```
 输出结果：
-![[Pasted image 20230820172818.png]]
+![[Pasted image 20230820172818.png|342]]

@@ -57,7 +57,7 @@ StopCoroutine (Coroutine routine)//通过指定的协程来关闭
 ## 4.关于 yield
 要想理解协程，就要理解 yield
 yield 也是脚本生命周期的一些执行方法，不同的 yield 的方法处于生命周期的不同位置，可以通过下图查看：
-![[Pasted image 20230820114126.png]]
+![[Pasted image 20230820114126.png|725]]
 通过这张图可以看出大部分 yield 位于 `Update` 与 `LateUpdate` 之间，而一些特殊的则分布在其他位置，这些 `yield` 代表什么意思呢，又为啥位于这个位置呢？
 
 首先解释一下位于 Update 与 LateUpdate 之间这些 yield 的含义：
@@ -88,7 +88,7 @@ void Update()
 ```
 将上面的脚本挂载到物体上，运行游戏场景，来查看打印的日志，可以看到下面的日志记录：  
 日志记录：
-![[Pasted image 20230820114453.png]]
+![[Pasted image 20230820114453.png|475]]
 可以很清晰的看出，协程虽然是在 Update 中开启，但是关于  **yield return null 后面的代码会在下一帧运行，并且是在 Update 执行完之后才开始执行，并且在 LateUpdate 之前执行**
 
 ---
