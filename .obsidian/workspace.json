@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "41f08448ae4cbc3b",
+        "id": "9bc4b2d654a92203",
         "type": "tabs",
         "children": [
           {
-            "id": "c5f1eb93982d5c6f",
+            "id": "a48975c19ff3c2d7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "计算机图形学/Overview of computer graphics.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "计算机图形学/Overview of computer graphics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "计算机图形学/Overview of computer graphics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "计算机图形学/Overview of computer graphics.md"
+              }
             }
           },
           {
@@ -171,9 +179,22 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "c5f1eb93982d5c6f",
+  "active": "a48975c19ff3c2d7",
   "lastOpenFiles": [
+    "计算机图形学/attachments/Screen Shot 2023-10-22 at 19.44.17.png",
+    "计算机图形学/attachments",
     "unity3D/unityShader/1.渲染流水线.md",
+    "计算机图形学/Overview of computer graphics.md",
+    "General.md",
+    "1、URP多相机.md",
+    "unity3D/unityShader/attachments/Pasted image 20231022192020.png",
+    "unity3D/unityShader/attachments/Pasted image 20231022191506.png",
+    "unity3D/unityShader/attachments/Pasted image 20231022191317.png",
+    "CSharp开发/设计模式/单实例类.md",
+    "unity3D/工作整理/8、协同程序Coroutine.md",
+    "CSharp开发/泛型.md",
+    "CSharp开发/迭代器.md",
+    "CSharp开发/Stream流.md",
     "unity3D/unityShader/attachments/Pasted image 20231015210654.png",
     "unity3D/unityShader/attachments/Pasted image 20231015205718.png",
     "unity3D/unityShader/attachments",
@@ -186,9 +207,6 @@
     "unity3D/Unity的渲染/URP/URP Concepts/attachments/Pasted image 20231015182346.png",
     "unity3D/Unity的渲染/URP/URP Concepts/attachments/Pasted image 20231015182318.png",
     "unity3D/Unity的渲染/URP/URP Concepts/attachments/Pasted image 20231015182251.png",
-    "unity3D/Unity的渲染/URP/URP Concepts/attachments/character-depth-test-greater.gif",
-    "unity3D/Unity的渲染/URP/URP Concepts/attachments/Pasted image 20231015182046.png",
-    "unity3D/Unity的渲染/URP/URP Concepts/attachments/Pasted image 20231015181541.png",
     "unity3D/工作整理/4、Collider组件.md",
     "unity3D/工作整理/3、选中、移动、旋转物体.md",
     "unity3D/工作整理/2、射线Ray.md",
@@ -197,26 +215,17 @@
     "unity3D/Unity的渲染/URP/Camera/3、Clearing, rendering order and overdraw.md",
     "unity3D/Unity的渲染/URP/Camera/2、Render Type.md",
     "MacOS探索/1、macOS系统如何将App安装至移动硬盘.md",
-    "CSharp开发/迭代器.md",
     "CSharp开发/protected关键字.md",
-    "CSharp开发/Stream流.md",
     "unity3D/工作整理/10、Newtonsoft.Json.md",
-    "unity3D/工作整理/8、协同程序Coroutine.md",
-    "1、URP多相机.md",
     "unity3D/Unity的渲染/URP/Camera/1、Universal Additional Camera Data 组件.md",
     "unity3D/Unity的渲染/URP/入门.md",
-    "unity3D/Unity的渲染/URP/Post-processing/Volume.md",
     "unity3D/Unity的渲染/URP/URP Concepts/attachments",
-    "General.md",
-    "unity3D/Unity的渲染/URP/Post-processing/How to configure post-processing effects in URP.md",
     "unity3D/unityShader",
     "unity3D/Unity的渲染/URP/URP Concepts",
     "unity3D/Unity的渲染/URP/Post-processing/attachments",
-    "unity3D/工作整理/11、延迟调用和周期性调用.md",
     "unity3D/Unity的渲染/URP/Post-processing",
     "unity3D/基础",
     "UProject/视频脚本",
-    "UProject",
-    "unity3D/Unity的渲染/URP/Camera"
+    "UProject"
   ]
 }
