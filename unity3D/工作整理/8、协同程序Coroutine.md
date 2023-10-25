@@ -138,4 +138,58 @@ public class Test : MonoBehaviour
 - AB包资源的异步加载
 - Reaources资源的异步加载
 - 场景的异步加载
-- WWW模块的异步请求
+### 5.4用协程来实现接口调用
+1. **编写接口和接口方法**：首先，您需要定义接口以及接口中的方法。这是您的接口协议，规定了应该实现的操作。
+```csharp
+public interface IMyApi
+{
+    IEnumerator GetDataFromServer(string url, Action<string> callback);
+}
+```
+2. **编写实现接口的类**：创建一个类，实现您的接口，并提供方法的具体实现。在方法内部，使用 Unity 的协程来执行异步操作。
+```csharp
+public class MyApi : IMyApi
+{
+    public IEnumerator GetDataFromServer(string url, Action<string> callback)
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
+        {
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.Success)
+            {
+                string data = webRequest.downloadHandler.text;
+                callback(data);
+            }
+            else
+            {
+                Debug.LogError("Error: " + webRequest.error);
+            }
+        }
+    }
+}
+```
+3. **在 MonoBehaviours 中使用协程**：在需要调用接口的 MonoBehaviours 中，使用 `StartCoroutine` 来调用接口的方法。在回调中处理数据。
+```csharp
+public class MyMonoBehaviour : MonoBehaviour
+{
+    private IMyApi myApi = new MyApi();
+
+    private void Start()
+    {
+        StartCoroutine(GetDataAndProcess());
+    }
+
+    private IEnumerator GetDataAndProcess()
+    {
+        string url = "https://api.example.com/data";
+
+        yield return myApi.GetDataFromServer(url, data =>
+        {
+            // Process the data
+            Debug.Log(data);
+        });
+    }
+}
+```
+在这个示例中，`GetDataAndProcess` 协程首先调用 `GetDataFromServer`，然后在接口的回调中处理获取的数据。这使您能够在 Unity 中执行异步操作而不会阻塞主线程。
