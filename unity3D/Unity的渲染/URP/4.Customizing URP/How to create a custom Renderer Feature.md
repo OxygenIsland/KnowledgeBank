@@ -45,7 +45,7 @@ public class LensFlareRendererFeature : ScriptableRendererFeature
 	} 
 }
 ```
-[[4.URP Renderer Feature#How to add a Renderer Feature| Add the Renderer Feature you created to the the Universal Renderer asset.]]
+[[3.URP Renderer Feature#How to add a Renderer Feature| Add the Renderer Feature you created to the the Universal Renderer asset.]]
 ![[Pasted image 20231109213349.png|478]]
 Add the Lens Flare Renderer Feature to the Universal Renderer.
 ## Create and enqueue the scriptable Render Pass
