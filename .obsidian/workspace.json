@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/1.URP Concepts/1.Universal Render Pipeline Asset（通用渲染管线资源）.md",
+                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/1.URP Concepts/1.Universal Render Pipeline Asset（通用渲染管线资源）.md",
+                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/1.URP Concepts/1.Universal Render Pipeline Asset（通用渲染管线资源）.md",
+                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/1.URP Concepts/1.Universal Render Pipeline Asset（通用渲染管线资源）.md"
+                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md"
               }
             }
           },
@@ -181,11 +181,18 @@
   },
   "active": "26aa804cfa25a76a",
   "lastOpenFiles": [
+    "unity3D/Unity的渲染/URP/3.Post-processing/How to configure post-processing effects in URP.md",
+    "unity3D/Unity的渲染/URP/3.Post-processing/Volume.md",
+    "unity3D/Unity的渲染/URP/2.Camera/3、Clearing, rendering order and overdraw.md",
+    "unity3D/Unity的渲染/URP/2.Camera/2、Render Type.md",
+    "unity3D/工作整理/5、unity中的委托.md",
+    "CSharp开发/delegate委托.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/1.Rendering in the Universal Render Pipeline.md",
+    "unity3D/Unity的渲染/URP/1.URP Concepts/2.Universal Render Pipeline Asset（通用渲染管线资源）.md",
+    "unity3D/Unity的渲染/URP/1.URP Concepts/4.URP Renderer Feature.md",
+    "unity3D/Unity的渲染/URP/1.URP Concepts/3.Universal Renderer(通用渲染器).md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/0.overview.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Pasted image 20231112164555.png",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/3.Universal Renderer(通用渲染器).md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/1.Universal Render Pipeline Asset（通用渲染管线资源）.md",
     "Humorous/自我介绍.md",
     "unity3D/unityShader/Introduction to Shader Code Basics.md",
     "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 11.37.21.png",
@@ -202,7 +209,6 @@
     "Humorous",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Screen Shot 2023-11-11 at 20.10.46.png",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Screen Shot 2023-11-11 at 20.07.15.png",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/4.URP Renderer Feature.md",
     "unity3D/Unity的渲染/URP/4.Customizing URP/How to create a custom Renderer Feature.md",
     "unity3D/Unity的渲染/URP/4.Customizing URP/Using the beginCameraRendering event.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/2.URP Global Settings(URP 全局设置 ).md",
@@ -215,12 +221,7 @@
     "1、URP多相机.md",
     "CSharp开发/设计模式/单实例类.md",
     "unity3D/工作整理/8、协同程序Coroutine.md",
-    "CSharp开发/泛型.md",
-    "CSharp开发/迭代器.md",
-    "CSharp开发/Stream流.md",
     "unity3D/unityShader/attachments",
-    "unity3D/工作整理/4、Collider组件.md",
-    "unity3D/工作整理/3、选中、移动、旋转物体.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments",
     "unity3D/unityShader",
     "unity3D/Unity的渲染/URP/1.URP Concepts",

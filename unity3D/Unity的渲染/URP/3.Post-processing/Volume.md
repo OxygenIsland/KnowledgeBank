@@ -1,4 +1,4 @@
-通用渲染管线 (Universal Render Pipeline, URP) 使用 Volume 框架。Volume可以根据摄像机相对于每个体积的位置来覆盖或扩展场景属性。
+通用渲染管线 (Universal Render Pipeline, URP) 使用 Volume 框架。Volume 可以根据摄像机相对于每个 Volume的位置来覆盖或扩展场景属性。
 URP 为 Volume 实现了专用的游戏对象：**Global Volume**、**Box Volume**、**Sphere Volume**、**Convex Mesh Volume**。
 ![[Pasted image 20231014103852.png|587]]
 可以将 **Volume** 组件添加到任何游戏对象。一个场景可以包含多个带有 Volume 组件的游戏对象。可以将多个 Volume 组件添加到一个游戏对象。
