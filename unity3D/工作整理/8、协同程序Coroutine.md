@@ -57,7 +57,7 @@ StopCoroutine (Coroutine routine)//通过指定的协程来关闭
 ## 4.关于 yield
 要想理解协程，就要理解 yield
 yield 也是脚本生命周期的一些执行方法，不同的 yield 的方法处于生命周期的不同位置，可以通过下图查看：
-![[Pasted image 20230820114126.png|725]]
+![[Pasted image 20230820114126.png|825]]
 通过这张图可以看出大部分 yield 位于 `Update` 与 `LateUpdate` 之间，而一些特殊的则分布在其他位置，这些 `yield` 代表什么意思呢，又为啥位于这个位置呢？
 
 首先解释一下位于 Update 与 LateUpdate 之间这些 yield 的含义：
@@ -101,6 +101,57 @@ yield return new WaitForEndOfFrame():等到所有相机画面被渲染完毕后�
 yield break; 跳出协程对应方法，其后面的代码不会被执行
 ```
 通过上面的一些**yield**一些用法以及其在脚本生命周期中的位置，我们也可以看到关于**协程不是线程**的概念的具体的解释，所有的这些方法都是在主线程中进行的，只是有别于我们正常使用的 Update 与 LateUpdate 这些可视的方法
+###  CustomYieldInstruction ` 
+这是 Unity 中用于自定义协程等待的基类。通过继承 `CustomYieldInstruction`，可以创建自定义的等待条件，使得协程可以等待这些条件的满足。
+```csharp
+using System;
+using UnityEngine;
+public class WaitForSecondsWithCallback : CustomYieldInstruction
+{
+    private float duration;
+    private float elapsedTime;
+    private Action callback;
+    public override bool keepWaiting => elapsedTime < duration;
+
+    public WaitForSecondsWithCallback(float seconds, Action callback)
+    {
+        duration = seconds;
+        this.callback = callback;
+    }
+
+    public void Update()
+    {
+        elapsedTime += Time.deltaTime;
+
+        if (!keepWaiting)
+        {
+            // 执行回调函数
+            callback?.Invoke();
+        }
+    }
+}
+```
+
+```csharp
+using UnityEngine;
+
+public class CoroutineExample : MonoBehaviour
+{
+    private void Start()
+    {
+        StartCoroutine(MyCoroutine());
+    }
+    private System.Collections.IEnumerator MyCoroutine()
+    {
+        Debug.Log("Coroutine started");
+        // 等待 3 秒并执行回调
+        yield return new WaitForSecondsWithCallback(3f, () => Debug.Log("Callback executed"));
+
+        Debug.Log("Coroutine finished");
+    }
+}
+
+```
 ## 5.协程几个小用法
 ### 5 .1将一个复杂程序分帧执行
 如果一个复杂的函数对于一帧的性能需求很大，我们就可以通过**yield return null**将步骤拆除，从而将性能压力分摊开来，最终获取一个流畅的过程，这就是一个简单的应用。
