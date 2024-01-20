@@ -65,7 +65,8 @@ yield 也是脚本生命周期的一些执行方法，不同的 yield 的方法�
 yield return null; 暂停协程等待下一帧继续执行
 yield return 0或其他数字; 暂停协程等待下一帧继续执行
 yield return new WairForSeconds(时间); 等待规定时间后继续执行
-yield return StartCoroutine("协程方法名");开启一个协程（嵌套协程)
+
+yield return StartCoroutine("协程方法名");开启一个协程（嵌套协程)!
 ```
 在了解这些 yield 的方法后，可以通过下面的代码来理解其执行顺序：
 ```csharp
