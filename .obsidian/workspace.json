@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
+                "file": "CSharp开发/数据读取/Xml文件操作.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
+                "file": "CSharp开发/数据读取/Xml文件操作.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
+                "file": "CSharp开发/数据读取/Xml文件操作.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md"
+                "file": "CSharp开发/数据读取/Xml文件操作.md"
               }
             }
           },
@@ -185,7 +185,17 @@
   },
   "active": "26aa804cfa25a76a",
   "lastOpenFiles": [
+    "CSharp开发/数据读取/Json文件操作--Newtonsoft.Json.md",
+    "CSharp开发/数据读取/Xml文件操作.md",
     "unity3D/工作整理/StateMachine状态机.md",
+    "unity3D/工作整理/SourceTree使用教程.md",
+    "CSharp开发/Stream流.md",
+    "CSharp开发/数据读取/attachments/Pasted image 20240205103013.png",
+    "CSharp开发/数据读取/attachments/Pasted image 20240205102212.png",
+    "CSharp开发/数据读取/attachments",
+    "CSharp开发/设计模式/单实例类.md",
+    "CSharp开发/数据读取",
+    "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
     "unity3D/Unity的渲染/Built-in Render Pipeline/相机的渲染消息Messages.md",
     "unity3D/Unity的渲染/Built-in Render Pipeline",
     "unity3D/Unity的渲染/URP/3.Post-processing/How to configure post-processing effects in URP.md",
@@ -214,22 +224,12 @@
     "Humorous/Good sentence for humor.md",
     "unity3D/unityShader/1.渲染流水线.md",
     "Humorous",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Screen Shot 2023-11-11 at 20.10.46.png",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Screen Shot 2023-11-11 at 20.07.15.png",
     "unity3D/Unity的渲染/URP/4.Customizing URP/How to create a custom Renderer Feature.md",
-    "unity3D/Unity的渲染/URP/4.Customizing URP/Using the beginCameraRendering event.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/2.URP Global Settings(URP 全局设置 ).md",
     "unity3D/Unity的渲染/URP/4.Customizing URP/attachments",
-    "unity3D/Unity的渲染/URP/入门.md",
     "unity3D/Unity的渲染/URP/4.Customizing URP",
-    "计算机图形学/Overview of computer graphics.md",
     "计算机图形学/attachments",
-    "General.md",
-    "1、URP多相机.md",
     "unity3D/unityShader/attachments",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments",
-    "unity3D/unityShader",
-    "unity3D/Unity的渲染/URP/1.URP Concepts",
-    "unity3D/Unity的渲染/URP/3.Post-processing/attachments"
+    "unity3D/unityShader"
   ]
 }
