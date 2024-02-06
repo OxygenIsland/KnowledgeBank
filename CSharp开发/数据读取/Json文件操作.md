@@ -1,4 +1,4 @@
-## 1.JsonConvert . DeserializeObject 
+## 1、Deserialize
 该方法通常用于将整个 JSON 字符串转换为一个 .NET 对象。如果想转换 JSON 字符串中的某一段，可以首先将整个字符串解析为一个包含多个属性的 .NET 对象，然后从该对象中提取所需的属性。
 例如，假设你有以下 JSON 字符串：
 ```csharp
@@ -64,3 +64,59 @@ public class User
 }
 ```
 在上面的示例中，我们在 `User` 类型的属性上使用了 `JsonProperty` 特性指定了 JSON 数据中的字段名。这样，当你使用 `JsonConvert.DeserializeObject`  将 JSON 数据解析到 User 对象时，Json.NET 将会根据特性中指定的字段名来进行映射。使用这种方式，即使 JSON 数据的字段名与 C# 类型属性名不匹配，也能够正确地进行数据映射。
+## 2、Serialize
+Json 的格式跟在代码设置的自定义类的格式一定要一一对应，错一个字母都不行，还区分大小写。
+首先，我们先写一个字段类 Person，类里面有 string 类型的“Name”和 int 类型的“Grade”，然后写一个"Data”数据类，里面存放的使我们的字段类 Person 数组：
+```csharp
+[System.Serializable]
+class Person
+{
+    public string Name;
+    public int Grade;
+}
+[System.Serializable]
+class Data
+{
+    public Person[] Person;
+}
+```
+生成 Json 数据，将 Json 数据保存到文件中：
+```csharp
+using System.IO;
+using UnityEngine;
+public class Demo5 : MonoBehaviour
+{
+    void Start()
+    {
+        WriteData();
+    }
+    //写数据
+    public void WriteData()
+    {
+        //新建一个数据类
+        Data m_Data = new Data();
+        //新建一个字段类 进行赋值
+        m_Data.Person = new Person[5];
+        for (int i = 0; i < 5; i++)
+        {
+            Person m_Person = new Person();
+            m_Person.Name = "User" + i;
+            m_Person.Grade = i + 50;
+            m_Data.Person[i] = m_Person;
+        }
+        //将数据转成json
+        string js = JsonUtility.ToJson(m_Data);
+        //获取到项目路径
+        string fileUrl = Application.streamingAssetsPath + "\\jsonInfo.txt";
+        //打开或者新建文档
+        using (StreamWriter sw =new StreamWriter(fileUrl))
+        {
+            //保存数据
+            sw.WriteLine(js);
+            //关闭文档
+            sw.Close();
+            sw.Dispose();
+        }
+    }
+}
+```
