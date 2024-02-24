@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c2bb87fd1e83bbbb",
+        "id": "6289b19f1ec10325",
         "type": "tabs",
         "children": [
           {
-            "id": "d9ab8a6d721d2b0c",
+            "id": "26aa804cfa25a76a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "计算机图形学/2.Review of Linear Algebra.md",
+                "file": "CSharp开发/数据读取/Json文件操作.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机图形学/2.Review of Linear Algebra.md",
+                "file": "CSharp开发/数据读取/Json文件操作.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "计算机图形学/2.Review of Linear Algebra.md",
+                "file": "CSharp开发/数据读取/Json文件操作.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "计算机图形学/2.Review of Linear Algebra.md"
+                "file": "CSharp开发/数据读取/Json文件操作.md"
               }
             }
           },
@@ -171,65 +171,65 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-excalidraw-plugin:Create new drawing": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "audio-recorder:开始/结束录音": false,
-      "workspaces:管理工作区布局": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "d9ab8a6d721d2b0c",
+  "active": "26aa804cfa25a76a",
   "lastOpenFiles": [
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 17.22.01.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 17.11.09.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 17.09.47.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 16.55.00.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 16.47.34.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 16.45.35.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 15.59.38.png",
-    "计算机图形学/1.Overview of computer graphics.md",
-    "计算机图形学/2.Review of Linear Algebra.md",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 12.39.17.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 12.30.31.png",
-    "计算机图形学/attachments/Screen Shot 2024-01-20 at 12.23.15.png",
-    "CSharp开发/设计模式/链式编程.md",
-    "unity3D/工作整理/8、协同程序Coroutine.md",
-    "CSharp开发/delegate委托.md",
-    "经济/小岛经济学/如何控制底层人民.md",
-    "经济/kk大神说房产/19、在严厉调控期如何投资.md",
-    "经济/小岛经济学",
-    "经济/kk大神说房产/2、调控房地产，防范金融风险.md",
-    "经济/kk大神说房产/0、2010年房地产调控政策汇总.md",
-    "Humorous/自我介绍.md",
-    "Humorous/Good sentence for humor.md",
+    "CSharp开发/数据读取/Xml文件操作.md",
+    "CSharp开发/数据读取/Json文件操作.md",
+    "unity3D/工作整理/StateMachine状态机.md",
+    "unity3D/工作整理/SourceTree使用教程.md",
+    "CSharp开发/Stream流.md",
+    "CSharp开发/数据读取/attachments/Pasted image 20240205103013.png",
+    "CSharp开发/数据读取/attachments/Pasted image 20240205102212.png",
+    "CSharp开发/数据读取/attachments",
     "CSharp开发/设计模式/单实例类.md",
+    "CSharp开发/数据读取",
     "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
-    "CSharp开发/设计模式/StateMachine状态机.md",
-    "CSharp开发/设计模式/attachments/Pasted image 20231231215058.png",
+    "unity3D/Unity的渲染/Built-in Render Pipeline/相机的渲染消息Messages.md",
+    "unity3D/Unity的渲染/Built-in Render Pipeline",
     "unity3D/Unity的渲染/URP/3.Post-processing/How to configure post-processing effects in URP.md",
     "unity3D/Unity的渲染/URP/3.Post-processing/Volume.md",
     "unity3D/Unity的渲染/URP/2.Camera/3、Clearing, rendering order and overdraw.md",
     "unity3D/Unity的渲染/URP/2.Camera/2、Render Type.md",
     "unity3D/工作整理/5、unity中的委托.md",
+    "CSharp开发/delegate委托.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/1.Rendering in the Universal Render Pipeline.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/2.Universal Render Pipeline Asset（通用渲染管线资源）.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/4.URP Renderer Feature.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/3.Universal Renderer(通用渲染器).md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/0.overview.md",
+    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Pasted image 20231112164555.png",
+    "Humorous/自我介绍.md",
     "unity3D/unityShader/Introduction to Shader Code Basics.md",
+    "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 11.37.21.png",
+    "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 10.46.07.png",
+    "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 10.41.42.png",
+    "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 10.37.55 1.png",
+    "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 10.37.55.png",
+    "unity3D/unityShader/attachments/Screen Shot 2023-11-12 at 10.36.38.png",
+    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/character-depth-test-greater.gif",
+    "unity3D/工作整理/6、lamda表达式.md",
+    "Humorous/Good sentence for love.md",
+    "Humorous/Good sentence for humor.md",
+    "unity3D/unityShader/1.渲染流水线.md",
     "Humorous",
+    "unity3D/Unity的渲染/URP/4.Customizing URP/How to create a custom Renderer Feature.md",
     "unity3D/Unity的渲染/URP/4.Customizing URP/attachments",
     "unity3D/Unity的渲染/URP/4.Customizing URP",
     "计算机图形学/attachments",
     "unity3D/unityShader/attachments",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments",
-    "unity3D/unityShader",
-    "unity3D/Unity的渲染/URP/1.URP Concepts",
-    "unity3D/Unity的渲染/URP/3.Post-processing/attachments"
+    "unity3D/unityShader"
   ]
 }
