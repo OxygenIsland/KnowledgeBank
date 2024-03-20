@@ -197,6 +197,10 @@ public class TestSerilize
 	public string Name { get; set;}
 	[XmlElement("List")]   //序列化一个链表的标签
 	public List<int> List { get; set; }
+	public bool ShouldSerializeList
+	{
+		//该函数在序列化的时候被自动调用，如果返回的是true，则序列化List字段，反之则不进行序列化。
+	}
 }
 ```
 有了这个类文件之后，就可以实现二者之间的互相转换

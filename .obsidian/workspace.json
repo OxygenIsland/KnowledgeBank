@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "1fc74fc15f5d18a1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "unity3D/工作整理/1、Camera组件.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "unity3D/工作整理/1、Camera组件.md",
+                "file": "CSharp开发/设计模式/1、简单工厂模式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "unity3D/工作整理/1、Camera组件.md",
+                "file": "CSharp开发/设计模式/1、简单工厂模式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "unity3D/工作整理/1、Camera组件.md"
+                "file": "CSharp开发/设计模式/1、简单工厂模式.md"
               }
             }
           },
@@ -196,8 +183,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1fc74fc15f5d18a1",
+  "active": "26aa804cfa25a76a",
   "lastOpenFiles": [
+    "CSharp开发/数据读取/Xml文件操作.md",
+    "unity3D/工作整理/SerializeField.md",
+    "unity3D/工作整理/SourceTree使用教程.md",
+    "unity3D/工作整理/StateMachine状态机.md",
+    "unity3D/工作整理/studio-DT的模块管理.md",
+    "unity3D/工作整理/Unity打包方式.md",
+    "unity3D/工作整理/11、延迟调用和周期性调用.md",
+    "DIY/书籍装帧/Book binding process.md",
+    "unity3D/工作整理/1、Camera组件.md",
+    "DIY/书籍装帧",
+    "DIY",
     "unity3D/工作整理/7、抽象类与接口.md",
     "CSharp开发/设计模式/单实例类.md",
     "unity3D/UI设计/UI框架.md",
@@ -218,9 +216,6 @@
     "网络编程/Http.md",
     "网络编程/attachments/Pasted image 20240218135241.png",
     "CSharp开发/数据读取/Json文件操作.md",
-    "CSharp开发/数据读取/Xml文件操作.md",
-    "unity3D/工作整理/StateMachine状态机.md",
-    "unity3D/工作整理/SourceTree使用教程.md",
     "CSharp开发/Stream流.md",
     "CSharp开发/数据读取/attachments/Pasted image 20240205103013.png",
     "CSharp开发/数据读取/attachments/Pasted image 20240205102212.png",
@@ -232,17 +227,9 @@
     "unity3D/Unity的渲染/URP/3.Post-processing/How to configure post-processing effects in URP.md",
     "unity3D/Unity的渲染/URP/3.Post-processing/Volume.md",
     "unity3D/Unity的渲染/URP/2.Camera/3、Clearing, rendering order and overdraw.md",
-    "unity3D/Unity的渲染/URP/2.Camera/2、Render Type.md",
-    "unity3D/工作整理/5、unity中的委托.md",
-    "CSharp开发/delegate委托.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/1.Rendering in the Universal Render Pipeline.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/2.Universal Render Pipeline Asset（通用渲染管线资源）.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/4.URP Renderer Feature.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Pasted image 20231112164555.png",
     "Humorous",
     "unity3D/Unity的渲染/URP/4.Customizing URP/attachments",
-    "unity3D/Unity的渲染/URP/4.Customizing URP",
-    "计算机图形学/attachments",
-    "unity3D/unityShader/attachments"
+    "unity3D/Unity的渲染/URP/4.Customizing URP"
   ]
 }
