@@ -69,3 +69,30 @@ SendMessage('MyGameObject', 'MyFunction', 5);
 SendMessage('MyGameObject', 'MyFunction', 'MyString');
 ```
 如果在 javaScript 脚本中找不到 unityInstance 可以在 index.html 中进行传递
+
+在 index.html 中调用时，需要在 Unity 的资源已经加载完成才可以，这个好解决，js 加个 button；
+<button Type="button" onclick="TestSend()">WebToUnity</button>
+其次在调用这个方法前需要先实例化 UnityInstance 变量；
+```js
+var gameInstance = null;
+script.onload = () => {
+		gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
+        	dataUrl: "Build/Test.data",
+        	frameworkUrl: "Build/Test.framework.js",
+        	codeUrl: "Build/Test.wasm",
+        	streamingAssetsUrl: "StreamingAssets",
+        	companyName: "DefaultCompany",
+       		productName: "UnityToWeb",
+        	productVersion: "0.1",
+      });
+};
+//以上的参数都可以在unity的playersetting界面找到；
+```
+最后调用时要在 then 中用 lamda 表达式
+```js
+function TestSend() {
+	gameInstance.then((unityInstance) => {
+		unityInstance.SendMessage("Canvas","OnLogin","dqwreqweraf");        
+	});
+}
+```
