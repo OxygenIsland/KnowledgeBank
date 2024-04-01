@@ -58,7 +58,8 @@ public class NewBehaviourScript : MonoBehaviour
 	} 
 }
 ```
-简单的数字类型可在函数参数中传递给 JavaScript，无需进行任何转换。其他数据类型将作为 emscripten 堆（实际上就是 JavaScript 中的一个大型数组）中的指针进行传递。对于字符串，可使用 `Pointer_stringify` helper 函数转换为 JavaScript 字符串。要返回字符串值，必须调用 `_malloc` 来分配一些内存，并调用 `stringToUTF8` helper 函数向其中写入 JavaScript 字符串。如果字符串是返回值，则 il2cpp 运行时将负责为您释放内存。对于原始类型的数组，`emscripten` 针对内存的不同大小的整数、无符号整数或浮点数表示形式，提供其堆的不同 `ArrayBufferViews`：__HEAP8、HEAPU8、HEAP16、HEAPU16、HEAP32、HEAPU32、HEAPF32、HEAPF64__。为了在 WebGL 中访问纹理，emscripten 提供了 `GL.textures` 数组，该数组将本机纹理 ID 从 Unity 映射到 WebGL 纹理对象。可在 emscripten 的 WebGL 上下文 `GLctx` 中调用 WebGL 函数。
+简单的数字类型可在函数参数中传递给 JavaScript，无需进行任何转换。其他数据类型将作为 emscripten 堆（实际上就是 JavaScript 中的一个大型数组）中的指针进行传递。对于字符串，可使用 `Pointer_stringify` helper 函数转换为 JavaScript 字符串。要返回字符串值，必须调用 `_malloc` 来分配一些内存，并调用 `stringToUTF8` helper 函数向其中写入 JavaScript 字符串。如果字符串是返回值，则 il2cpp 运行时将负责为您释放内存。对于原始类型的数组，`emscripten` 针对内存的不同大小的整数、无符号整数或浮点数表示形式，提供其堆的不同 `ArrayBufferViews`：__HEAP8、HEAPU8、HEAP16、HEAPU16、HEAP32、HEAPU32、HEAPF32、HEAPF64__。
+为了在 WebGL 中访问纹理，emscripten 提供了 `GL.textures` 数组，该数组将本机纹理 ID 从 Unity 映射到 WebGL 纹理对象。可在 emscripten 的 WebGL 上下文 `GLctx` 中调用 WebGL 函数。具体可见 [[unity webgl获取网络摄像头|unity webgl获取网络摄像头]]
 ## 从 JavaScript 调用 Unity 脚本函数
 有时需要从浏览器的 JavaScript 向 Unity 脚本发送一些数据或通知。建议的做法是调用内容中的游戏对象上的方法。如果要从嵌入在项目中的 JavaScript 插件执行调用，可使用以下代码：
 `SendMessage(objectName, methodName, value);`
