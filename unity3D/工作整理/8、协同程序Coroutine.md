@@ -16,6 +16,7 @@
 - **`IEnumerator`：是一个实现迭代器功能的接口**
 - `IEnumerable`：是在 `IEnumerator` 基础上的一个封装接口，有一个 [[迭代器#^c7ba43|GetEnumerator()]]  方法返回 `IEnumerator` 
 在迭代器中（其实就是协程代码中），最关键的是 `yield` 的使用，这是实现我们协程功能的主要途径，通过该关键方法，可以使得协程的运行暂停、记录下一次启动的时间与位置等等。
+当协程中使用了 yield 语句，例如 `yield return new WaitForSeconds(3f);`，Unity 会创建一个用于等待的 [[#CustomYieldInstruction ]] 对象，并在每一帧调用它的 keepWaiting 属性来检查是否满足等待条件。如果 keepWaiting 返回 true，则继续等待；如果返回 false，则协程继续执行。
 
 协程函数与普通函数的区别：
 
@@ -102,7 +103,7 @@ yield return new WaitForEndOfFrame():等到所有相机画面被渲染完毕后�
 yield break; 跳出协程对应方法，其后面的代码不会被执行
 ```
 通过上面的一些**yield**一些用法以及其在脚本生命周期中的位置，我们也可以看到关于**协程不是线程**的概念的具体的解释，所有的这些方法都是在主线程中进行的，只是有别于我们正常使用的 Update 与 LateUpdate 这些可视的方法
-###  CustomYieldInstruction ` 
+###  CustomYieldInstruction  
 这是 Unity 中用于自定义协程等待的基类。通过继承 `CustomYieldInstruction`，可以创建自定义的等待条件，使得协程可以等待这些条件的满足。
 ```csharp
 using System;
