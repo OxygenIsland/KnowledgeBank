@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6289b19f1ec10325",
+        "id": "773207d58492967f",
         "type": "tabs",
         "children": [
           {
-            "id": "26aa804cfa25a76a",
+            "id": "09546468f65ecd20",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSharp开发/设计模式/1、简单工厂模式.md",
+                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSharp开发/设计模式/1、简单工厂模式.md",
+                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSharp开发/设计模式/1、简单工厂模式.md",
+                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSharp开发/设计模式/1、简单工厂模式.md"
+                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md"
               }
             }
           },
@@ -171,27 +171,41 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "audio-recorder:开始/结束录音": false,
-      "workspaces:管理工作区布局": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "workspaces:Manage workspace layouts": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "26aa804cfa25a76a",
+  "active": "09546468f65ecd20",
   "lastOpenFiles": [
+    "Omnivore/2024-04-10/Organize your Omnivore library with labels.md",
+    "Omnivore/2024-04-10/Getting Started with Omnivore.md",
+    "unity3D/工作整理/11、延迟调用和周期性调用.md",
+    "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
+    "Omnivore/2024-04-10",
+    "Omnivore",
+    "unity3D/基础/Coroutine.md",
+    "CSharp开发/迭代器.md",
+    "unity3D/WebGL/WebGL：与浏览器脚本交互.md",
+    "unity3D/打包方式/Unity中CSharp脚本进行打包.md",
+    "unity3D/WebGL",
+    "unity3D/打包方式/Jenkins实现Unity多平台自动打包.md",
+    "Humorous/谐语.md",
+    "CSharp开发/设计模式/1、简单工厂模式.md",
     "CSharp开发/数据读取/Xml文件操作.md",
     "unity3D/工作整理/SerializeField.md",
     "unity3D/工作整理/SourceTree使用教程.md",
     "unity3D/工作整理/StateMachine状态机.md",
     "unity3D/工作整理/studio-DT的模块管理.md",
     "unity3D/工作整理/Unity打包方式.md",
-    "unity3D/工作整理/11、延迟调用和周期性调用.md",
     "DIY/书籍装帧/Book binding process.md",
     "unity3D/工作整理/1、Camera组件.md",
     "DIY/书籍装帧",
@@ -201,7 +215,6 @@
     "unity3D/UI设计/UI框架.md",
     "unity3D/UI设计/unity中的UI界面跳转.md",
     "unity3D/UI设计/弹窗类UI.md",
-    "CSharp开发/设计模式/1、简单工厂模式.md",
     "CSharp开发/设计模式/2、策略模式.md",
     "unity3D/UI设计/attachments/微信图片编辑_20240218153513.jpg",
     "unity3D/UI设计/attachments/Pasted image 20240218153156.png",
@@ -212,24 +225,12 @@
     "网络编程/attachments/Pasted image 20240218143227.png",
     "网络编程/attachments/Pasted image 20240218143127.png",
     "网络编程/attachments/Pasted image 20240218142020.png",
-    "网络编程/WebSocket.md",
-    "网络编程/Http.md",
     "网络编程/attachments/Pasted image 20240218135241.png",
-    "CSharp开发/数据读取/Json文件操作.md",
-    "CSharp开发/Stream流.md",
     "CSharp开发/数据读取/attachments/Pasted image 20240205103013.png",
     "CSharp开发/数据读取/attachments/Pasted image 20240205102212.png",
     "CSharp开发/数据读取/attachments",
     "CSharp开发/数据读取",
-    "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
-    "unity3D/Unity的渲染/Built-in Render Pipeline/相机的渲染消息Messages.md",
     "unity3D/Unity的渲染/Built-in Render Pipeline",
-    "unity3D/Unity的渲染/URP/3.Post-processing/How to configure post-processing effects in URP.md",
-    "unity3D/Unity的渲染/URP/3.Post-processing/Volume.md",
-    "unity3D/Unity的渲染/URP/2.Camera/3、Clearing, rendering order and overdraw.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Pasted image 20231112164555.png",
-    "Humorous",
-    "unity3D/Unity的渲染/URP/4.Customizing URP/attachments",
-    "unity3D/Unity的渲染/URP/4.Customizing URP"
+    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Pasted image 20231112164555.png"
   ]
 }
