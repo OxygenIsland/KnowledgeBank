@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
+                "file": "Xcode/Apple related.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
+                "file": "Xcode/Apple related.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
+                "file": "Xcode/Apple related.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md"
+                "file": "Xcode/Apple related.md"
               }
             }
           },
@@ -184,12 +184,41 @@
       "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "09546468f65ecd20",
+  "active": "30daf6fc74c45631",
   "lastOpenFiles": [
-    "Omnivore/2024-04-10/Organize your Omnivore library with labels.md",
+    "Xcode",
+    "unity3D/Apple Vision Pro/2. Getting Start.md",
+    "Xcode/Apple related.md",
+    "unity3D/Apple Vision Pro/迁移ViewerAR到visionPro.md",
+    "C++开发/CMake.md",
     "Omnivore/2024-04-10/Getting Started with Omnivore.md",
-    "unity3D/工作整理/11、延迟调用和周期性调用.md",
+    "C++开发",
+    "unity3D/工作整理/周五分享.md",
+    "unity3D/工作整理/attachments/bd8d96701547ba4721fbaabe1756c7c.png",
+    "unity3D/工作整理/attachments/b19d9a67f01f49a27f9ec9001a60815.jpg",
+    "unity3D/工作整理/attachments/Pasted image 20240412161723.png",
+    "unity3D/工作整理/attachments/Pasted image 20240412161609.png",
+    "unity3D/工作整理/attachments/Pasted image 20240412160431.png",
+    "unity3D/工作整理/attachments/Pasted image 20240412102829.png",
+    "unity3D/工作整理/attachments/1712908451192.png",
+    "unity3D/基础/Camera.md",
+    "unity3D/Apple Vision Pro/visionOS Platform Overview.md",
+    "unity3D/Apple Vision Pro/polyspatial.md",
+    "unity3D/Apple Vision Pro",
+    "Omnivore/2024-04-12/这次风口一定要抓住，Apple VisionOS 开发教程 - 掘金.md",
+    "Omnivore/2024-04-11/【GAMES101】作业0与vcpkg+CMake环境配置 - BladeHiker's HammerShop.md",
+    "Omnivore/2024-04-10/Fundamentals of Computer Graphics (Steve Marschner , Peter Shirley) (Z-Library).md",
+    "Omnivore/2024-04-12",
+    "Omnivore/2024-04-11",
+    "Omnivore/2024-04-10/Organize your Omnivore library with labels.md",
     "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
+    "unity3D/ARFoundation/attachments/Pasted image 20240409094223.png",
+    "unity3D/ARFoundation/attachments/Pasted image 20240409094156.png",
+    "unity3D/ARFoundation/attachments/Pasted image 20240409094114.png",
+    "unity3D/ARFoundation/获取CPU上的相机图像.md",
+    "unity3D/ARFoundation/attachments",
+    "unity3D/ARFoundation",
+    "unity3D/工作整理/11、延迟调用和周期性调用.md",
     "Omnivore/2024-04-10",
     "Omnivore",
     "unity3D/基础/Coroutine.md",
@@ -202,35 +231,6 @@
     "CSharp开发/设计模式/1、简单工厂模式.md",
     "CSharp开发/数据读取/Xml文件操作.md",
     "unity3D/工作整理/SerializeField.md",
-    "unity3D/工作整理/SourceTree使用教程.md",
-    "unity3D/工作整理/StateMachine状态机.md",
-    "unity3D/工作整理/studio-DT的模块管理.md",
-    "unity3D/工作整理/Unity打包方式.md",
-    "DIY/书籍装帧/Book binding process.md",
-    "unity3D/工作整理/1、Camera组件.md",
-    "DIY/书籍装帧",
-    "DIY",
-    "unity3D/工作整理/7、抽象类与接口.md",
-    "CSharp开发/设计模式/单实例类.md",
-    "unity3D/UI设计/UI框架.md",
-    "unity3D/UI设计/unity中的UI界面跳转.md",
-    "unity3D/UI设计/弹窗类UI.md",
-    "CSharp开发/设计模式/2、策略模式.md",
-    "unity3D/UI设计/attachments/微信图片编辑_20240218153513.jpg",
-    "unity3D/UI设计/attachments/Pasted image 20240218153156.png",
-    "unity3D/UI设计/attachments",
-    "unity3D/UI设计",
-    "网络编程/URI.md",
-    "网络编程/attachments/Pasted image 20240218143245.png",
-    "网络编程/attachments/Pasted image 20240218143227.png",
-    "网络编程/attachments/Pasted image 20240218143127.png",
-    "网络编程/attachments/Pasted image 20240218142020.png",
-    "网络编程/attachments/Pasted image 20240218135241.png",
-    "CSharp开发/数据读取/attachments/Pasted image 20240205103013.png",
-    "CSharp开发/数据读取/attachments/Pasted image 20240205102212.png",
-    "CSharp开发/数据读取/attachments",
-    "CSharp开发/数据读取",
-    "unity3D/Unity的渲染/Built-in Render Pipeline",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/attachments/Pasted image 20231112164555.png"
+    "DIY/书籍装帧"
   ]
 }
