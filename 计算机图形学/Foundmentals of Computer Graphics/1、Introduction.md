@@ -37,3 +37,5 @@ This implies that some basic classes to be written include:
 - **transform**  A 4 × 4 matrix for transformations.
 - **image**  A 2D array of RGB pixels with an output operation.
 ### 1.4.2 Float 和 Double
+Modern architecture suggests that keeping memory use down and maintaining coherent memory access are the keys to efficiency. 
+This suggests using singleprecision data. However, avoiding numerical problems suggests using double precision arithmetic. The tradeoffs depend on the program, but it is nice to have a default in your class definitions.
