@@ -34,3 +34,10 @@ I have resolved this issue by deleting 'Library/Bee' and 'Library/BuildPlayerDat
 (in Unity 2022.1.14)
 使用 V 2.0.2 版本的 ILRuntime 没有出现该错误
 ### visionOS 平台遇到的问题
+#### 1 、Thread 1: EXC_RESOURCE (RESOURCE_TYPE_MEMORY: high watermark memory limit exceeded) (limit=5120 MB)
+应用程序超出了系统设置的内存使用上限所导致的。内存限制为 5120 M。
+在 Profiler 中分析发现 viewerAR 的 allocated memory 为 9.89 G（包含 editor 和 player），不确定是否 player 单独就超过 5 G，进行内存优化？
+![[Pasted image 20240429180955.png|450]] ![[Pasted image 20240429181758.png|475]]
+
+1.1 内存优化
+#### 2 、发布的 demo 应用中没拿到头部位姿，UI 都在地面上
