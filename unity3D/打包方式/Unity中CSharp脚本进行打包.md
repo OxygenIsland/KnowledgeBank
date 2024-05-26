@@ -188,3 +188,12 @@ public class ARViewerBuilder
 5. **按路径过滤**：使用 `p:` 后跟路径来搜索指定路径下的资源。例如，`"p:Assets/Textures"` 将会返回指定路径下的所有资源。
 
 这些过滤器可以单独使用，也可以组合使用以获取特定的资源集合。使用搜索过滤器可以提高资源定位的效率，并帮助你更快速地管理项目中的资源。
+
+# 使用命令行打包
+```bat
+@echo off
+echo lunch unity.exe ,please wait a moment...
+"C:\Program Files\Unity\Hub\Editor\2020.3.18f1c1\Editor\Unity.exe" -quit -batchmode -projectPath "D:\Unity\Unity\FViteMVC" -executeMethod ARViewerBuilder.BuildAPKForAndroid
+echo "Build WebGL done"
+pause
+```
