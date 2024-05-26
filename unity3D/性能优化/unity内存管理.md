@@ -146,8 +146,7 @@ Incremental GC（渐进式GC）：[https://blogs.unity3d.com/2018/11/26/feature-
 
 **堆栈：**
 
-堆栈是内存中存储**函数**和**值类型**的地方。
-
+==堆栈是内存中存储**函数**和**值类型**的地方。==
 例如我们调用一个函数A，会将这个函数体与函数收到的参数放入到堆栈中，若在函数A中调用函数B，同样会把函数B存放到堆栈中。当函数B运行结束，会将其从堆栈中移除，然后当A运行结束，把A从堆栈中移除。
 
 因此我们在看Debug信息的时候，就会发现Log里面能够做到一层层的方法回溯，方便我们查看整体的调用过程，这也就是**堆栈回溯**。
@@ -155,8 +154,7 @@ Incremental GC（渐进式GC）：[https://blogs.unity3d.com/2018/11/26/feature-
 由于是堆栈的结构，因此不会遇到碎片化或是垃圾收集（GC）的问题。但是可能会碰见堆栈溢出的问题，比如调用了太多的函数导致一直push东西进堆栈，占据越来越多的内存空间，导致**堆栈溢出**。
 
 **堆积：**
-
-堆积是内存中另一个区域，要比堆栈大，我们将所有的**引用类型**存放在这。通常我们每创建一个新的对象，会在堆积中找到下一个足够存放的空位置，将其存储。但是当我们销毁对象后，**内存空间不会马上释放出来**，而是标记成未使用，之后垃圾收集器会释放这部分空间。
+==堆积是内存中另一个区域，要比堆栈大，我们将所有的**引用类型**存放在这。通常我们每创建一个新的对象，会在堆积中找到下一个足够存放的空位置，将其存储。但是当我们销毁对象后，**内存空间不会马上释放出来**，而是标记成未使用，之后垃圾收集器会释放这部分空间。==
 
 **对象实例化和摧毁的过程其实很慢**，所以我们要尽可能地避免在堆积中配置内存的行为。如果我们需要的内存比之前已经配置好的还多，在放不下的情况下，**堆积会膨胀，并且每次都增长两倍，且不会再缩回去**，过大的堆积就会影响到我们游戏的性能。当我们在堆积中释放了一些占用空间小的对象，而后添加一些占用空间大的对象时，由于前面释放的空间不足以存放下，就会导致这些空间空出来，使得内存的使用情况就变得断断续续起来，这也就是内存的**碎片化**，同样降低我们的游戏性能。
 
@@ -179,16 +177,16 @@ Incremental GC（渐进式GC）：[https://blogs.unity3d.com/2018/11/26/feature-
 DSP Buffer大小的设置一般会导致两种问题：
 - 设置的值过大会导致声音的延迟，因为填充满需要很多的声音数据，当我们声音数据不大的时候，就会产生延时。
 - 设置的值太小会导致CPU负担上升，因为会频繁的发送。
-![](https://pic2.zhimg.com/80/v2-c0c2c479b0b7a905edc114a7f6a480ad_720w.webp)
+![|500](https://pic2.zhimg.com/80/v2-c0c2c479b0b7a905edc114a7f6a480ad_720w.webp)
 
 DSP Buffer设置
-**Force To Mono：**​这个选项作用是强制单声道，很多声音为了追求质量会设置成双声道，导致声音在包体和内存中，占用的空间加倍，但是95%以上的声音，两个声道是完全一样的数据。**因此对声音不是很敏感的项目建议勾选此项**，来降低内存的占用。
+**Force To Mono：** ​这个选项作用是强制单声道，很多声音为了追求质量会设置成双声道，导致声音在包体和内存中，占用的空间加倍，但是95%以上的声音，两个声道是完全一样的数据。**因此对声音不是很敏感的项目建议勾选此项**，来降低内存的占用。
 
-![](https://pic1.zhimg.com/80/v2-aed8faecef34d2e3cd2d94475e36fad8_720w.webp)
+![|223](https://pic1.zhimg.com/80/v2-aed8faecef34d2e3cd2d94475e36fad8_720w.webp)
 
 Force To Mono设置
-**Compression Format：**不同的平台有不同的声音格式的支持，IOS对MP3有硬件支持，Android暂时没有硬件支持。**建议IOS适合使用ADPCM和MP3格式，Android适合使用Vorbis格式。**
-![](https://pic3.zhimg.com/80/v2-9d4a617188e8cd35b63df9226576a44a_720w.webp)
+**Compression Format：** 不同的平台有不同的声音格式的支持，IOS 对 MP3有硬件支持，Android 暂时没有硬件支持。**建议 IOS 适合使用 ADPCM 和 MP3格式，Android 适合使用 Vorbis 格式。**
+![|259](https://pic3.zhimg.com/80/v2-9d4a617188e8cd35b63df9226576a44a_720w.webp)
 
 Compression Format设置
 **Load Type：**决定声音在内存中的存在形态：
@@ -200,10 +198,10 @@ Compression Format设置
 |Streaming|从磁盘读取声音数据|适用于大型音频文件，例如背景音|
 
 注：例如Decompress On Load，要求文件必须小于200kb，因为内部内存管理的问题，如果是大于200kb的文件，那么也还是只会被分配到不足200kb的内存。
-![](https://pic3.zhimg.com/80/v2-98bd5233047c363a35395c252e25cc66_720w.webp)
+![|357](https://pic3.zhimg.com/80/v2-98bd5233047c363a35395c252e25cc66_720w.webp)
 
 Load Type设置
-**Bitrate：**我们可以对音频文件本身进行压缩，降低文件的**比特率**（bitrate），前提音频品质不会被破坏太严重。
+**Bitrate：** 我们可以对音频文件本身进行压缩，降低文件的**比特率**（bitrate），前提音频品质不会被破坏太严重。
 
 ![|373](https://pic4.zhimg.com/80/v2-e58d2583f833d77137679cb232b9b853_720w.webp)
 
@@ -256,7 +254,7 @@ Resource文件夹里的内容被打进包的时候会做一个红黑树（R-B Tr
 
 **IOS设备**运行平台要求支持**OpenGL ES 3.0**的使用**ASTC**，RGB压缩为RGB CompressedASTC 6x6 block，RGBA压缩为RGBA Compressed ASTC 4x4 block。对于法线贴图的压缩精度较高可以选择RGB CompressedASTC 5x5 block。需要兼容**OpenGLES 2.0**的使用**PVRTC**，RGB压缩为PVRTC 4bits，RGBA压缩为RGBA 16bits。（压缩大小不能接受的情况下，压缩为2张RGB Compressed PVRTC 4bits）
 
-![](https://pic1.zhimg.com/80/v2-d5f6a809657346791084b5045903f77c_720w.webp)
+![|500](https://pic1.zhimg.com/80/v2-d5f6a809657346791084b5045903f77c_720w.webp)
 
 参考：
 
@@ -322,7 +320,7 @@ public class Enemy : MonoBehaviour
 这个组件挂载在每个敌人身上，但是其中这两个浮点数（maxSpeed 和 attachRadius）的数值都是不变的。那么当场景中存在很多的敌人时，每次生成敌人的时候，这些数据就会重复一份。
 
 所以即使所有数据都一样，这两个浮点数还是重复的出现在有此脚本的对象上。所以建议改用Scriptable Objects，这样就只会耗费一组这样数据的内存，代码如下：
-
+#TODO serverconfig 是不是就是通过这样的方式来写的?????
 ```text
 public class EnemyConfiguration : ScriptableObject
 {
@@ -351,7 +349,6 @@ public class Enemy : MonoBehaviour
 ```
 
 ### 缓存一些Hash值
-
 在我们想要在运行时修改动画或者材质的时候，可以使用下面方法来实现
 
 ```text
@@ -372,7 +369,7 @@ material.SetColor(colorId, Color.white);
 
 例如我们常常会在游戏运行的时候去查找一些对象，**GameObject.Find**与其他所有关联的方法，需要遍历所有内存中的游戏对象以及组件，因此在复杂场景中，效率会很低。**GameObject.GetComponent**，会查询所有附加到GameObject上的组件，组件越多，GetComponent的成本就越高。若使用的是**GetComponentInChildren**，随着查询变复杂，成本会更高。
 
-因此不要多次查询相同的对象或组件，而且查询一次后将其缓存起来，方便后续的使用。
+==因此不要多次查询相同的对象或组件，而且查询一次后将其缓存起来，方便后续的使用。==
 
 ---
 
@@ -383,15 +380,13 @@ material.SetColor(colorId, Color.white);
 基本上当Unity渲染游戏图像时，会调用 **draw call** 来对GPU下指令，让场景能成功渲染。对象，材质和纹理越多，处理起来需要的时间也越多。所以过多的drawcall就会影响游戏的优化，这对于瓶颈在GPU上的游戏影响特别大，也就是我们的游戏已经给GPU太大的压力了。
 
 ### 使用批处理：
-
 我们可以使用**批处理**来尽量减少drawcall，使用批处理需要满足一些情况，例如，要批处理的对象必须引用一样的材质，并使用相同的纹理（纹理合并在这就很重要），但是使用的模型可以不一样。
 
-**动态批处理：**可以减少对于移动对象的drawcall。只能用于**少于900个顶点**信息的情况，包含坐标、法线、uv0、uv1、切线。动态批处理每帧评估一次，由CPU负责。
+**动态批处理：** 可以减少对于移动对象的 drawcall。只能用于**少于900个顶点**信息的情况，包含坐标、法线、uv0、uv1、切线。动态批处理每帧评估一次，由 CPU 负责。
 
-**静态批处理：**即对开启 **static** 标记的对象做批处理，在构建期完成。适用于绝大部分的静态Mesh，因此任何不会动的对象都应标记为静态的。如果我们在运行时要添加静态对象，可以看一下 **StaticBatchUtility.Combine()** 的API
+**静态批处理：**  即对开启  static 标记的对象做批处理，在构建期完成。适用于绝大部分的静态 Mesh，因此任何不会动的对象都应标记为静态的。如果我们在运行时要添加静态对象，可以看一下 **StaticBatchUtility.Combine()** 的 API
 
 有关SRP Batcher可以看下：
-
 [SRP Batcher，Draw Call优化，Shader SRP Batcher compatible​blog.csdn.net/wangjiangrong/article/details/105518220![](https://pic2.zhimg.com/v2-fa4a63e6b3baaea5be76e7b472093bd5_180x120.jpg)](https://link.zhihu.com/?target=https%3A//blog.csdn.net/wangjiangrong/article/details/105518220)
 
 ### Cast Shadows
@@ -404,61 +399,45 @@ material.SetColor(colorId, Color.white);
 
 因此若场景有的对象是否有阴影对整体效果没有影响的话，就关闭这个选项。不计算阴影可以省下CPU时间。（具体渲染步骤可以在 Frame Debugger的Shadows.Draw中查看）
 
-### Light Culling Mask
-
+### 设置Light Culling Mask
 ![|308](https://pic4.zhimg.com/80/v2-7f7b3a74fafd378ffa53d563063166a7_720w.webp)
-
 ​在复杂场景中，许多光线紧靠彼此，你可能觉得光线不能影响特定对象。根据渲染流程的设置，场景中越多的光照，性能可能就会越差。因此我们要确保光照只影响特定的对象层（例如专门给角色打光的光源，设置成只影响角色），尤其是多光源和多对象彼此紧靠的时候。
 
 ### 避免使用手机原生分辨率
-
 现在的手机分辨率非常的高，在手机呈现高分辨率可能会影响性能和手机过热的问题。因为会有大量的计算需求，如后期处理。如果游戏本身很耗GPU，高分辨率会恶化这些问题。建议使用 **Screen.SetResolution** 来降低游戏预设的解析设置（根据不同的设备来找到一些合适的值），来提高性能。
 
 ## UI的一些优化建议
 
 ### 显示与隐藏
-
-UI的隐藏我们可以使用将其移到Canvas外的方法，而不是利用SetActive(false)的方法来隐藏。
-
+如果这个 UI 显示隐藏比较频繁的话，UI 的隐藏我们可以使用将其移到 Canvas 外的方法，而不是利用 SetActive(false)的方法来隐藏。
 ### UI的批处理
-
 如果UI元素会改变数值或是位置，会影响批处理，导致向GPU发送更多的drawcall。因此建议：
-
 - 将更新频率不同的UI放在不同的Canvas上。
 - 相同Canvas中的UI元素的Z值要相同，这样才不会打断批处理。
 - 相同Canvas中的UI元素要使用相同的材质和纹理，材质或着色器可以有动态变换（例如一些特效），这不会影响批处理。
 - 相同Canvas中的UI元素要使用相同裁剪矩阵。
-
 ### Graphic Raycaster
 
 ![|350](https://pic3.zhimg.com/80/v2-befd185b0e88bcac476895c14de5c60a_720w.webp)
 
 ​该组件是用来处理输入事件，默认挂载在每个Canvas上。有时不能互动的对象仍是canvas中的一部分，并附带了该组件，所以当每次鼠标或触控点击时，系统就要遍历所有可能接受输入事件的UI元素，就会造成多次的 “点落在矩形中” 的检查，来判断对象是否该作出反应。在UI很复杂的情况下，这个运算成本就会很高。因此建议确保只有可互动的Canvas才有该组件，节省CPU运行时间。
-
 ### 全屏UI的处理
-
 游戏中可能会有些全屏UI（例如一些设置界面），会遮挡住场景物体或其他UI元素。然而它们即使被遮挡看不见，CPU和GPU还是会有消耗，因此建议：
-
 - 3D场景完全被遮挡的话，关闭渲染3D场景的摄像机。
 - 被遮蔽的UI，Disable这些Canvas，注意不是SetActive(false）。
 - 尽可能的降低帧率，因为这些UI一般不需要刷新那么频繁。
 
 ## 其他一些优化
-
 ### GameObject的层次结构
-
 某些情况下，场景中的物体可能有很深的嵌套结构，当我们对父节点的GameObject进行坐标转换时，就会产生**OnTransformChanged**事件，这消息会传递给该GameObject下所有子对象，即使这些对象没有任何渲染组件（也就是我们看不见任何变化），造成一些不必要的转换运算，包括平移，旋转和缩放。
 
 此外，较深的结构也会导致在GC时，花费更多的时间在层级结构间遍历。
 
 ### 避免在Awake和Start中添加大量的逻辑
-
 这对游戏启动很重要，Unity会在Awake和Start方法执行后渲染第一个画面，某些情况可能会导致启动画面或是载入画面需要花更长的时间渲染，因为你必须等每个游戏对象都完成Awake和Start的执行。同时若游戏启动时，黑屏太久，提包时可能会被退审。
 
 ### 删除空的Unity事件
-
 Monobehaviour中的Start，Update这些方法即使是空的，也会带来些微的性能消耗，因此若为空，就删除它们。
-
 ### Accelerometer Frequency
 
 ![|500](https://pic1.zhimg.com/80/v2-940faec8dd3742eb1136f205cca49558_720w.webp)
@@ -466,23 +445,18 @@ Monobehaviour中的Start，Update这些方法即使是空的，也会带来些�
 ​​这个设置在Project Settings->Player->IOS->Other Settings中，这个功能定义Unity从设备读取加速度仪信息的频率，在不需要加速仪的游戏中，将它启动或设置了高于需求的频率，会影响性能表现。因为读取硬件设备信息，会增加CPU的处理时间。
 
 ### 移动物体
-
 Unity中有许多移动游戏对象的方法，例如 **transform.Translate**，如果对象需要碰撞判定，我们则会添加刚体和碰撞体，如果还是使用 transform.Translate 方法，会造成**PhysX物理引擎**整体重新计算，对于复杂的场景，成本可能很高。因此若要移动带有刚体的对象，使用**rigidBody.MovePosition**，并且要在**FixedUpdate**方法中执行。
 
 建议使用transform.Translate就在Update中执行，使用rigidBody.MovePosition或AddForce方法在FixedUpdate中执行。
 
 ### 添加组件
-
 在运行时调用**AddComponent**其实很没效率，尤其在一帧中多次启用这类调用。
 
 当我们添加一个组件的时候，Unity会做下列操作：
-
 - 先看组件有没有DisallowMultipleComponent的设置，如果有，就要去检查是否有同类型的组件已加入
 - 然后检查RequireComponent设置是否存在，如果设置了，就代表这个组件需要别的组件同步加入（重复做添加组件的操作）
 - 最后调用所有被加入的MonoBehaviour的Awake方法
-
 上述这些步骤都**发生在堆积**上，所以可能会影响性能和增加GC的处理时间。
-
+最好使用prefab
 ### 数据结构
-
 也就是Array，List和Dictionary等，例如在Array或List中使用索引的成本很低，那么就适合要经常通过索引读取的情况。而要频繁增加和移除对象时，使用Dictionary是最合适的。

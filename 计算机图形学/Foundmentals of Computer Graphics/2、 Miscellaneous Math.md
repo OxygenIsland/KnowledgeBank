@@ -47,5 +47,21 @@ $\frac{d}{dx} log_ax=\frac{1}{xln_a}$
 $\frac{d}{dx}a^x=a^xln_a$ 
 The constant multipliers above are unity only for a = e.  常数乘数是什么鬼？还是不懂
 ## 2.2 Solving Quadratic Equations 解二次方程
-
-
+A quadratic equation has the form：
+$Ax^2+Bx^2+Cx^2=0$
+If you think of a 2D xy plot with $y = Ax^2 + Bx^2 + C$, the solution is just whatever x values are “zero crossings” in y
+$y = Ax^2 + Bx^2 + C$,是一个 Parabola（抛物线）,
+![[Pasted image 20240523215353.png|233]]
+这个对我来说肯定很简单啦啦，经过推算之后我们可以得到一个求根公式：
+$x=\frac{-B\pm \sqrt{B^2-4AC}}{2A}$,当然无根、1 个根、2 个根，的区分就依靠 $B^2-4AC$ 啦，which is called the discriminant（判别式） of the quadratic equation
+## 2.3 Trigonometry (三角学)
+In graphics we use basic trigonometry in many contexts. Usually, it is nothing too fancy（幻想？花里胡哨！）, and it often helps to remember the basic definitions.
+### 2.3.1 Angles
+Although we take angles somewhat for granted, we should return to their definition so we can extend the idea of the angle onto the sphere. An angle is formed between two half-lines (infinite rays stemming from an origin) or directions, and some convention（约定、惯例） must be used to decide between the two possibilities for the angle created between them as shown in Figure 2.6
+![[Pasted image 20240523221313.png|275]]
+单位圆的 perimeter（周长）为 $2\pi$ ,弧长的单位是 radians，Another common unit is degrees, where the perimeter of the circle is 360 degrees. Thus, an angle that is π radians is 180 degrees, usually denoted $180^\circ$. The conversion between degrees and radians is:
+$degrees=\frac{180}{\pi}radians$
+$radians=\frac{\pi}{180}degrees$
+### 2.3.2 Trigonometric Functions
+![[Pasted image 20240523223647.png|284]]
+勾股定理，自己也可以推出来哦
