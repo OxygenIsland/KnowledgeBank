@@ -32,6 +32,11 @@ mergeInto(LibraryManager.library, {
 	}, 
 });
 ```
+**mergeInto(LibraryManager.library, {函数 1，函数 2，......})**:
+- `mergeInto` 是一个 Emscripten 提供的工具函数，用于将一个对象的属性和方法合并到另一个对象中。
+- `LibraryManager.library` 是一个全局对象，包含所有导出的 JavaScript 函数和模块。
+- 这行代码的作用是将所有方法和属性合并到 `LibraryManager.library` 对象中，使其成为 WebAssembly 模块的一部分，可以从 Unity C# 代码中调用。
+
 然后，可从 C# 脚本调用这些函数，如下所示：
 ```csharp
 using UnityEngine; 
@@ -117,3 +122,4 @@ if (unityInstance != null) {
 	unityInstance.SendMessage('WebglCameraMan', 'InitCallback', msg);
 }
 ```
+
