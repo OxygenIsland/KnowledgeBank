@@ -1,0 +1,2 @@
+1、在obsidian中实现康奈尔笔记的功能，实现不同标签的抓取
+2、在obsidian中实现将所有tag为Todo list的文段抓取到本页的功能
