@@ -4,22 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "773207d58492967f",
+        "id": "0bbb254a2def1406",
         "type": "tabs",
         "children": [
           {
-            "id": "09546468f65ecd20",
+            "id": "db9da8af360d88fb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Xcode/Apple related.md",
+                "file": "unity3D/基础/Character Controller.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Character Controller"
+            }
+          },
+          {
+            "id": "5dc48cbf16bb68f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "unity3D/基础/Character Controller.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Character Controller"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -54,7 +73,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -62,7 +83,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -70,7 +93,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -93,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Xcode/Apple related.md",
+                "file": "unity3D/基础/Character Controller.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +126,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Character Controller 的反向链接列表"
             }
           },
           {
@@ -110,10 +137,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Xcode/Apple related.md",
+                "file": "unity3D/基础/Character Controller.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Character Controller 的出链列表"
             }
           },
           {
@@ -124,7 +153,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -133,8 +164,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Xcode/Apple related.md"
-              }
+                "file": "unity3D/基础/Character Controller.md"
+              },
+              "icon": "lucide-list",
+              "title": "Character Controller 的大纲"
             }
           },
           {
@@ -146,7 +179,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           },
           {
@@ -158,7 +193,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           }
         ],
@@ -171,66 +208,65 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "audio-recorder:Start/stop recording": false,
-      "workspaces:Manage workspace layouts": false,
+      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "audio-recorder:开始/结束录音": false,
+      "workspaces:管理工作区布局": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-omnivore:Omnivore": false
     }
   },
-  "active": "30daf6fc74c45631",
+  "active": "5dc48cbf16bb68f5",
   "lastOpenFiles": [
-    "Xcode",
-    "unity3D/Apple Vision Pro/2. Getting Start.md",
-    "Xcode/Apple related.md",
-    "unity3D/Apple Vision Pro/迁移ViewerAR到visionPro.md",
-    "C++开发/CMake.md",
-    "Omnivore/2024-04-10/Getting Started with Omnivore.md",
-    "C++开发",
-    "unity3D/工作整理/周五分享.md",
-    "unity3D/工作整理/attachments/bd8d96701547ba4721fbaabe1756c7c.png",
-    "unity3D/工作整理/attachments/b19d9a67f01f49a27f9ec9001a60815.jpg",
-    "unity3D/工作整理/attachments/Pasted image 20240412161723.png",
-    "unity3D/工作整理/attachments/Pasted image 20240412161609.png",
-    "unity3D/工作整理/attachments/Pasted image 20240412160431.png",
-    "unity3D/工作整理/attachments/Pasted image 20240412102829.png",
-    "unity3D/工作整理/attachments/1712908451192.png",
+    "unity3D/OpenXR/使用摇杆实现移动.md",
+    "unity3D/基础/attachments/Pasted image 20241017175648.png",
+    "unity3D/工作整理/输入管理器设计.md",
+    "unity3D/基础/Character Controller.md",
+    "unity3D/工作整理/未命名.md",
+    "unity3D/OpenCVForUnity/Mat-基本图像容器.md",
+    "unity3D/Unity的渲染/URP/2.Camera/2、Render Type.md",
+    "unity3D/OpenXR",
+    "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
+    "unity3D/Unity的渲染/Built-in Render Pipeline/相机的渲染消息Messages.md",
     "unity3D/基础/Camera.md",
-    "unity3D/Apple Vision Pro/visionOS Platform Overview.md",
-    "unity3D/Apple Vision Pro/polyspatial.md",
-    "unity3D/Apple Vision Pro",
-    "Omnivore/2024-04-12/这次风口一定要抓住，Apple VisionOS 开发教程 - 掘金.md",
-    "Omnivore/2024-04-11/【GAMES101】作业0与vcpkg+CMake环境配置 - BladeHiker's HammerShop.md",
-    "Omnivore/2024-04-10/Fundamentals of Computer Graphics (Steve Marschner , Peter Shirley) (Z-Library).md",
-    "Omnivore/2024-04-12",
-    "Omnivore/2024-04-11",
-    "Omnivore/2024-04-10/Organize your Omnivore library with labels.md",
-    "Omnivore/2024-04-10/The Secret Power of ‘Read It Later’ Apps.md",
-    "unity3D/ARFoundation/attachments/Pasted image 20240409094223.png",
-    "unity3D/ARFoundation/attachments/Pasted image 20240409094156.png",
-    "unity3D/ARFoundation/attachments/Pasted image 20240409094114.png",
-    "unity3D/ARFoundation/获取CPU上的相机图像.md",
-    "unity3D/ARFoundation/attachments",
-    "unity3D/ARFoundation",
+    "unity3D/工作整理/7、抽象类与接口.md",
+    "unity3D/utilities/图片等比例适应工具.md",
+    "unity3D/基础/Rect Transform.md",
+    "unity3D/基础/ScrollView.md",
+    "unity3D/utilities/内存优化.md",
+    "unity3D/WebGL/unity webgl获取网络摄像头.md",
+    "unity3D/空间变换/空间和变换.md",
+    "unity3D/空间变换/unity中的坐标系.md",
+    "unity3D/工作整理/消息系统.md",
+    "unity3D/基础/InputSystem.md",
+    "unity3D/基础/attachments/Pasted image 20240809141907.png",
+    "unity3D/基础/PlayerInput.md",
+    "unity3D/基础/attachments/Pasted image 20240809141304.png",
+    "unity3D/基础/attachments/Pasted image 20240809140727.png",
+    "unity3D/基础/attachments/Pasted image 20240809140033.png",
+    "unity3D/基础/attachments/Pasted image 20240809135817.png",
+    "unity3D/基础/attachments/Pasted image 20240809134656.png",
+    "unity3D/基础/attachments/Pasted image 20240809134640.png",
+    "unity3D/基础/attachments/Pasted image 20240809134133.png",
+    "unity3D/基础/attachments/Pasted image 20240809113806.png",
+    "unity3D/工作整理/3、选中、移动、旋转物体.md",
+    "unity3D/工作整理/6、lamda表达式.md",
+    "unity3D/工作整理/9、资源加载.md",
     "unity3D/工作整理/11、延迟调用和周期性调用.md",
-    "Omnivore/2024-04-10",
-    "Omnivore",
-    "unity3D/基础/Coroutine.md",
-    "CSharp开发/迭代器.md",
-    "unity3D/WebGL/WebGL：与浏览器脚本交互.md",
-    "unity3D/打包方式/Unity中CSharp脚本进行打包.md",
-    "unity3D/WebGL",
-    "unity3D/打包方式/Jenkins实现Unity多平台自动打包.md",
-    "Humorous/谐语.md",
-    "CSharp开发/设计模式/1、简单工厂模式.md",
-    "CSharp开发/数据读取/Xml文件操作.md",
-    "unity3D/工作整理/SerializeField.md",
-    "DIY/书籍装帧"
+    "unity3D/工作整理/面向接口编程.md",
+    "RenderHell/attachments/pipeline_rop_01.webm",
+    "RenderHell/attachments/pipeline_workdistribution_03 1.webm",
+    "RenderHell/attachments/pipeline_rasterizing01.webm",
+    "RenderHell/attachments/pipeline_triangle_journey01.webm",
+    "RenderHell/attachments/pipeline_clipping01.webm",
+    "RenderHell/attachments/pipeline_screenmapping01.webm",
+    "RenderHell/attachments/pipeline_geometry_shader01.webm",
+    "RenderHell/attachments/pipeline_primitive_assembly_01.webm",
+    "RenderHell/attachments/pipeline_domain_shader01.webm"
   ]
 }
