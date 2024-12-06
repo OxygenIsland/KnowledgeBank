@@ -69,6 +69,15 @@ mesh 网格相对于点云信息来说损失了很多细节，所以用 mesh 来
 
 ![[Pasted image 20241120142016.png|500]]
 
+Test demo (广告牌)
+![[
+
+
+
+
+
+
+]] ![[Pasted image 20241202164709.png|500]]
 
 ### think
 
@@ -182,12 +191,30 @@ scale：
     References
     - [【6D位姿估计】FoundationPose 跑通demo 训练记录_foundationpose demo-CSDN博客](https://blog.csdn.net/qq_41204464/article/details/138619210?spm=1001.2014.3001.5501&login=from_csdn)
     - [【6D位姿估计】FoundationPose 支持6D位姿估计和跟踪 CVPR 2024_一颗小树x-开放原子开发者工作坊](https://openatomworkshop.csdn.net/673fe99559bcf8384a83ff9a.html?dp_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NzA3Nzg0LCJleHAiOjE3MzMxMDg5ODEsImlhdCI6MTczMjUwNDE4MSwidXNlcm5hbWUiOiJ1MDEyNDIxNjE2In0.Q87nJomid96zCc_HrL7e6K1ntF3Yk3V-Cg11nfVMjso&spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-2-138537252-blog-137132253.235%5Ev43%5Epc_blog_bottom_relevance_base4&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Eactivity-2-138537252-blog-137132253.235%5Ev43%5Epc_blog_bottom_relevance_base4&utm_relevant_index=4)
+    复现流程：
+    升级 python `conda install python=3.9`
+    升级 gcc、g++
+    `conda install -c conda-forge gcc=11 gxx=11`
+    
+
+
 4. Omni6D: Large-Vocabulary 3D Object Dataset for Category-Level 6D Object Pose Estimation
     **现有方法的评估与分析**：我们在 Omni6D 数据集上评估了现有的类别级 6D 物体位姿估计方法，深入分析了这些方法面临的挑战，帮助识别当前技术的不足之处。
 5. SAM-6D: Segment Anything Model Meets Zero-Shot 6D Object Pose Estimation
     ![[Pasted image 20241125114740.png|500]]
+    docker run -it --gpus "device=0" -v D:/work/DeepLearningSpace/SAM-6D-main/:/workspace  lihualiu/sam-6d: 1.0 /bin/bash 
+    ![[vis_pem.png|500]]
+    
     -  输入 RGBD 图像数据、待位姿估计的物体数据，可以输入多个要估计的物体。
     - 实例分割，RGBD 数据输入到 Segment Anything 模型（SAM）进行实例分割，生成所有可能的物体区域。
     - 匹配对应目标物体，生成的物体区域会有多个，需要逐一和待估计的物体进行匹配。
     - 姿态估计，输入包括 RGB-D 图像中提取的观测点云、目标物体的3D 模型点云；首先进行粗略匹配，再进行精细匹配。
-    - 输出6D位姿信息，包括三维位置、三维方向。
+    - 输出6D 位姿信息，包括三维位置、三维方向。
+
+6 D 位姿估计的算法是否可行？是否可以融入到 nerf 地图训练的流程中，最终在 json 中提供对应的位姿
+测试 6 D 位姿的算法，对应的测试数据
+metaspace 训练 nerf 地图的流程、训练 3 DGS 地图的流程
+
+数据相关的问题：
+从点云生成深度图，
+从深度图生成点云
