@@ -20,7 +20,7 @@
 ==RectTransform 继承自 Transform，对比 Transform，它增加了2个新的属性，分别是：Anchor（锚点） 和 Pivot（轴心点） ==
 
 ### 1 .3 Difference —— 区别
-- Transform：记录并表示，一个 3 D 物体在三维空间中的位置、旋转和缩放三种属性
+- Transform：记录并表示，一个 3D 物体在三维空间中的位置、旋转和缩放三种属性
 - RectTransform：记录并表示，一个 2 D UI 元素在屏幕中的位置、旋转和缩放三种属性
 - Rect：表示 2D 矩形，常用来处理表示 2 维矩形，设置 x、y 位置和宽度、高度。( 你可以理解为用来描述一个矩阵的长宽 )
 ## 2 、Anchor —— 锚点
@@ -99,7 +99,25 @@ GetComponent<RectTransform>().anchoredPosition3D = new Vector3(posx,posy,posz);
 GetComponent<RectTransform>().anchoredPosition = new Vector2(posx,posy);
 ```
 ### 5.2 Position —— PosX、PosY 与 Left、Top、Right、Bottom 数值显示与 anchoredPosition
-在 UGUI 中 Pos X 与 Pos Y 分别表示 UI**轴心点**到**锚点**的水平与方向距离。==Position值的显示只和UI自身**锚点**及**轴心点**的位置有关系。==  
+在 UGUI 中 Pos X 与 Pos Y 分别表示 UI**轴心点**到**锚点**的水平与方向距离。==Position 值的显示只和 UI 自身**锚点**及**轴心点**的位置有关系。==  
+#### anchoredPosition 与 position 的区别：
+##### 区别和联系
+对于 UGUI 元素来说，RectTransform.anchoredPosition (Vector2) 是相对于anchor来设置的位置。RectTransform.position （Vector3) 是三维坐标（in world space），是相对于世界原点的。
+##### 举例说明
+已知 e.Position 是触摸或点击事件提供的屏幕坐标（Vector2)，Canvas 设置为 Screen Space - Overlay。如果屏幕是 [iPhone7](https://www.baidu.com/s?wd=iPhone7&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd) 的大小 667x375，那么点在[最右](https://www.baidu.com/s?wd=%E6%9C%80%E5%8F%B3&tn=24004469_oem_dg&rsv_dl=gh_pl_sl_csd)下角的时候，e.Position 的值就是(667, 375)。如果把按钮的 RectTransform.position 赋值为 e.Position，就能把这个按钮放在屏幕右下角 (667, 375)位置。如果把按钮的 RectTransform.anchoredPosition 赋值为 e.Position，那么按钮会在哪里取决于 anchor 的位置（参见下图）：
+
+![|500](https://i-blog.csdnimg.cn/blog_migrate/888acdc7681f4d4c07cd474bd2980e36.png)
+
+1. 如果 anchor 在左上角(0, 0)，那么相对 anchor 设置坐标为 (0, 0) + (667, 375) = (667, 375)
+2. 如果anchor在右下角(667, 375)，那么相对 anchor 设置坐标为 (667, 375) + (667, 375) = (1334, 750)，设置到屏幕外了。
+3. 其他情况类推。
+
+问题：RectTransform.position 是世界坐标下的 Vector3， e.Position 是屏幕坐标下的 Vector2，为什么从 Vector2 隐式类型转换为 Vector3 后坐标正好是对的？
+
+可能的解释：隐式类型转换时，z = 0。因为 Canvas 是使用 Screen Space - Overlay 模式，元素是绘制在场景之上的，也就是最顶层，z 的数值应该是失效的，只要 x, y 坐标值是对的，元素就会显示在正确的位置。如果有覆盖的问题，可能要设置渲染次序而不是 z 值了。
+
+##### 总结
+==position 的原点是 Canvas 屏幕空间的原点, anchoredPosition 的原点是元素本身的 anchor。==
 #### **UI 的锚点和轴心点都在正中间**  
 这种情况下，锚点和轴心点重合 Pos X 和 Pos Y 显示的数值为0
 ![[Pasted image 20240523100043.png|500]]
