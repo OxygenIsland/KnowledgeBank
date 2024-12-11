@@ -17,21 +17,21 @@ can bus 通信协议
 Putty 的作用是通过数据线连接系统，进行固件的编译，在线升级等
 #### 4.1用Type_c数据线与主板的Host_USB连接，主板供电，在电脑的设备管理器查看com口，然后打开Putty  
 #### 4.2选择com口，设置波特率1500000，点击Open打开连接
-![[Pasted image 20240711213042.png]]
+![[Pasted image 20240711213042.png|426]]
 #### 4.3进入下面界面，点击回车（ENTER）键
-![[Pasted image 20240711213117.png]]
+![[Pasted image 20240711213117.png|475]]
 #### 4.4然后输入账号：mks, 密码：makerbase
 ### 5、SSH连接
 SSH的作用是无线发送指令操作系统，进行固件的编译，在线升级等
 这里使用坤哥推荐的那个软件试一试也可以
 1）下载安装Xshell软件，Xshell6Portable 下载地址：https://www.netsarang.com/zh/free-for-home-school/
 2）打开Xshell软件，建立新的会话
-![[Pasted image 20240711213306.png]]
-![[Pasted image 20240711213324.png]]
+![[Pasted image 20240711213306.png|441]]
+![[Pasted image 20240711213324.png|475]]
 2）然后点击连接
-![[Pasted image 20240711213357.png]]
+![[Pasted image 20240711213357.png|475]]
 4）连接后弹出设置用户名界面，输入用户名：mks
-![[Pasted image 20240711213434.png]]
+![[Pasted image 20240711213434.png|353]]
 5）双击新建的会话连接，弹出密码输入界面，密码：makerbase输入密码后进入linux操作系统的用户界面shell。
 ### 6、MKS PI_TS35屏幕连接和操作
 
@@ -40,7 +40,7 @@ SSH的作用是无线发送指令操作系统，进行固件的编译，在线�
 ### 7、加速度传感器ADXL345连接和配置
 
 MKS PI与ADXL345的连接如下：
-![[Pasted image 20240711213952.png]]
+![[Pasted image 20240711213952.png|475]]
 MKS PI镜像默认已安装加速度计算库和依赖库，不用额外配置，在配置文件中配置ADXL345和测试位置参数即可。  
 1、在配置文件中配置adxl345，将以下参数复制到配置文件中
 ```
@@ -86,18 +86,18 @@ shaper_freq_y = 37.5
 到时候可以试一下小米的那个摄像头
 默认镜像文件已经安装MJPG-Streamer，只需要在fluidd网页上配置摄像头参数即可，配置项如下：  
 1、在网页界面的配置项→选择摄像头→添加摄像头
-![[Pasted image 20240711215030.png]]
+![[Pasted image 20240711215030.png|475]]
 2、启用摄像头→配置摄像头名称→视频类型选择为MJPEG视频流，然后保存，返回到主界面能查看到图像即可。
-![[Pasted image 20240711215102.png]]
+![[Pasted image 20240711215102.png|475]]
 ### 9、主板固件更新
 主板固件更新指的是将3D打印机主板上的固件（即嵌入式软件）升级到最新版本的过程。固件是控制和管理主板及其连接的所有硬件设备的低级软件。
 ### 10、[[Kliper#Klipper配置|klipper 配置文件]] 配置
 ### 11、驱动跳线
 1、TMC2208、2209、2226普通模式16细分跳线
-![[Pasted image 20240711233251.png]]
+![[Pasted image 20240711233251.png|500]]
 2、TMC2225普通模式16细分跳线
-![[Pasted image 20240711233316.png]]
+![[Pasted image 20240711233316.png|500]]
 3、A4988 16细分跳线
-![[Pasted image 20240711233341.png]]
+![[Pasted image 20240711233341.png|475]]
 4、TMC驱动[[Kliper#3.4 TMC驱动 UART模式配置|UART模式]]跳线
-![[Pasted image 20240711233401.png]]
+![[Pasted image 20240711233401.png|475]]
