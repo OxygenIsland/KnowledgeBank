@@ -70,14 +70,8 @@ mesh 网格相对于点云信息来说损失了很多细节，所以用 mesh 来
 ![[Pasted image 20241120142016.png|500]]
 
 Test demo (广告牌)
-![[
-
-
-
-
-
-
-]] ![[Pasted image 20241202164709.png|500]]
+![[Pasted image 20241202163124.png|500]]
+![[Pasted image 20241202164709.png|500]]
 
 ### think
 
