@@ -3,7 +3,15 @@ unity Shader 的主要结构如下所示：
 Shader "" 引号中是该 Shader 的名字，也可以采用目录式命名，方便管理，下图展示的是 Properties 中常见的属性变量，以及在 unity 面板中的样式
 ![[Screen Shot 2023-11-12 at 10.36.38.png|475]] ![[Screen Shot 2023-11-12 at 10.41.42.png|475]]
 接下来看 SubShader 的部分，SubShader 可以包含多个 Pass{}，一个 Pass{}就相当于一个完整的 GPU 渲染管线。
-![[Screen Shot 2023-11-12 at 11.37.21.png|600]]
+
+要访问不同的顶点数据，您需要自己声明顶点结构，或将输入参数添加到顶点着色器。顶点数据由Cg / HLSL语义标识，并且必须来自以下列表：
+- POSITION是顶点位置，通常是afloat3或float4。
+- NORMAL是顶点法线，通常是float3。
+- TEXCOORD0是所述第一 UV 坐标，典型的float2，float3或 float4。
+- TEXCOORD1，TEXCOORD2并且TEXCOORD3是第2，第3和第4个UV坐标。
+- TANGENT是切线向量（用于法线贴图），通常为float4。
+- COLOR是每个顶点的颜色，通常是float4。
+
 ```csharp
  Shsder “01MiniShader”
  {
@@ -57,8 +65,8 @@ Shader "" 引号中是该 Shader 的名字，也可以采用目录式命名，�
 		 ENDCG
 	 }
  }
-//注意：
-//float4 是32位的，主要用于坐标点
-//half 是16位的，主要用于uv和大部分向量
-//fixed是8位的，主要用于颜色
 ```
+**注意：**
+	float 4 是 32 位的，主要用于坐标点
+	half 是 16 位的，主要用于 uv 和大部分向量
+	fixed 是 8 位的，主要用于颜色
