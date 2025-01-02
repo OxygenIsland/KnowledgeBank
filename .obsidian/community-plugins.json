@@ -11,5 +11,6 @@
   "obsidian-pandoc",
   "table-editor-obsidian",
   "mousewheel-image-zoom",
-  "execute-code"
+  "execute-code",
+  "obsidian-git"
 ]

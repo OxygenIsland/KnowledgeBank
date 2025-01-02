@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "0bbb254a2def1406",
+        "id": "522f6a2309bdc04b",
         "type": "tabs",
         "children": [
           {
-            "id": "db9da8af360d88fb",
+            "id": "672b9d03d06f533d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "unity3D/基础/Character Controller.md",
+                "file": "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.1 Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Character Controller"
-            }
-          },
-          {
-            "id": "5dc48cbf16bb68f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "unity3D/基础/Character Controller.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Character Controller"
+              "title": "1.1 Introduction"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,7 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 288.5
+    "width": 636.5
   },
   "right": {
     "id": "5e2a7d70625f3243",
@@ -137,12 +122,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "unity3D/基础/Character Controller.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "file": "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.1 Introduction.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Character Controller 的出链列表"
+              "title": "1.1 Introduction 的出链列表"
             }
           },
           {
@@ -203,8 +188,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,56 +201,56 @@
       "command-palette:打开命令面板": false,
       "audio-recorder:开始/结束录音": false,
       "workspaces:管理工作区布局": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-omnivore:Omnivore": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5dc48cbf16bb68f5",
+  "active": "672b9d03d06f533d",
   "lastOpenFiles": [
-    "unity3D/OpenXR/使用摇杆实现移动.md",
-    "unity3D/基础/attachments/Pasted image 20241017175648.png",
-    "unity3D/工作整理/输入管理器设计.md",
-    "unity3D/基础/Character Controller.md",
-    "unity3D/工作整理/未命名.md",
-    "unity3D/OpenCVForUnity/Mat-基本图像容器.md",
-    "unity3D/Unity的渲染/URP/2.Camera/2、Render Type.md",
-    "unity3D/OpenXR",
-    "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
-    "unity3D/Unity的渲染/Built-in Render Pipeline/相机的渲染消息Messages.md",
-    "unity3D/基础/Camera.md",
-    "unity3D/工作整理/7、抽象类与接口.md",
-    "unity3D/utilities/图片等比例适应工具.md",
-    "unity3D/基础/Rect Transform.md",
-    "unity3D/基础/ScrollView.md",
-    "unity3D/utilities/内存优化.md",
-    "unity3D/WebGL/unity webgl获取网络摄像头.md",
-    "unity3D/空间变换/空间和变换.md",
-    "unity3D/空间变换/unity中的坐标系.md",
-    "unity3D/工作整理/消息系统.md",
-    "unity3D/基础/InputSystem.md",
-    "unity3D/基础/attachments/Pasted image 20240809141907.png",
-    "unity3D/基础/PlayerInput.md",
-    "unity3D/基础/attachments/Pasted image 20240809141304.png",
-    "unity3D/基础/attachments/Pasted image 20240809140727.png",
-    "unity3D/基础/attachments/Pasted image 20240809140033.png",
-    "unity3D/基础/attachments/Pasted image 20240809135817.png",
-    "unity3D/基础/attachments/Pasted image 20240809134656.png",
-    "unity3D/基础/attachments/Pasted image 20240809134640.png",
-    "unity3D/基础/attachments/Pasted image 20240809134133.png",
-    "unity3D/基础/attachments/Pasted image 20240809113806.png",
-    "unity3D/工作整理/3、选中、移动、旋转物体.md",
-    "unity3D/工作整理/6、lamda表达式.md",
-    "unity3D/工作整理/9、资源加载.md",
-    "unity3D/工作整理/11、延迟调用和周期性调用.md",
-    "unity3D/工作整理/面向接口编程.md",
-    "RenderHell/attachments/pipeline_rop_01.webm",
-    "RenderHell/attachments/pipeline_workdistribution_03 1.webm",
-    "RenderHell/attachments/pipeline_rasterizing01.webm",
-    "RenderHell/attachments/pipeline_triangle_journey01.webm",
-    "RenderHell/attachments/pipeline_clipping01.webm",
-    "RenderHell/attachments/pipeline_screenmapping01.webm",
-    "RenderHell/attachments/pipeline_geometry_shader01.webm",
-    "RenderHell/attachments/pipeline_primitive_assembly_01.webm",
-    "RenderHell/attachments/pipeline_domain_shader01.webm"
+    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/attachments/Pasted image 20250102174308.png",
+    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/attachments",
+    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.2 感知机.md",
+    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.1 Introduction.md",
+    "深度学习/Neural Networks and Deep Learning/未命名.md",
+    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits",
+    "深度学习/2.preliminaries/计算图.md",
+    "深度学习/Neural Networks and Deep Learning",
+    "深度学习/2.preliminaries/2.5 自动微分.md",
+    "深度学习/2.preliminaries/2.1 数据操作.md",
+    "深度学习/【深度学习环境】VSCode 调试python 带args参数的程序.md",
+    "论文/Automated Creation of Digital Cousins  for Robust Policy Learning.md",
+    "计算机图形学/Foundmentals of Computer Graphics/2、 Miscellaneous Math.md",
+    "计算机图形学/Foundmentals of Computer Graphics/1、Introduction.md",
+    "强化学习/1、基础.md",
+    "Docker/使用docker配置深度学习环境.md",
+    "Diary/佳美绿洲 住房贷款以及开发商违约金.md",
+    "深度学习/独热编码（One-Hot Encoding）.md",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180920.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180745.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180721.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180701.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180433.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180244.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231180104.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231175800.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231174705.png",
+    "深度学习/2.preliminaries/attachments/Pasted image 20241231173642.png",
+    "深度学习/2.preliminaries/2.4 微积分.md",
+    "深度学习/2.preliminaries/2.2 数据预处理.md",
+    "深度学习/2.preliminaries/2.3. 线性代数.md",
+    "深度学习/2.preliminaries/attachments/attachments",
+    "Omnivore/2024-04-12/这次风口一定要抓住，Apple VisionOS 开发教程 - 掘金.md",
+    "RenderHell/1、Verview.md",
+    "Pasted image 20240708182340.png.md",
+    "Docker/Docker 入门.md",
+    "网络编程/Http.md",
+    "深度学习/2.preliminaries/attachments/adadelta.ipynb",
+    "深度学习/2.preliminaries/attachments/adadelta 1.ipynb",
+    "深度学习/2.preliminaries/attachments",
+    "unity3D/unityShader/Introduction to Shader Code Basics.md",
+    "unity3D/unityShader/Example/Scan 扫描.md",
+    "unity3D/unityShader/Example/扣绿幕.md",
+    "unity3D/unityShader/Example/attachments",
+    "unity3D/unityShader/Example",
+    "Python"
   ]
 }
