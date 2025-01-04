@@ -13,12 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.1 Introduction.md",
+                "file": "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works/2.2 A fast matrix-based approach to computing the output from a neural network.md",
                 "mode": "source",
                 "source": false
-              },
-              "icon": "lucide-file",
-              "title": "1.1 Introduction"
+              }
             }
           }
         ]
@@ -41,9 +39,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              }
             }
           },
           {
@@ -58,9 +54,7 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "搜索"
+              }
             }
           },
           {
@@ -68,9 +62,7 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "state": {}
             }
           },
           {
@@ -78,16 +70,14 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "书签"
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 636.5
+    "width": 427.5
   },
   "right": {
     "id": "5e2a7d70625f3243",
@@ -103,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "unity3D/基础/Character Controller.md",
+                "file": "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works/2.2 A fast matrix-based approach to computing the output from a neural network.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,9 +101,7 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Character Controller 的反向链接列表"
+              }
             }
           },
           {
@@ -122,12 +110,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.1 Introduction.md",
+                "file": "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works/2.2 A fast matrix-based approach to computing the output from a neural network.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
-              },
-              "icon": "links-going-out",
-              "title": "1.1 Introduction 的出链列表"
+              }
             }
           },
           {
@@ -138,9 +124,7 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "标签"
+              }
             }
           },
           {
@@ -149,10 +133,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "unity3D/基础/Character Controller.md"
-              },
-              "icon": "lucide-list",
-              "title": "Character Controller 的大纲"
+                "file": "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works/2.2 A fast matrix-based approach to computing the output from a neural network.md"
+              }
             }
           },
           {
@@ -164,9 +146,7 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
+              }
             }
           },
           {
@@ -178,9 +158,7 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
+              }
             }
           }
         ],
@@ -192,26 +170,45 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-excalidraw-plugin:新建 Excalidraw 绘图": false,
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "audio-recorder:开始/结束录音": false,
-      "workspaces:管理工作区布局": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false,
+      "workspaces:Manage workspace layouts": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "672b9d03d06f533d",
   "lastOpenFiles": [
-    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/attachments/Pasted image 20250102174308.png",
-    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/attachments",
-    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.2 感知机.md",
-    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.1 Introduction.md",
+    "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works/2.1 Introduction.md",
+    "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works/2.2 A fast matrix-based approach to computing the output from a neural network.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.1 Introduction.md",
     "深度学习/Neural Networks and Deep Learning/未命名.md",
-    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits",
+    "深度学习/Neural Networks and Deep Learning/2. How the backpropagation algorithm works",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.8 Toward deep learning.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.6 Learning with gradient descent.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.5 A simple network to classify handwritten digits.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.4 The architecture of neural networks.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.3 Sigmoid neurons.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/1.7 Implementing our network to classify digits.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104223027.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104223012.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104222941.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104222927.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104222916.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104222818.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104222710.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104214326.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104213652.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments/Pasted image 20250104212329.png",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits/attachments",
+    "深度学习/Neural Networks and Deep Learning/Using neural nets to recognize handwritten digits/1.2 感知机.md",
+    "深度学习/Neural Networks and Deep Learning/1. Using neural nets to recognize handwritten digits",
     "深度学习/2.preliminaries/计算图.md",
     "深度学习/Neural Networks and Deep Learning",
     "深度学习/2.preliminaries/2.5 自动微分.md",
@@ -224,33 +221,15 @@
     "Docker/使用docker配置深度学习环境.md",
     "Diary/佳美绿洲 住房贷款以及开发商违约金.md",
     "深度学习/独热编码（One-Hot Encoding）.md",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180920.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180745.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180721.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180701.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180433.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180244.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231180104.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231175800.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231174705.png",
-    "深度学习/2.preliminaries/attachments/Pasted image 20241231173642.png",
     "深度学习/2.preliminaries/2.4 微积分.md",
     "深度学习/2.preliminaries/2.2 数据预处理.md",
     "深度学习/2.preliminaries/2.3. 线性代数.md",
     "深度学习/2.preliminaries/attachments/attachments",
     "Omnivore/2024-04-12/这次风口一定要抓住，Apple VisionOS 开发教程 - 掘金.md",
-    "RenderHell/1、Verview.md",
-    "Pasted image 20240708182340.png.md",
-    "Docker/Docker 入门.md",
-    "网络编程/Http.md",
     "深度学习/2.preliminaries/attachments/adadelta.ipynb",
     "深度学习/2.preliminaries/attachments/adadelta 1.ipynb",
     "深度学习/2.preliminaries/attachments",
-    "unity3D/unityShader/Introduction to Shader Code Basics.md",
-    "unity3D/unityShader/Example/Scan 扫描.md",
-    "unity3D/unityShader/Example/扣绿幕.md",
     "unity3D/unityShader/Example/attachments",
-    "unity3D/unityShader/Example",
-    "Python"
+    "unity3D/unityShader/Example"
   ]
 }
