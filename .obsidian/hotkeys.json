@@ -1,1 +1,11 @@
-{}
+{
+  "templater-obsidian:TemplateFolder/callout.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ]
+}

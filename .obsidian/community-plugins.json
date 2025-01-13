@@ -12,5 +12,8 @@
   "table-editor-obsidian",
   "mousewheel-image-zoom",
   "execute-code",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-topic-linking",
+  "virtual-linker",
+  "templater-obsidian"
 ]
