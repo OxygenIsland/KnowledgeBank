@@ -7,5 +7,14 @@
       ],
       "key": "C"
     }
+  ],
+  "templater-obsidian:create-TemplateFolder/capture.md": [
+    {
+      "modifiers": [
+        "Alt",
+        "Mod"
+      ],
+      "key": "F"
+    }
   ]
 }

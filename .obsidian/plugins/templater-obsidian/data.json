@@ -7,7 +7,7 @@
       ""
     ]
   ],
-  "trigger_on_file_creation": false,
+  "trigger_on_file_creation": true,
   "auto_jump_to_cursor": false,
   "enable_system_commands": false,
   "shell_path": "",
@@ -15,8 +15,8 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "",
-      "template": ""
+      "folder": "Diary",
+      "template": "TemplateFolder/CommonTemplate.md"
     }
   ],
   "enable_file_templates": false,
@@ -29,7 +29,8 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "TemplateFolder/callout.md"
+    "TemplateFolder/callout.md",
+    "TemplateFolder/capture.md"
   ],
   "startup_templates": [
     ""
