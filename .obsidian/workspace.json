@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ea505623ddbb45e3",
+        "id": "60fd2b3cc9ca8165",
         "type": "tabs",
         "children": [
           {
-            "id": "8e70d0b20c59c1e9",
+            "id": "9dbe43a0b3b34c56",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TemplateFolder/capture.md",
+                "file": "CSharp开发/设计模式/1、简单工厂模式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "capture"
+              "title": "1、简单工厂模式"
             }
           }
         ]
@@ -148,10 +148,24 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TemplateFolder/capture.md"
+                "file": "DailyNotes/2025-01-14.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of capture"
+              "title": "Outline of 2025-01-14"
+            }
+          },
+          {
+            "id": "a9eb3ffbba3b04a2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           },
           {
@@ -169,7 +183,7 @@
             }
           },
           {
-            "id": "67162abaae89a148",
+            "id": "2cc34a50996d7833",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -179,11 +193,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 389.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,39 +210,39 @@
       "audio-recorder:Start/stop recording": false,
       "workspaces:Manage workspace layouts": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
-      "obsidian-git:Open Git source control": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false,
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8e70d0b20c59c1e9",
+  "active": "9dbe43a0b3b34c56",
   "lastOpenFiles": [
-    "DailyNotes/2025-01-14.md",
-    "DailyNotes/Untitled.md",
-    "Untitled.md",
+    "CSharp开发/数据读取/Xml文件操作.md",
+    "CSharp开发/数据读取/Json文件操作.md",
+    "C++开发/CMake.md",
     "TemplateFolder/capture.md",
-    "Untitled 1.md",
-    "Untitled 2.md",
+    "TemplateFolder/CommonTemplate.md",
+    "DailyNotes/2025-01-14.md",
+    "Untitled 9.md",
+    "Untitled 10.md",
+    "Untitled 8.md",
+    "Untitled 7.md",
+    "Untitled 6.md",
     "Untitled 5.md",
     "Untitled 4.md",
     "Untitled 3.md",
+    "Untitled 13.md",
+    "Untitled 12.md",
+    "Untitled 11.md",
+    "TemplateFolder/DailyNote.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Untitled 2.md",
     "TemplateFolder/callout.md",
-    "TemplateFolder/CommonTemplate.md",
-    "网络编程/URI.md",
-    "网络编程/Http.md",
-    "网络编程/WebSocket.md",
-    "unity3D/工作整理/6、lamda表达式.md",
-    "unity3D/工作整理/3、选中、移动、旋转物体.md",
-    "unity3D/工作整理/StateMachine状态机.md",
-    "unity3D/工作整理/SourceTree使用教程.md",
-    "unity3D/工作整理/SerializeField.md",
-    "unity3D/工作整理/AR中的跟随式UI.md",
-    "unity3D/工作整理/周五分享.md",
-    "unity3D/工作整理/消息系统.md",
-    "unity3D/工作整理/四级结构绑定--bbox.md",
-    "unity3D/工作整理/四级结构、算法、检测点自动绑定.md",
-    "unity3D/工作整理/输入管理器设计.md",
-    "2025-01-14.md 6.md",
+    "TODO LIST.md",
+    "README.md",
+    "2025-01-14.md",
+    "Xcode/Apple related.md",
     "DailyNotes",
     "Untitled",
     "TemplateFolder",

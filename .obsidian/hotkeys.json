@@ -8,13 +8,12 @@
       "key": "C"
     }
   ],
-  "templater-obsidian:create-TemplateFolder/capture.md": [
+  "templater-obsidian:TemplateFolder/capture.md": [
     {
       "modifiers": [
-        "Alt",
-        "Mod"
+        "Alt"
       ],
-      "key": "F"
+      "key": "C"
     }
   ]
 }

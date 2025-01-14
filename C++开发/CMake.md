@@ -1,4 +1,11 @@
-cmake 的定义是什么 ?-----高级编译配置工具当多个人用不同的语言或者编译器开发一个项目，最终要输出一个可执行文件或者共享库(dll，so 等等)这时候神器就出现了-----CMake! 所有操作都是通过编译 CMakeLists.txt 来完成的
+---
+title: "[[CMake]]"
+type: Literature
+status: done
+Creation Date: 2024-04-12 22:32
+tags:
+---
+cmake 的定义是什么 ?-----高级编译配置工具当多个人用不同的语言或者编译器开发一个项目，最终要输出一个可执行文件或者共享库(dll，so 等等)这时候神器就出现了CMake! 所有操作都是通过编译 CMakeLists.txt 来完成的
 ## CMake 一个 HelloWord
 ### 1、写一个 HelloWord
 ```cpp

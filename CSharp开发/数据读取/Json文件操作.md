@@ -1,3 +1,10 @@
+---
+title: "[[Json文件操作]]"
+type: Literature
+status: done
+Creation Date: 2024-02-03 23:50
+tags:
+---
 ## 1、Deserialize
 该方法通常用于将整个 JSON 字符串转换为一个 .NET 对象。如果想转换 JSON 字符串中的某一段，可以首先将整个字符串解析为一个包含多个属性的 .NET 对象，然后从该对象中提取所需的属性。
 例如，假设你有以下 JSON 字符串：
