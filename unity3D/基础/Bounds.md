@@ -1,3 +1,10 @@
+---
+title: "[[Bounds]]"
+type: Literature
+status: done
+Creation Date: 2024-04-03 17:53
+tags:
+---
 ## 一、Bounds(包围盒)概述
 ### 1 . 什么是包围盒?
 包围盒算法是一种求解离散点集最优包围空间的方法。

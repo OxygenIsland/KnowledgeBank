@@ -1,3 +1,10 @@
+---
+title: "[[UI框架]]"
+type: Permanent
+status: done
+Creation Date: 2024-05-30 18:33
+tags:
+---
 在 studio 中使用了代码生成 UI 预制体的方式来切换和控制 UI 界面，以下是我整理的 studio 中的 UI 框架
 首先是一个接口 IPanel，定义了 UI 界面的一些基本操作，同时定义了 UI 界面的数据类 IUIData
 ```csharp

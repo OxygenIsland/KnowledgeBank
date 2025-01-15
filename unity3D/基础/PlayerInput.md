@@ -1,3 +1,10 @@
+---
+title: "[[PlayerInput]]"
+type: Literature
+status: done
+Creation Date: 2024-08-08 17:56
+tags:
+---
 ## 一、PlayerInput 介绍
 ​ PlayerInput 是 InputSystem 提供的专门用于接受玩家输入来处理自定义逻辑的组件
 

@@ -1,3 +1,10 @@
+---
+title: "[[Camera]]"
+type: Literature
+status: done
+Creation Date: 2023-09-27 12:47
+tags:
+---
 ## Main Camera
 场景被创建出来时自带的 camera,一个场景可以有多个 camera,但是 Main Camera 只能有一个，即具有"MainCamera"tag 的物体只能有一个。
 当添加多个 Camera 时，只能保留一个 Camera 的 Audio Listener，其他相机的 Audio Listener 需要移除因为 Scene 中只能允许一个 Audio Listener 存在

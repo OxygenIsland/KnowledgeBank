@@ -1,3 +1,10 @@
+---
+title: "[[How to create a custom Renderer Feature]]"
+type: Literature
+status: done
+Creation Date: 2023-11-10 14:11
+tags:
+---
 - The **Scriptable Render Pipeline Settings** property refers to a URP asset (**Project Settings** > **Graphics** > **Scriptable Render Pipeline Settings**).
 创建示例场景和游戏对象。
 创建可编写脚本的渲染器功能，并将其添加到通用渲染器中。

@@ -1,3 +1,10 @@
+---
+title: "[[unity内存管理]]"
+type: Literature
+status: done
+Creation Date: 2024-05-27 09:43
+tags:
+---
 ## 1、什么是内存
 操作系统有物理内存和虚拟内存两个概念：
 ### 物理内存

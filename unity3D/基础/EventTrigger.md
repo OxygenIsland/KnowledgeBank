@@ -1,3 +1,10 @@
+---
+title: "[[EventTrigger]]"
+type: Literature
+status: done
+Creation Date: 2024-12-13 16:46
+tags:
+---
 ## 一、前言
 ### 1-1、EventTrigger简介
 EventTrigger 是 Unity 中用于处理 UI 事件的一个组件。它允许我们为 UI 元素（如按钮、图像等）添加事件监听器，从而响应各种交互事件，如鼠标点击、悬停、拖拽等。使用 `EventTrigger` 可以避免手动编写复杂的事件处理代码，使 UI 事件的响应更加简洁和易于管理。比手写 UI 的 Event 快很多,方便很多。

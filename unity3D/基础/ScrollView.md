@@ -1,3 +1,10 @@
+---
+title: "[[ScrollView]]"
+type: Literature
+status: done
+Creation Date: 2024-09-13 11:56
+tags:
+---
 滚动列表的居中显示效果
 ```csharp
 internal void ScrolleToIndex(int index, int totalCount)

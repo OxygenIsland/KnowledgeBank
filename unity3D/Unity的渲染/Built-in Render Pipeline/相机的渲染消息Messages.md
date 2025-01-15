@@ -1,3 +1,10 @@
+---
+title: "[[相机的渲染消息Messages]]"
+type: Literature
+status: done
+Creation Date: 2023-12-27 10:47
+tags:
+---
 ## 1、onPreRender
 In the Built-in Render Pipeline, Unity calls this `onPreRender` before any Camera begins rendering. To execute custom code at this point, create callbacks that match the signature of [CameraCallback](https://docs-alpha.unity3d.com/cn/2023.2/ScriptReference/Camera.CameraCallback.html), and add them to this delegate.
 

@@ -1,3 +1,10 @@
+---
+title: "[[3、Clearing, rendering order and overdraw]]"
+type: Literature
+status: done
+Creation Date: 2023-11-10 14:11
+tags:
+---
 ## 1、Clering
 在 Unity 中，URP（Universal Render Pipeline）相机中的 Clearing（清除）是指相机在渲染新的帧之前如何处理场景中的现有内容。Clearing 主要包括清除颜色缓冲区（Clear Color Buffer）、深度缓冲区（Clear Depth Buffer）和模板缓冲区（Clear Stencil Buffer）等操作。
 

@@ -1,3 +1,10 @@
+---
+title: "[[迁移ViewerAR到visionPro]]"
+type: Permanent
+status: done
+Creation Date: 2024-04-16 14:30
+tags:
+---
 ## 开发环境配置
 硬件
 - [[1. visionOS Platform Overview#1.1 vision​OS Modes|Apple Silicon Mac]]

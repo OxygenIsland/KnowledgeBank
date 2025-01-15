@@ -1,3 +1,10 @@
+---
+title: "[[Introduction to Shader Code Basics]]"
+type: Literature
+status: done
+Creation Date: 2023-11-13 09:32
+tags:
+---
 unity Shader 的主要结构如下所示：
 ![[Screen Shot 2023-11-12 at 10.37.55.png|475]]
 Shader "" 引号中是该 Shader 的名字，也可以采用目录式命名，方便管理，下图展示的是 Properties 中常见的属性变量，以及在 unity 面板中的样式

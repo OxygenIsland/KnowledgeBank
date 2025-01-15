@@ -1,3 +1,10 @@
+---
+title: "[[射线Ray]]"
+type: Literature
+status: done
+Creation Date: 2024-04-28 09:48
+tags:
+---
 unity 从 Main Camera 的 near clipping plane 的一个点，（鼠标坐标确定下 x,y）以锥角的方向形成了一条射线，而不是从相机的位置。摄像机提供了两种方法， ScreenPointToRay 和 ViewportPointToRay 。
 - ScreenPointToRay 需要提供一个像素位置，取决于屏幕分辨率
 - ViewportPointToRay 接受 0.. 1 范围内的归一化坐标 ( 0 代表左下角 1 代表右上角)

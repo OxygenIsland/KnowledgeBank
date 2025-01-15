@@ -1,3 +1,12 @@
+---
+title: "[[创建 TextMeshPro 静态字体]]"
+type: Literature
+status: done
+Creation Date: 2024-04-03 15:07
+tags:
+  - unity
+  - 插件
+---
 ## 1、在 Unity 中新建一个文件夹，用来存储字体，并把你想要转换的中文字体放进去。比如微软雅黑等。
 ## 2 、打开 Font Asset Creator 窗口： Window > TextMeshPro > Font Asset Creator.
 	![[Pasted image 20240403151325.png|500]]

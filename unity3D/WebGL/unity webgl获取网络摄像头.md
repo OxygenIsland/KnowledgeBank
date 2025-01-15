@@ -1,3 +1,10 @@
+---
+title: "[[unity webgl获取网络摄像头]]"
+type: Literature
+status: done
+Creation Date: 2024-04-01 11:24
+tags:
+---
 本文是基于 WebRTC 的 RTSP 播放器的 JavaScript 代码。利用 WebRTC 技术来获取摄像头的视频流，并通过 Canvas 将视频渲染出来。
 1、首先在 unity 中创建一个纹理用于存储摄像头的视频流
 ```csharp

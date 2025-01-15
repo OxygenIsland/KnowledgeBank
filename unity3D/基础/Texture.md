@@ -1,3 +1,10 @@
+---
+title: "[[Texture]]"
+type: Literature
+status: done
+Creation Date: 2024-04-01 20:07
+tags:
+---
 ## 1、Texture（纹理）：
 - Texture 是所有纹理类型的基类，是一个抽象类，不能直接使用。
 - 它定义了一些通用的属性和方法，例如 width、height、filterMode 等。

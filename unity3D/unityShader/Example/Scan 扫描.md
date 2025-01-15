@@ -1,3 +1,10 @@
+---
+title: "[[Scan 扫描]]"
+type: Literature
+status: done
+Creation Date: 2024-12-25 10:13
+tags:
+---
 扫描特效是类似一种扫描光线从屏幕上一扫而过的效果，并非3D 游戏中那种以主角为中心发射的扫描脉冲波，我们的效果比较简单，直接看最终效果图：
 ![[2oAugwaUHt3kiN8Lj0WSB4FnbpRz.gif|148]]   ![[3fubPQZH6hjFMLYOlmdeJcCEDABs.gif|106]]
 ## 思路分析

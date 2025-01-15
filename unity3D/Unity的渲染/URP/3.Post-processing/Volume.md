@@ -1,3 +1,10 @@
+---
+title: "[[Volume]]"
+type: Literature
+status: done
+Creation Date: 2023-11-10 14:11
+tags:
+---
 通用渲染管线 (Universal Render Pipeline, URP) 使用 Volume 框架。Volume 可以根据摄像机相对于每个 Volume的位置来覆盖或扩展场景属性。
 URP 为 Volume 实现了专用的游戏对象：**Global Volume**、**Box Volume**、**Sphere Volume**、**Convex Mesh Volume**。
 ![[Pasted image 20231014103852.png|587]]

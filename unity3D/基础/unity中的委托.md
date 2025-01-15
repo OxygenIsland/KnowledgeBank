@@ -1,3 +1,10 @@
+---
+title: "[[unity中的委托]]"
+type: Literature
+status: done
+Creation Date: 2024-05-30 18:33
+tags:
+---
 ## 1. UnityAction
 UnityAction 是 Unity 对 CSharp 中 [[delegate委托#4. Action|Action]] 的再封装，是更适合再 Unity 中使用的一种泛型委托，用法和 Action 一样
 需要包含头文件 `using UnityEngine.Events;`

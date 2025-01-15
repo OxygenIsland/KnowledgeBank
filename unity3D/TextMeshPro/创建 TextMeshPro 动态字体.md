@@ -1,3 +1,12 @@
+---
+title: "[[创建 TextMeshPro 动态字体]]"
+type: Literature
+status: done
+Creation Date: 2024-04-03 15:57
+tags:
+  - unity
+  - 插件
+---
 首先，我们肯定要导入一份中文字体
 ![[Pasted image 20240403161823.png|500]]
 然后我们在字体上右键，找到 Create-TextMeshPro-Font Asset

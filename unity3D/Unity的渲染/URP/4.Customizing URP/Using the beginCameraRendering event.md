@@ -1,3 +1,10 @@
+---
+title: "[[Using the beginCameraRendering event]]"
+type: Literature
+status: done
+Creation Date: 2023-11-10 14:11
+tags:
+---
 ## overview
 Unity 在每一帧中,渲染每个 active camera之前会引发一个 `beginCameraRendering` 事件。如果摄像机处于inactive状态（例如，摄像机游戏对象上的 **Camera** 组件复选框被清除），Unity 不会引发此摄像机的 `beginCameraRendering` 事件。
 

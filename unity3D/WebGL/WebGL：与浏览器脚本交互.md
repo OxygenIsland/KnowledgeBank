@@ -1,3 +1,10 @@
+---
+title: "[[WebGL：与浏览器脚本交互]]"
+type: Literature
+status: done
+Creation Date: 2024-04-01 09:38
+tags:
+---
 构建适用于 Web 的内容时，可能需要与网页上的其他元素进行通信。或者，您可能希望使用 Unity 当前在默认情况下未公开的 Web API 来实现功能。在这两种情况下，都需要直接与浏览器的 JavaScript 引擎连接。Unity WebGL 提供了不同的方法来执行此操作。
 ##  从 Unity 脚本调用 JavaScript 函数
 在项目中使用浏览器 JavaScript 的建议方法是将 JavaScript 源代码添加到项目中，然后直接从脚本代码中调用这些函数。为此，请使用 .jslib 扩展名将包含 JavaScript 代码的文件放置在 Assets 文件夹中的“Plugins”子文件夹下。插件文件需要有如下所示的语法：

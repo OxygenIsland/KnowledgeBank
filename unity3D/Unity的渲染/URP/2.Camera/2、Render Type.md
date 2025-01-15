@@ -1,3 +1,10 @@
+---
+title: "[[2、Render Type]]"
+type: Literature
+status: done
+Creation Date: 2023-11-10 14:11
+tags:
+---
 通用渲染管线 (Universal Render Pipeline, URP) 中有两种类型的摄像机：
 - [[2、Render Type#Base Camera|基础摄像机 (Base Camera)]] 是一种渲染到渲染目标（屏幕或[渲染纹理](https://docs.unity3d.com/Manual/class-RenderTexture.html)）的通用摄像机。
 - [[#Overlay Camera|叠加摄像机 (Overlay Camera)]] 渲染在另一个摄像机的输出之上。基础摄像机的输出可以和一个或多个叠加摄像机的输出结合起来。这种技术称为[[2、Render Type#Camera stacking|摄像机堆叠 (Camera stacking)]]。

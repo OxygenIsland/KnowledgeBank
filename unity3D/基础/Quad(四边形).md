@@ -1,3 +1,10 @@
+---
+title: "[[Quad(四边形)]]"
+type: Literature
+status: done
+Creation Date: 2024-05-30 18:33
+tags:
+---
 在 Unity 中，Quad（四边形）是一种非常基本的 3 D 几何体，它是由两个三角形组成的平面，通常用于创建 2 D 或简单的平面图形。
 
 1. **构成**：Quad 由两个三角形组成，每个三角形有三个顶点。因此，一个 Quad 总共有 6 个顶点和 6 个顶点索引。

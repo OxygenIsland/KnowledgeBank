@@ -1,3 +1,10 @@
+---
+title: "[[弹窗类UI]]"
+type: Permanent
+status: done
+Creation Date: 2024-02-18 15:09
+tags:
+---
 下面是一个弹窗 UI 界面基类，提供最基础的弹框类功能
 ```csharp
 public class PopupBase : MonoBehaviour

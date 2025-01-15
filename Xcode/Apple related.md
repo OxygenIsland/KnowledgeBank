@@ -1,3 +1,10 @@
+---
+title: "[[Apple related]]"
+type: Literature
+status: done
+Creation Date: 2024-04-18 09:53
+tags:
+---
 Xcode 与 visionPro 的 Wifi 联机调试
 1. Mac 与 visionPro 连接到同一局域网，并在 VisionPro 中打开远程设备 (menu: **Setting > General > Remote Devices**).
 2. 在 XCode 中打开设备和模拟器, 在列表中找到远程设备并配对  (menu: **Window > Devices and Simulators**).

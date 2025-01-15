@@ -1,3 +1,10 @@
+---
+title: "[[WebGL增强输入]]"
+type: Permanent
+status: done
+Creation Date: 2024-05-31 10:44
+tags:
+---
 unity 打包出来的 webgl 应用存在两个问题：
 1、网页不支持中文输入
 2、输入框不支持精准的光标插入，选中文字等操作

@@ -1,3 +1,10 @@
+---
+title: "[[How to configure post-processing effects in URP]]"
+type: Literature
+status: done
+Creation Date: 2023-11-10 14:11
+tags:
+---
 ## 在URP 模板场景中使用后期处理
 URP 模板的 SampleScene 场景中预先配置了后期处理**Post-process Volume**。
 ![[Pasted image 20231013200309.png]]

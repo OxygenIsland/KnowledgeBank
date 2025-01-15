@@ -1,3 +1,10 @@
+---
+title: "[[Unity的程序集划分]]"
+type: Reference
+status: done
+Creation Date: 2024-04-28 09:48
+tags:
+---
 Assembly Definitions and Assembly References are assets that you can create to organize your **scripts**into assemblies.
 An assembly is a C# code library that contains the compiled classes and structs that are defined by your scripts and which also define references to other assemblies. 
 ==By default, Unity compiles almost all of your game scripts into the predefined assembly, **Assembly-CSharp.dll**. ==

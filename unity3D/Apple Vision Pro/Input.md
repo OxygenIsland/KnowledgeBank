@@ -1,3 +1,10 @@
+---
+title: "[[Input]]"
+type: Literature
+status: done
+Creation Date: 2024-04-19 17:04
+tags:
+---
 There are two ways to capture user intent on visionOS: 3D touch and skeletal hand tracking. ==In exclusive mode, developers can also access head tracking data.==
 ## 3D Touch and TouchSpace
 In both bounded and unbounded volumes, a 3D touch input is provided when the user looks at an ==object with an input collider==  and performs the “pinch” (touch thumb and index finger together to “**tap**” or “**drag**”) gesture. The **SpatialPointerDevice Input device** provides that information to the developer. If the user holds the pinch gesture, a drag is initiated and the application is provided “move” updates relative to the original start point. 

@@ -1,3 +1,10 @@
+---
+title: "[[Character Controller]]"
+type: Literature
+status: done
+Creation Date: 2024-10-17 17:56
+tags:
+---
 在 Unity 中，创建逼真的角色控制和移动是许多游戏项目的核心需求。Character Controller 组件提供了一种简单而强大的方式来实现这些功能，相比 Rigidbody，Character Controller 提供了更高的控制灵活性，尤其适合需要精准移动和跳跃的角色。它允许开发者为角色添加碰撞检测、自动斜坡行走和复杂的移动控制。
 ![[Pasted image 20241017175648.png|500]]
 

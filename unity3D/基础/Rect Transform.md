@@ -1,3 +1,10 @@
+---
+title: "[[Rect Transform]]"
+type: Literature
+status: done
+Creation Date: 2024-05-22 18:00
+tags:
+---
 ## 1 、RectTransform —— UI 元素必备组件
 ### 1 .1 Transform —— 3D
 >前言：在了解 RectTransform 组件前，我们有必要先来了解下 Transform 组件
