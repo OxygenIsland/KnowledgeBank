@@ -1,3 +1,10 @@
+---
+title: "[[1、Verview]]"
+type: Literature
+status: todo
+Creation Date: 2024-07-03 17:58
+tags:
+---
 Artists must be strong now: From a computers perspective, your assets are just lists of vertex- and texture data. Converting this raw data into a next-gen image, is mainly done by your system processor (**CPU**) and your graphics processor (**GPU**).
 ## 1 . Copy the data into system memory for fast access
 At first all necessary data is loaded from your hard drive (**HDD**) into the system memory (**RAM**) for faster access. Now the necessary meshes and textures are loaded into the memory on the graphic card (**VRAM**). This is because the graphic card can access the VRAM (显存) a lot faster. ![[copy_data_from_hdd_to_ram_vram_01.webm]] If a texture isn’t needed anymore (after loading it into the VRAM), it can be thrown out of the RAM (but you should be sure, that you won’t need it again soon, because reloading it from HDD costs a lot time). The meshes should stay in the RAM because it’s most likely that the CPU wants to have access to them e.g. for collision detection.(碰撞检测)

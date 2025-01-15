@@ -1,3 +1,10 @@
+---
+title: "[[URI]]"
+type: Literature
+status: done
+Creation Date: 2024-02-18 13:52
+tags:
+---
 URI（Uniform Resource Identifier 统一资源标识符），是互联网上用于标识和定位资源的重要概念，包括 URL（Uniform Resource Locator 统一资源定位符）和 URN（(Uniform Resource Name 统一资源名称）
 ![[Pasted image 20240218135241.png|475]]
 ## URN

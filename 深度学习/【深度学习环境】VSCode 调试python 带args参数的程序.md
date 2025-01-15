@@ -1,3 +1,10 @@
+---
+title: "[[【深度学习环境】VSCode 调试python 带args参数的程序]]"
+type: Literature
+status: done
+Creation Date: 2024-12-18 13:59
+tags:
+---
 ## 1. 初始化配置参数
 在调试过程中，配置项驱动 VSCode 的行为。配置项被定义在项目的 **.vscode/launch.json** 中。第一次运行可以如下配置：
 ![[Pasted image 20241218140218.png|500]]

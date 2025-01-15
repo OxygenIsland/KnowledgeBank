@@ -1,3 +1,10 @@
+---
+title: "[[2、 Miscellaneous Math]]"
+type: Literature
+status: done
+Creation Date: 2024-05-30 18:33
+tags:
+---
 ## 2.1 Sets and Mappings 集合和映射
 Mappings, also called functions, are basic to mathematics and programming. Like a function in a program, a mapping in math takes an argument of one type and maps it to (returns) an object of a particular type. In a program we say “type”; in math we would identify the set.
 

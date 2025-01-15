@@ -1,3 +1,10 @@
+---
+title: "[[使用docker配置深度学习环境]]"
+type: Literature
+status: done
+Creation Date: 2024-11-26 10:24
+tags:
+---
 如何在 Windows 环境下使用 Docker 作为深度学习环境呢？一共分为三步：安装 Docker、配置 WSL2，开始玩。
 安装 Docker、配置 WSL 2 这个就不讲了，配置好这两项之后，我们直接进入正题：
 

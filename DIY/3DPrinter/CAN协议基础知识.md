@@ -1,3 +1,10 @@
+---
+title: "[[CAN协议基础知识]]"
+type: Literature
+status: ing
+Creation Date: 2024-07-23 19:13
+tags:
+---
 ## 1. CAN简介
 
 CAN，全称为：Controller Area Network，全称是一种串行通信协议。开发该协议的目的是为了减少线束数量，通过多个LAN进行大量数据的高速通信。该协议由电气商博世公司于1986年开发，并在之后通过ISO11898和ISO11519进行标准化，在欧洲等地流传较广。

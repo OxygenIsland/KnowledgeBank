@@ -1,3 +1,10 @@
+---
+title: "[[四级结构绑定--bbox]]"
+type: Permanent
+status: ing
+Creation Date: 2024-12-19 14:23
+tags:
+---
 ## 语义分割算法调研
 主要有两条思路
 1. 根据用户的点击所提供的信息来进行实例分割

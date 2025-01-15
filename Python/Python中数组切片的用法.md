@@ -1,3 +1,10 @@
+---
+title: "[[Python中数组切片的用法]]"
+type: Literature
+status: done
+Creation Date: 2024-12-20 17:52
+tags:
+---
 ## 1、python 中“::-1”代表什么
 在 Python 中::-1 表示将字符或数字倒序输出（也称【反转】）。
 举个栗子，当 line = "abcde"时，使用语句 line[::-1]，最后的运行结果为：‘edcba’。

@@ -1,3 +1,10 @@
+---
+title: "[[protected关键字]]"
+type: Literature
+status: done
+Creation Date: 2024-04-08 09:37
+tags:
+---
 受保护成员在其所在的类中可由派生类实例访问。
 只有在通过派生类类型进行访问时，**基类的受保护成员在派生类中才是可访问的**。以下面的代码段为例：
 ```csharp

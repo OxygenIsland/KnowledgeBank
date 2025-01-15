@@ -1,3 +1,10 @@
+---
+title: "[[1、Introduction]]"
+type: Literature
+status: done
+Creation Date: 2024-04-23 20:50
+tags:
+---
 ## 1.1. Graphics APIs
 There are currently two dominant paradigms for graphics and user-interface APIs. 两种主流模式的 API：
 The first is the integrated approach（集成方法）, exemplified by Java, where the graphics and userinterface toolkits（用户界面工具包） are integrated and portable packages that are fully standardized and supported as part of the language. 

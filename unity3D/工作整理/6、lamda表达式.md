@@ -1,3 +1,10 @@
+---
+title: "[[6、lamda表达式]]"
+type: Literature
+status: done
+Creation Date: 2023-09-27 12:47
+tags:
+---
 lambda 表达式简化了[[委托#匿名委托|匿名委托]]的使用，让你让代码更加简洁，优雅。
 所有的 lambda 表达式都是用新的 lambda 运算符 " => ",可以叫他，“转到”或者 “成为”。运算符将表达式分为两部分，左边指定输入参数，右边是 lambda 的主体。
 以下示例使用带有方法语法的 [[LINQ|LINQ]] 功能来演示 lambda 表达式的用法：

@@ -1,3 +1,10 @@
+---
+title: "[[WebSocket]]"
+type: Literature
+status: done
+Creation Date: 2024-02-18 13:48
+tags:
+---
 ## 一、为什么需要 WebSocket？
 初次接触 WebSocket 的人，都会问同样的问题：我们已经有了 HTTP 协议，为什么还需要另一个协议？它能带来什么好处？
 答案很简单，因为 HTTP 协议有一个缺陷：通信只能由客户端发起。

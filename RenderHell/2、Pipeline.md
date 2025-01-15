@@ -1,3 +1,10 @@
+---
+title: "[[2、Pipeline]]"
+type: Literature
+status: todo
+Creation Date: 2024-07-04 14:52
+tags:
+---
 ## Pipeline in Detail
 Most of the constructive feedback I received about this article was “Nice explanation, but your pipeline is 6 years old!”. I wasn’t sure what that exactly meant until [Christoph Kubisch](https://twitter.com/pixeljetstream) joined my fight in the Render Hell. He is a Developer Technology Engineer working for [NVIDIA](http://www.nvidia.com/) and whatever question I had, [he answered it](https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline). And believe me, I had a lot! 😀
 

@@ -1,3 +1,10 @@
+---
+title: "[[命令模式command Pattern]]"
+type: Literature
+status: done
+Creation Date: 2024-05-22 09:48
+tags:
+---
 ## Definition
 Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.  
 命令模式将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象，同时支持可撤消的操作。

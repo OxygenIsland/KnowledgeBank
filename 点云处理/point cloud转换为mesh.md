@@ -1,3 +1,10 @@
+---
+title: "[[point cloud转换为mesh]]"
+type: Literature
+status: done
+Creation Date: 2025-01-08 16:08
+tags:
+---
 ## 网格化策略
 ### Ball-Pivoting Algorithm (BPA) 球旋转算法
 **Ball-Pivoting Algorithm (BPA)** 是一种用于从点云数据中重建三角网格的算法。它通过模拟一个“滚球”在点云表面滚动来生成三角面片，适用于均匀分布的点云数据。BPA 的核心思想是基于局部几何信息构建网格，因此它能够快速生成表面，并且在处理密集点云时表现良好。

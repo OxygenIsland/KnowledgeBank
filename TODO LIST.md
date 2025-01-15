@@ -1,4 +1,3 @@
-1、在obsidian中实现康奈尔笔记的功能，实现不同标签的抓取
 2、在 obsidian 中实现将所有 tag 为 Todo list 的文段抓取到本页的功能
 3、mac 配置 homebrew
 4、总结中东石油的文章
@@ -15,9 +14,11 @@ LIST
 FROM ""
 WHERE status = "todo" 
 ```
-## Fleeting
+
+
+## 需要完成和消化的文章
 ```dataview 
 LIST
 FROM ""
-WHERE status = "todo" AND type = "Fleeting"
+WHERE status = "ing" AND type = "Literature"
 ```

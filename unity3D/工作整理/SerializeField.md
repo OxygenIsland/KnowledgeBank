@@ -1,3 +1,10 @@
+---
+title: "[[SerializeField]]"
+type: Literature
+status: done
+Creation Date: 2023-09-27 12:47
+tags:
+---
 ## 可被 Serialize 的变量的定义方法
 
 ## 1. public 变量
