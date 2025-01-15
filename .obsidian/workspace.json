@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "da62edded78b40d4",
+        "id": "ba163d5dcbf71a42",
         "type": "tabs",
         "children": [
           {
-            "id": "6522ac1b85de2391",
+            "id": "20832ab60844203d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -215,11 +215,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6522ac1b85de2391",
+  "active": "20832ab60844203d",
   "lastOpenFiles": [
-    "DailyNotes/2025-01-14.md",
-    "TODO LIST.md",
     "README.md",
+    "unity3D/基础/InputSystem.md",
+    "DailyNotes/2025-01-15.md",
+    "unity3D/性能优化/unity DrawCall优化.md",
+    "TODO LIST.md",
+    "DailyNotes/2025-01-14.md",
     "Xcode/Apple related.md",
     "unity3D/WebGL/WebGL增强输入.md",
     "unity3D/WebGL/WebGL：与浏览器脚本交互.md",
@@ -240,9 +243,6 @@
     "unity3D/Unity的渲染/URP/2.Camera/2、Render Type.md",
     "unity3D/Unity的渲染/URP/2.Camera/1、Universal Additional Camera Data 组件.md",
     "unity3D/Unity的渲染/URP/1.URP Concepts/4.URP Renderer Feature.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/3.Universal Renderer(通用渲染器).md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/2.Universal Render Pipeline Asset（通用渲染管线资源）.md",
-    "unity3D/Unity的渲染/URP/1.URP Concepts/1.Rendering in the Universal Render Pipeline.md",
     "DailyNotes",
     "Untitled",
     "TemplateFolder",
