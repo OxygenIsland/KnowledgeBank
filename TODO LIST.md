@@ -19,3 +19,10 @@ LIST
 FROM ""
 WHERE status = "ing" AND type = "Literature"
 ```
+
+## 需要整理的Fleeting
+```dataview 
+LIST
+FROM ""
+WHERE status = "todo" AND type = "Fleeting"
+```
