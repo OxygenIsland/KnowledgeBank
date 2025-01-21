@@ -3,7 +3,7 @@ title: "[[Input]]"
 type: Literature
 status: done
 Creation Date: 2024-04-19 17:04
-tags:
+tags: 
 ---
 There are two ways to capture user intent on visionOS: 3D touch and skeletal hand tracking. ==In exclusive mode, developers can also access head tracking data.==
 ## 3D Touch and TouchSpace
