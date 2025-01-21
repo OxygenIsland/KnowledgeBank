@@ -17,7 +17,7 @@ WHERE status = "todo"
 ```dataview 
 LIST
 FROM ""
-WHERE status = "ing" AND type = "Literature"
+WHERE status = "ing"
 ```
 
 ## 需要整理的Fleeting
