@@ -26,3 +26,12 @@ LIST
 FROM ""
 WHERE status = "todo" AND type = "Fleeting"
 ```
+
+## 100封给朋友的信 
+```dataview 
+TABLE length(rows) AS "数量"
+FROM ""
+WHERE contains(file.tags, "100封给朋友的信")
+GROUP BY "符合条件的笔记"
+```
+
