@@ -1,10 +1,15 @@
-2、在 obsidian 中实现将所有 tag 为 Todo list 的文段抓取到本页的功能
 3、mac 配置 homebrew
-6、坚持每天写点东西，感悟、心得、日记、知识整理、都可以
+4、
+5、微信文件传输助手里的视频整理一下
+6、[obsidian图片排版](https://www.bilibili.com/video/BV1fB4y1i7qf/?spm_id_from=333.337.search-card.all.click&vd_source=ae99cbe2bab29b19bc05583b76d35b48)
 7、稀土进出口量，做一些全局的分析，
 8、人民币汇率下降和上升的影响
 9、美元加息降息对经济的影响
 
+> [!todo]+ 每日必做
+> - [x] 1、收集一个笑话
+> - [x] 2、拍一张照片
+> - [x] 3、每天写点东西，感悟、心得、日记、知识整理、都可以
 ## Articles to be completed
 ```dataview 
 LIST
