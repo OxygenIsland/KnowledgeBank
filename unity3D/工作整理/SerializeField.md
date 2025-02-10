@@ -9,12 +9,12 @@ tags:
 
 ## 1. public 变量
 在没有加入任何Attribute的前提下，public变量是默认被视为可以被Serialize的。
-## 2. [SerializeField]Attribute
-有时候我们需要Serialize一份private或者protected数据段，这个时候可以使用[SerializeField]这个Attribute:
-[SerializeField] protected int foobar = 0;
+## 2. \[SerializeField] Attribute
+有时候我们需要Serialize一份private或者protected数据段，这个时候可以使用\[SerializeField]这个Attribute:
+\[SerializeField] protected int foobar = 0;
 注意: 这样定义出的成员变量是会在Inspector中显示出来。
 ## 3. 单独的class或structu
-有时候我们会自定义一些单独的 class/struct, 由于这些类并没有从 MonoBehavior 派生所以默认并不被 Unity3D 识别为可以 Serialize 的结构。自然也就不会在 Inspector 中显示。我们可以通过添加 [System.Serializable]这个 Attribute 使 Unity3D 检测并注册这些类为可 Serialize 的类型。具体做法如下：
+有时候我们会自定义一些单独的 class/struct, 由于这些类并没有从 MonoBehavior 派生所以默认并不被 Unity3D 识别为可以 Serialize 的结构。自然也就不会在 Inspector 中显示。我们可以通过添加 \[System.Serializable]这个 Attribute 使 Unity3D 检测并注册这些类为可 Serialize 的类型。具体做法如下：
 ```csharp
 [System.Serializable]
 public class FooBar 
@@ -29,7 +29,7 @@ ScriptableObject 是Unity3D提供的一种特殊的处理数据存储的方法�
 ## 1. protected, private, internal 变量
 默认情况下，protected, private, internal变量将不会被serialize.
 ## 2. `[System.NonSerialized]`Attribute
-有时候我们需要定义一些public变量方便操作，但是又不希望这些变量保留。这个时候可以利用[System.NonSerialized]来完成这个操作:
+有时候我们需要定义一些public变量方便操作，但是又不希望这些变量保留。这个时候可以利用\[System.NonSerialized]来完成这个操作:
 `[System.NonSerialized] public float foobar = 1.0f;`
 ## 3. readonly, const, static 修饰符
 如果变量加入了 readonly, const, static 等修饰符，无论他的 serialize 设置如何，都将不会进行 serialize
