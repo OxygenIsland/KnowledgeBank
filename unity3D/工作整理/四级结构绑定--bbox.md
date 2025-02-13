@@ -1,7 +1,7 @@
 ---
 title: "[[四级结构绑定--bbox]]"
 type: Permanent
-status: ing
+status: done
 Creation Date: 2024-12-19 14:23
 tags:
 ---
