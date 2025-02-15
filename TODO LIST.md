@@ -1,4 +1,5 @@
 3、mac 配置 homebrew
+5、办香港银行的卡
 6、[obsidian图片排版](https://www.bilibili.com/video/BV1fB4y1i7qf/?spm_id_from=333.337.search-card.all.click&vd_source=ae99cbe2bab29b19bc05583b76d35b48)
 7、稀土进出口量，做一些全局的分析，
 8、人民币汇率下降和上升的影响
