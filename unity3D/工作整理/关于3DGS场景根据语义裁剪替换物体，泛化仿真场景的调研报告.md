@@ -1,7 +1,7 @@
 ---
 title: "[[关于3DGS场景根据语义裁剪替换物体，泛化仿真场景的调研报告]]"
 type: Permanent
-status: ing
+status: done
 Creation Date: 2024-11-08 14:56
 tags:
 ---
