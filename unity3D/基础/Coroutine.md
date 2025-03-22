@@ -108,8 +108,40 @@ yield return GameObject; 当游戏对象被获取到之后执行
 yield return new WaitForFixedUpdate()：等到下一个固定帧数更新
 yield return new WaitForEndOfFrame():等到所有相机画面被渲染完毕后更新
 yield break; 跳出协程对应方法，其后面的代码不会被执行
+yield return new WaitUntil(); 是协程中常用的一个指令，用于暂停执行直到给定的条件为真。
 ```
-通过上面的一些**yield**一些用法以及其在脚本生命周期中的位置，我们也可以看到关于**协程不是线程**的概念的具体的解释，所有的这些方法都是在主线程中进行的，只是有别于我们正常使用的 Update 与 LateUpdate 这些可视的方法
+### 嵌套协程（Nested Coroutine）
+用于实现协程之间的顺序执行和控制权转移
+#### **嵌套协程的底层原理**
+1. ​**协程调度**  
+    Unity 的协程调度器会管理所有活跃的协程。当父协程通过 `yield return` 等待子协程时，父协程会被挂起，子协程被加入调度队列。
+2. ​**执行流程**
+    - 父协程执行到 `yield return StartCoroutine(子协程)` 时，启动子协程。
+    - 父协程暂停，子协程开始执行。
+    - 子协程完全执行完毕后，父协程恢复执行。
+### WaitUntil
+**WaitUntil**：一种 `YieldInstruction`，需传入一个返回 `bool` 的委托（如Lambda表达式）。协程会每帧检查条件，直到结果为 `true` 时恢复执行。
+```csharp
+using UnityEngine;
+using System.Collections;
+
+public class Example : MonoBehaviour
+{
+    void Start()
+    {
+        StartCoroutine(MyCoroutine());
+    }
+
+    IEnumerator MyCoroutine()
+    {
+        Debug.Log("等待按下空格键...");
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        Debug.Log("空格键已按下！");
+    }
+}
+```
+`WaitUntil` 会每帧检测条件，可能对性能有轻微影响（尤其是复杂条件）。需优化条件判断逻辑。
+
 ###  CustomYieldInstruction  
 这是 Unity 中用于自定义协程等待的基类。通过继承 `CustomYieldInstruction`，可以创建自定义的等待条件，使得协程可以等待这些条件的满足。
 ```csharp
