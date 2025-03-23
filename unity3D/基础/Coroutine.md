@@ -1,6 +1,6 @@
 ---
 title: "[[Coroutine]]"
-type: Literature
+type: Permanent
 status: done
 Creation Date: 2024-04-18 09:53
 tags:
