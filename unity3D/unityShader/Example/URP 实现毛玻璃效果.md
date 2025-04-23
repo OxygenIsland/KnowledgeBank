@@ -5,6 +5,7 @@ status: ing
 Creation Date: 2025-03-23 14:42
 tags: 
 ---
+## 适用于3D物体
 ![[8638144608a04c81bb78d481d3177ea5.gif|500]]
 **毛玻璃也叫磨砂玻璃：** 是用物理或化学方法处理过的一种表面粗糙不平整的半透明玻璃。
 
@@ -314,3 +315,105 @@ Shader "mgo/BlurGlass"
 BlurGlass在渲染完透明物体后，会渲染BlurGlass层的所有不透明物体，也就是所有的毛玻璃
 ###  AfterBlurGlass
 AfterBlurGlass在渲染后处理之前，会渲染AfterBlurGlass层的所有透明物体，也就是压在毛玻璃上的透明物体
+
+## 适用于UI
+下面介绍的是一个开源项目[Unified-Universal-Blur](https://github.com/lukakldiashvili/Unified-Universal-Blur) **Unified Blur** is best used with UI components that are part of the `Screen Space - Overlay` canvas.
+
+渲染管线的配置就不多说了，就是在添加renderer feature的时候，发现只有添加到default renderer才会生效
+![[1743646843249.png|439]]
+
+下面是renderer feature 的代码
+```csharp
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
+namespace Unified.Universal.Blur
+{
+    public class UniversalBlurFeature : ScriptableRendererFeature
+    {
+        public enum InjectionPoint
+        {
+            BeforeRenderingTransparents = RenderPassEvent.BeforeRenderingTransparents,
+            BeforeRenderingPostProcessing = RenderPassEvent.BeforeRenderingPostProcessing,
+            AfterRenderingPostProcessing = RenderPassEvent.AfterRenderingPostProcessing,
+        }
+
+        public Material passMaterial; // 模糊材质
+        [HideInInspector] public int passIndex = 0; // 材质Pass索引
+
+        [Header("Blur Settings")]
+        public InjectionPoint injectionPoint = InjectionPoint.AfterRenderingPostProcessing;
+
+        [Space]
+        [Range(0f, 1f)] public float intensity = 1.0f;  // 模糊强度
+        [Range(1f, 10f)] public float downsample = 2.0f; // 降采样比例
+        [Range(0f, 5f)] public float scale = .5f;   // 模糊缩放
+        [Range(1, 20)] public int iterations = 6;  // 迭代次数
+
+
+        // 声明该渲染通道（`UniversalBlurPass`）默认需要的输入资源类型（此处为颜色缓冲区 `Color`）。
+        //大多数全屏后处理效果（如模糊）需要基于当前颜色缓冲区的数据进行处理。
+        private ScriptableRenderPassInput requirements = ScriptableRenderPassInput.Color;
+
+        // Hidden by scope because of incorrect behaviour in the editor
+        private bool disableInSceneView = true;
+
+        private UniversalBlurPass fullScreenPass;
+        private bool requiresColor;
+        private bool injectedBeforeTransparents;
+
+        /// <inheritdoc/>
+        public override void Create()
+        {
+            // 初始化模糊Pass并配置渲染事件
+            fullScreenPass = new UniversalBlurPass();
+            fullScreenPass.renderPassEvent = (RenderPassEvent)injectionPoint;
+
+            ScriptableRenderPassInput modifiedRequirements = requirements;
+
+            requiresColor = (requirements & ScriptableRenderPassInput.Color) != 0;
+            injectedBeforeTransparents = injectionPoint <= InjectionPoint.BeforeRenderingTransparents;
+
+            if (requiresColor && !injectedBeforeTransparents)
+            {
+                modifiedRequirements ^= ScriptableRenderPassInput.Color;
+            }
+
+            fullScreenPass.ConfigureInput(modifiedRequirements);
+        }
+
+        /// <inheritdoc/>
+        public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
+        {
+            if (passMaterial == null)
+            {
+                Debug.LogWarningFormat("Missing Post Processing effect Material. {0} Fullscreen pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
+                return;
+            }
+
+            fullScreenPass.Setup(SetupPassData, downsample, renderingData);
+
+            renderer.EnqueuePass(fullScreenPass);
+        }
+
+        /// <inheritdoc/>
+        protected override void Dispose(bool disposing)
+        {
+            fullScreenPass.Dispose();
+        }
+
+        void SetupPassData(UniversalBlurPass.PassData passData)
+        {
+            passData.effectMaterial = passMaterial;
+            passData.intensity = intensity;
+            passData.passIndex = passIndex;
+            passData.requiresColor = requiresColor;
+            passData.profilingSampler ??= new ProfilingSampler("FullScreenPassRendererFeature");
+            passData.scale = scale;
+            passData.iterations = iterations;
+            passData.disableInSceneView = disableInSceneView;
+        }
+    }
+}
+```
