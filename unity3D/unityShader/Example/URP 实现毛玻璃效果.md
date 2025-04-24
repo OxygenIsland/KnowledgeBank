@@ -1,9 +1,9 @@
 ---
 title: "[[URP 实现毛玻璃效果]]"
 type: Literature
-status: ing
+status: done
 Creation Date: 2025-03-23 14:42
-tags: 
+tags:
 ---
 ## 适用于3D物体
 ![[8638144608a04c81bb78d481d3177ea5.gif|500]]

@@ -1,9 +1,9 @@
 ---
-title: "[[Camera]]"
+title: "[[Unity Camera]]"
 type: Literature
 status: done
 Creation Date: 2023-09-27 12:47
-tags:
+tags: 
 ---
 ## Main Camera
 场景被创建出来时自带的 camera,一个场景可以有多个 camera,但是 Main Camera 只能有一个，即具有"MainCamera"tag 的物体只能有一个。

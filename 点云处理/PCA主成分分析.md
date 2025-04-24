@@ -1,7 +1,7 @@
 ---
 title: "[[PCA主成分分析]]"
 type: Literature
-status: ing
+status: done
 Creation Date: 2024-11-20 15:45
 tags:
 ---
