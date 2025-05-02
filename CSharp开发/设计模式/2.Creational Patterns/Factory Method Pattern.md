@@ -1,5 +1,5 @@
 ---
-title: "[[6、Factory Method Pattern]]"
+title: "[[Factory Method Pattern]]"
 type: Permanent
 status: ing
 Creation Date: 2025-03-30 13:18
@@ -8,7 +8,7 @@ tags:
 ## Definition
 Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.  
 工厂方法使一个类的实例化延迟到其子类。
-[![](https://github.com/QianMo/Unity-Design-Pattern/raw/master/UML_Picture/factory.gif)](https://github.com/QianMo/Unity-Design-Pattern/blob/master/UML_Picture/factory.gif)
+![[Pasted image 20250502131756.png]]
 ## Participants
 The classes and objects participating in this pattern are:
 ### Product (Page)
