@@ -4,6 +4,7 @@ type: Literature
 status: done
 Creation Date: 2024-05-22 09:48
 tags:
+  - 设计模式
 ---
 ## Definition
 Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.  

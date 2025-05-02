@@ -1,3 +1,11 @@
+---
+title: "[[Prototype Pattern 原型模式]]"
+type: Reference
+status: done
+Creation Date: 2025-05-02 13:23
+tags:
+  - 设计模式
+---
 ## Definition
 Specify the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.  
 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。

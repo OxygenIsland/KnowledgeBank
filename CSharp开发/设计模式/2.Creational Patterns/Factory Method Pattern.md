@@ -3,7 +3,8 @@ title: "[[Factory Method Pattern]]"
 type: Permanent
 status: ing
 Creation Date: 2025-03-30 13:18
-tags: 
+tags:
+  - 设计模式
 ---
 ## Definition
 Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.  

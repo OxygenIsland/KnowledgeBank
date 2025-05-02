@@ -4,6 +4,7 @@ type: Literature
 status: done
 Creation Date: 2024-05-22 09:48
 tags:
+  - 设计模式
 ---
 享元模式（Flyweight Pattern）是一种结构型设计模式，它旨在通过共享尽可能多的对象来有效地支持大量细粒度的对象。在享元模式中，共享的对象通常被称为“享元”（flyweight），而非共享的部分则被称为“外部状态”（extrinsic state）。
 ## 背景
