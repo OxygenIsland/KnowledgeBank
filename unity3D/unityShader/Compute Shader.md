@@ -1,3 +1,10 @@
+---
+title: "[[Compute Shader]]"
+type: Reference
+status: done
+Creation Date: 2025-06-08 09:07
+tags: 
+---
 当代GPU被设计成可以执行大规模的并行操作，这有益于图形应用，因为在渲染管线中，不论是顶点着色器还是像素着色器，它们都可以独立进行。然而对于一些非图形应用也可以受益于GPU并行架构所提供的大量计算能力。比如说我们有个应用可以把两个excel里的N个值相加，如果N很大，那么是不是可以利用GPU来进行这些相加计算，来提升速度。像这样的非图形应用使用GPU的情况，我们称之为**GPGPU**（General Purpose GPU）编程。
 
 对于GPGPU编程而言，用户通常需要将GPU计算后的结果返回到CPU中。例如前面的例子中，我们要在CPU中读取到GPU计算后值，以便可以将结果写入到新的excel中。这就涉及到将数据从GPU显存（Video Memory）中拷贝到CPU系统内存（System Memory）中的操作，该操作非常的**慢**。但是相比使用GPU来计算所提升的运行速度而言，可以忽略此问题。下图展示了CPU和RAM、GPU和VRAM、CPU和GPU之间的相对内存带宽速度（图中的数字只是说明性的数字，以显示带宽之间的数量级差异），可以发现瓶颈在于CPU和GPU之间的内存传输。
@@ -581,15 +588,17 @@ Direct3D 11以来，共享内存支持的最大大小为32kb（之前的版本�
 
 ```cpp
 Texture2D input;
+# - 数组大小为256，与后面`numthreads`中指定的线程数一致，这样每个线程都可以在数组中存储一个数据。
 groupshared float4 cache[256];
 
 [numthreads(256, 1, 1)]
 void CS(int3 groupThreadID : SV_GroupThreadID, int3 dispatchThreadID : SV_DispatchThreadID)
 {
+    # - 每个线程从输入纹理中读取一个像素（位置为`dispatchThreadID.xy`），并将其存储到共享内存数组中自己对应的位置（`groupThreadID.x`）上。
     cache[groupThreadID.x] = input[dispatchThreadID.xy];
 
     GroupMemoryBarrierWithGroupSync();
-
+	# 每个线程尝试从共享内存中读取相邻位置的数据（左边和右边）：
     float4 left = cache[groupThreadID.x - 1];
     float4 right = cache[groupThreadID.x + 1];
     ......
@@ -677,8 +686,8 @@ void CSMain (uint3 id : SV_DispatchThreadID)
 
 然后我们就可以在C#端启用或禁用某个变体了：
 
-- #pragma multi_compile 声明的全局变体可以使用Shader.EnableKeyword/Shader.DisableKeyword或者ComputeShader.EnableKeyword/ComputeShader.DisableKeyword
-- #pragma multi_compile_local 声明的局部变体可以使用ComputeShader.EnableKeyword/ComputeShader.DisableKeyword
+- \#pragma multi_compile 声明的全局变体可以使用Shader.EnableKeyword/Shader.DisableKeyword或者ComputeShader.EnableKeyword/ComputeShader.DisableKeyword
+- \#pragma multi_compile_local 声明的局部变体可以使用ComputeShader.EnableKeyword/ComputeShader.DisableKeyword
 
 示例如下：
 
