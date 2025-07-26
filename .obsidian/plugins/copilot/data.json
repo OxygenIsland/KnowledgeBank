@@ -1,5 +1,5 @@
 {
-  "userId": "053bab79-d30e-4553-9417-78dc8f759923",
+  "userId": "10097c07-1397-4570-97bb-9b9fe8e93c11",
   "isPlusUser": false,
   "plusLicenseKey": "",
   "openAIApiKey": "",
@@ -18,8 +18,8 @@
   "mistralApiKey": "",
   "deepseekApiKey": "",
   "defaultChainType": "llm_chain",
-  "defaultModelKey": "gpt-4.1|openai",
-  "embeddingModelKey": "text-embedding-3-small|openai",
+  "defaultModelKey": "deepseek-ai/DeepSeek-R1|3rd party (openai-format)",
+  "embeddingModelKey": "Qwen/Qwen3-Embedding-0.6B|3rd party (openai-format)",
   "temperature": 0.1,
   "maxTokens": 6000,
   "contextTurns": 15,
@@ -41,13 +41,13 @@
   "enableIndexSync": true,
   "debug": false,
   "enableEncryption": false,
-  "maxSourceChunks": 3,
+  "maxSourceChunks": 15,
   "groqApiKey": "",
   "activeModels": [
     {
       "name": "copilot-plus-flash",
       "provider": "copilot-plus",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "plusExclusive": true,
@@ -59,7 +59,7 @@
     {
       "name": "google/gemini-2.5-flash-lite-preview-06-17",
       "provider": "openrouterai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "projectEnabled": true,
@@ -70,7 +70,7 @@
     {
       "name": "google/gemini-2.5-flash",
       "provider": "openrouterai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "projectEnabled": true,
@@ -81,7 +81,7 @@
     {
       "name": "google/gemini-2.5-pro",
       "provider": "openrouterai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "projectEnabled": true,
@@ -92,7 +92,7 @@
     {
       "name": "gpt-4.1",
       "provider": "openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "projectEnabled": true,
@@ -103,7 +103,7 @@
     {
       "name": "gpt-4.1-mini",
       "provider": "openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "projectEnabled": true,
@@ -114,7 +114,7 @@
     {
       "name": "gpt-4.1-nano",
       "provider": "openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "capabilities": [
@@ -124,7 +124,7 @@
     {
       "name": "o4-mini",
       "provider": "openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "capabilities": [
@@ -134,7 +134,7 @@
     {
       "name": "claude-3-5-sonnet-latest",
       "provider": "anthropic",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "capabilities": [
@@ -144,45 +144,45 @@
     {
       "name": "claude-sonnet-4-20250514",
       "provider": "anthropic",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
       "name": "claude-3-7-sonnet-latest",
       "provider": "anthropic",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
       "name": "claude-3-5-haiku-latest",
       "provider": "anthropic",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "grok-3-beta",
       "provider": "xai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "grok-3-mini-beta",
       "provider": "xai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "gemini-2.5-flash",
       "provider": "google",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "projectEnabled": true,
       "capabilities": [
@@ -192,7 +192,7 @@
     {
       "name": "gemini-2.5-pro",
       "provider": "google",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "projectEnabled": true,
       "capabilities": [
@@ -202,35 +202,48 @@
     {
       "name": "command-r",
       "provider": "cohereai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "command-r-plus",
       "provider": "cohereai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "azure-openai",
       "provider": "azure openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "deepseek-chat",
       "provider": "deepseek",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true
     },
     {
       "name": "deepseek-reasoner",
       "provider": "deepseek",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
         "reasoning"
       ]
+    },
+    {
+      "name": "deepseek-ai/DeepSeek-R1",
+      "provider": "3rd party (openai-format)",
+      "enabled": true,
+      "isBuiltIn": false,
+      "baseUrl": "https://api.siliconflow.cn/v1",
+      "apiKey": "sk-drwlgckkudbdkwlstgzjmddoetvlgtkpnztiwrvioiowfdtb",
+      "isEmbeddingModel": false,
+      "capabilities": [],
+      "stream": true,
+      "enableCors": true,
+      "displayName": "DeepSeek-R1"
     }
   ],
   "activeEmbeddingModels": [
@@ -299,6 +312,17 @@
       "enabled": true,
       "isBuiltIn": true,
       "isEmbeddingModel": true
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-0.6B",
+      "provider": "3rd party (openai-format)",
+      "enabled": true,
+      "isBuiltIn": false,
+      "baseUrl": "https://api.siliconflow.cn/v1",
+      "apiKey": "sk-drwlgckkudbdkwlstgzjmddoetvlgtkpnztiwrvioiowfdtb",
+      "isEmbeddingModel": true,
+      "capabilities": [],
+      "displayName": "Qwen3-Embedding-0.6B"
     }
   ],
   "embeddingRequestsPerMin": 90,
@@ -319,5 +343,5 @@
   "lastDismissedVersion": null,
   "passMarkdownImages": true,
   "enableCustomPromptTemplating": true,
-  "suggestedDefaultCommands": true
+  "suggestedDefaultCommands": false
 }

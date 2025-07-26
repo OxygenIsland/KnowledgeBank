@@ -1,15 +1,12 @@
 [
   "quick-explorer",
   "dataview",
-  "obsidian-excalidraw-plugin",
   "obsidian-minimal-settings",
-  "obsidian-pandoc",
-  "table-editor-obsidian",
   "mousewheel-image-zoom",
   "execute-code",
   "obsidian-git",
-  "obsidian-topic-linking",
   "virtual-linker",
   "templater-obsidian",
-  "copilot"
+  "copilot",
+  "smart-connections"
 ]
