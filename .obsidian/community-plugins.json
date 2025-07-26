@@ -10,5 +10,6 @@
   "obsidian-git",
   "obsidian-topic-linking",
   "virtual-linker",
-  "templater-obsidian"
+  "templater-obsidian",
+  "copilot"
 ]
