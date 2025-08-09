@@ -34,7 +34,7 @@
       "adapter": "ollama",
       "ollama": {}
     },
-    "active_thread_key": "",
+    "active_thread_key": "Untitled Chat 2025-08-09 12-40-13",
     "system_prompt": "",
     "detect_self_referential": true,
     "review_context": true,
@@ -44,10 +44,7 @@
     "use_tool_calls": true
   },
   "smart_notices": {
-    "muted": {
-      "done_import": true,
-      "embedding_complete": true
-    }
+    "muted": {}
   },
   "version": ""
 }
