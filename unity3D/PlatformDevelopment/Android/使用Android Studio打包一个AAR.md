@@ -6,7 +6,7 @@ Creation Date: 2025-08-09 10:29
 tags: 
 ---
 ## 1、在 Android Studio 中创建和打包插件 (AAR)
-> AAR (Android Archive) 文件是安卓库项目的二进制分发形式，它包含了编译后的代码（Java/Kotlin）、资源文件和 AndroidManifest.xml。Unity 可以直接使用这种格式的插件。
+> AAR ([[Android Archive]]) 文件是安卓库项目的二进制分发形式，它包含了编译后的代码（Java/Kotlin）、资源文件和 AndroidManifest.xml。Unity 可以直接使用这种格式的插件。
 
 **1. 创建一个新的 Android Studio 项目**
 

@@ -1,3 +1,10 @@
+---
+title: "[[Android Archive]]"
+type: Permanent
+status: done
+Creation Date: 2025-08-12 17:09
+tags:
+---
 AAR（Android Archive）是 Android 平台特有的一种库文件格式，用于封装和分发可复用的 Android 功能模块（如 UI 组件、工具库或 SDK）。相比传统的 JAR（Java Archive）文件，AAR 支持包含 Android 特有的资源文件和配置，更适合 Android 项目的模块化开发。以下是其核心特性和对比：
 ### 一、AAR 的核心组成
 
