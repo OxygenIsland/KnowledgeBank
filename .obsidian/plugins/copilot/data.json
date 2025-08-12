@@ -90,6 +90,36 @@
       ]
     },
     {
+      "name": "gpt-5",
+      "provider": "openai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "gpt-5-mini",
+      "provider": "openai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "gpt-5-nano",
+      "provider": "openai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
       "name": "gpt-4.1",
       "provider": "openai",
       "enabled": false,
@@ -340,7 +370,7 @@
   "autocompleteAcceptKey": "Tab",
   "allowAdditionalContext": true,
   "enableWordCompletion": false,
-  "lastDismissedVersion": null,
+  "lastDismissedVersion": "2.9.5",
   "passMarkdownImages": true,
   "enableCustomPromptTemplating": true,
   "suggestedDefaultCommands": false
