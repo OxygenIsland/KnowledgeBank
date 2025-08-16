@@ -4,9 +4,10 @@ type: Permanent
 status: done
 Creation Date: 2025-08-12 17:11
 tags:
+  - linker-exclude
 ---
 
-Gradle 是一个基于 ​**​JVM（Java虚拟机）的开源构建自动化工具​**​，主要用于管理项目的编译、测试、打包、依赖管理等流程。它结合了 Apache Ant 的灵活性和 Apache Maven 的依赖管理机制，但采用更简洁的 ​**​领域特定语言（DSL）​**​（基于 Groovy 或 Kotlin）替代传统的 XML 配置，显著提升开发效率。以下是其核心要点：
+Gradle 是一个基于 ​**​JVM（Java虚拟机）的开源构建自动化工具​**​，主要用于管理项目的编译、测试、打包、依赖管理等流程。它结合了 Apache Ant 的灵活性和 Apache Maven 的依赖管理机制，但采用更简洁的 ​**​领域特定语言（DSL）​**​（基于 Groovy 或 [[Kotlin]]）替代传统的 XML 配置，显著提升开发效率。以下是其核心要点：
 
 ### 🔧 ​**​一、核心功能与特点​**​
 1. ​**​自动化构建​**​
