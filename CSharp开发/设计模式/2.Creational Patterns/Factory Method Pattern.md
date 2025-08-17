@@ -1,7 +1,7 @@
 ---
 title: "[[Factory Method Pattern]]"
 type: Permanent
-status: ing
+status: done
 Creation Date: 2025-03-30 13:18
 tags:
   - 设计模式

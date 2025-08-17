@@ -7,8 +7,8 @@ tags:
 ---
 ## 一、REITs 快速入门
 - **什么是REITs？**  
-    REITs 是把不动产或基础设施的现金流[[什么是证劵？|证券化]]，然后在交易所或场内交易的一类基金/信托。投资者通过买入份额获得底层资产产生的租金/收费类分红（强调现金分红特性）。  
-    在中国，公募REITs 的实现方式是“**公募基金 + 资产支持证券（ABS）**”的组合思路，而非直接把“REIT”写进证券法里。[KWM](https://www.kwm.com/cn/en/insights/latest-thinking/chinas-pilot-program-on-publicly-offered-infrastructure-reits.html?utm_source=chatgpt.com)
+    REITs 是把不动产或基础设施的现金流[[什么是证劵？|证券化]]，然后在交易所或场内交易的一类基金/[[信托]]。投资者通过买入份额获得底层资产产生的租金/收费类分红（强调现金分红特性）。  
+    在中国，公募REITs 的实现方式是“**[[公募基金]] + [[资产支持证券（Asset-Backed Securities）|资产支持证券（ABS）]]**”的组合思路，而非直接把“REIT”写进证券法里。[KWM](https://www.kwm.com/cn/en/insights/latest-thinking/chinas-pilot-program-on-publicly-offered-infrastructure-reits.html?utm_source=chatgpt.com) 
     
 
 # 二、中国公募REITs 的基本结构与类型（要点）
@@ -122,9 +122,4 @@ tags:
     
 - 专业法律/投行分析关于中国 REITs 结构的说明（“公募基金 + ABS”方式）。[KWM](https://www.kwm.com/cn/en/insights/latest-thinking/chinas-pilot-program-on-publicly-offered-infrastructure-reits.html?utm_source=chatgpt.com)
     
-- 监管/交易层面的认购与场内交易说明（地方金融监管、上交所说明文档）。[上海市金融委员会](https://jrj.sh.gov.cn/CJWD143/20210531/9f7c097295cb490682bdada04775e755.html?utm_source=chatgpt.com)[上海电气](https://www.sse.com.cn/reits/assortment/prices/detail/price/?code=508077&name=%E5%8D%8E%E5%A4%8F%E5%9F%BA%E9%87%91%E5%8D%8E%E6%B6%A6%E6%9C%89%E5%B7%A2REIT&utm_source=chatgpt.com)
-    
-
----
-
-如果你愿意，我可以接着做两件事（你任选其一或都选）：
+- 监管/交易层面的认购与场内交易说明（地方金融监管、上交所说明文档）。[上海市金融委员会](https://jrj.sh.gov.cn/CJWD143/20210531/9f7c097295cb490682bdada04775e755.html?utm_source=chatgpt.com)[上海电气](https://www.sse.com.cn/reits/assortment/prices/detail/price/?code=508077&name=%E5%8D%8E%E5%A4%8F%E5%9F%BA%E9%87%91%E5%8D%8E%E6%B6%A6%E6%9C%89%E5%B7%A2REIT&utm_source=chatgpt.com) 
