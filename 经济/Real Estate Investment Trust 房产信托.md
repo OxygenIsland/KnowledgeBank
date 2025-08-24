@@ -11,7 +11,7 @@ tags:
     在中国，公募REITs 的实现方式是“**[[公募基金]] + [[资产支持证券（Asset-Backed Securities）|资产支持证券（ABS）]]**”的组合思路，而非直接把“REIT”写进证券法里。[KWM](https://www.kwm.com/cn/en/insights/latest-thinking/chinas-pilot-program-on-publicly-offered-infrastructure-reits.html?utm_source=chatgpt.com) 
     
 
-# 二、中国公募REITs 的基本结构与类型（要点）
+## 二、中国公募REITs 的基本结构与类型（要点）
 
 - **主要形式**：封闭式公募基金在交易所上市，上市后可以二级市场交易，但募集与赎回机制跟普通开放式基金不同（封闭期/场内交易为主）。[上海市金融委员会](https://jrj.sh.gov.cn/CJWD143/20210531/9f7c097295cb490682bdada04775e755.html?utm_source=chatgpt.com)[上海电气](https://www.sse.com.cn/reits/assortment/prices/detail/price/?code=508077&name=%E5%8D%8E%E5%A4%8F%E5%9F%BA%E9%87%91%E5%8D%8E%E6%B6%A6%E6%9C%89%E5%B7%A2REIT&utm_source=chatgpt.com)
     
@@ -112,14 +112,3 @@ tags:
 5. 每季度关注分派公告、运营指标（如机柜上架率、通行流量、出租率）与管理人公告。
     
 6. 若需要，我可以替你把 3–5 只候选 REITs 做出一页对比表（含：分派率、流通市值、换手率、杠杆、主要资产类型、原始权益人）。需要的话告诉我你的风险偏好（稳健/中性/进取）和目标年化收益预期。
-    
-
-# 十一、参考（部分权威出处）
-
-- 中国证监会关于公募 REITs 发展与统计（市场规模突破 2000 亿元等数据）。[csrc.gov.cn](https://www.csrc.gov.cn/shanxi/c106408/c7565883/content.shtml?utm_source=chatgpt.com)
-    
-- 证券时报 / 新浪 / 腾讯 的市场统计与专题报道（公募REITs 数量、资产类型、分红合计等）。[证券时报](https://www.stcn.com/article/detail/2305419.html?utm_source=chatgpt.com)[新浪财经](https://finance.sina.com.cn/stock/zqgd/2025-07-01/doc-infcyiik3380529.shtml?utm_source=chatgpt.com)[腾讯新闻](https://news.qq.com/rain/a/20250515A088NJ00?utm_source=chatgpt.com)
-    
-- 专业法律/投行分析关于中国 REITs 结构的说明（“公募基金 + ABS”方式）。[KWM](https://www.kwm.com/cn/en/insights/latest-thinking/chinas-pilot-program-on-publicly-offered-infrastructure-reits.html?utm_source=chatgpt.com)
-    
-- 监管/交易层面的认购与场内交易说明（地方金融监管、上交所说明文档）。[上海市金融委员会](https://jrj.sh.gov.cn/CJWD143/20210531/9f7c097295cb490682bdada04775e755.html?utm_source=chatgpt.com)[上海电气](https://www.sse.com.cn/reits/assortment/prices/detail/price/?code=508077&name=%E5%8D%8E%E5%A4%8F%E5%9F%BA%E9%87%91%E5%8D%8E%E6%B6%A6%E6%9C%89%E5%B7%A2REIT&utm_source=chatgpt.com) 
