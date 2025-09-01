@@ -1,9 +1,9 @@
 ---
-title: '[[巨灾债券 (Catastrophe Bond, "Cat Bond")]]'
+title: "[[巨灾债券—Catastrophe Bond]]"
 type: Reference
 status: done
 Creation Date: 2025-08-17 17:44
-tags: 
+tags:
 ---
 ## 一、基本概念
 ### **1. 什么是巨灾[[债券]]？**  
