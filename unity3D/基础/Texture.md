@@ -4,6 +4,7 @@ type: Literature
 status: done
 Creation Date: 2024-04-01 20:07
 tags:
+  - linker-exclude
 ---
 ## 1、Texture（纹理）：
 - Texture 是所有纹理类型的基类，是一个抽象类，不能直接使用。

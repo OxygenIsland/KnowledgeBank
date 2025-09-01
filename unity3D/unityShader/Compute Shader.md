@@ -60,7 +60,7 @@ RWTexture2D中，RW其实是**Read**和**Write**的意思，Texture2D就是二�
 
 又是num，又是thread的，肯定和线程数量有关。没错，它就是定义**一个线程组（Thread Group）中可以被执行的线程（Thread）总数量。**
 
-我们先来看看什么是线程组。在GPU编程中，我们可以将所有要执行的线程划分成一个个线程组，一个线程组在单个流多处理器（Stream Multiprocessor，简称SM）上被执行。如果我们的GPU架构有16个SM，那么至少需要16个线程组来保证所有SM有事可做。为了更好的利用GPU，每个SM至少需要两个线程组，因为SM可以切换到处理不同组中的线程来隐藏线程阻塞（如果着色器需要等待Texture处理的结果才能继续执行下一条指令，就会出现阻塞）。
+我们先来看看什么是线程组。在GPU编程中，我们可以将所有要执行的线程划分成一个个线程组，一个线程组在单个流多处理器（[[2、Pipeline#2 . There can be several parallel running pipelines!|Stream Multiprocessor]]，简称SM）上被执行。如果我们的GPU架构有16个SM，那么至少需要16个线程组来保证所有SM有事可做。为了更好的利用GPU，每个SM至少需要两个线程组，因为SM可以切换到处理不同组中的线程来隐藏线程阻塞（如果着色器需要等待Texture处理的结果才能继续执行下一条指令，就会出现阻塞）。
 
 每个线程组都有一个各自的共享内存（Shared Memory），该组中的所有线程都可以访问该组对应的共享内存，但是不能访问别的组对应的共享内存。因此线程同步操作可以在线程组中的线程之间进行，不同的线程组则不能进行同步操作。
 
@@ -83,7 +83,7 @@ numthreads(tX, tY, tZ)
 |cs_4_x|1|768|
 |cs_5_0|64|1024|
 
-如果是NVIDIA的显卡，线程组中的线程又会被划分成一个个**Warp**，每个Warp由32个线程组成，一个Warp通过SM来调度。在SIMD32下，当SM操控一个Warp执行一个指令，意味着有32个线程同时执行相同的指令。假如我们使用numthreads设置每个线程组只有10个线程，但是由于SM每次调度一个Warp就会执行32个线程，这就会造成有22个线程是不干活的（静默状态），从而在性能上无法达到最优。因此针对NVIDIA的显卡，我们应该将线程组中的线程数设置为32的倍数来达到最佳性能。如果是AMD显卡的话，线程组中的线程则是被划分成一个个由64个线程组成**Wavefront**，那么线程组中的线程数应该设置为64的倍数。因此**建议numthreads值设为64的倍数**，这样可以同时顾及到两大主流的显卡。
+如果是NVIDIA的显卡，线程组中的线程又会被划分成一个个 [[2、Pipeline#3.7 Shader Execution|Warp]]，每个Warp由32个线程组成，一个Warp通过SM来调度。在SIMD32下，当SM操控一个Warp执行一个指令，意味着有32个线程同时执行相同的指令。假如我们使用numthreads设置每个线程组只有10个线程，但是由于SM每次调度一个Warp就会执行32个线程，这就会造成有22个线程是不干活的（静默状态），从而在性能上无法达到最优。因此针对NVIDIA的显卡，我们应该将线程组中的线程数设置为32的倍数来达到最佳性能。如果是AMD显卡的话，线程组中的线程则是被划分成一个个由64个线程组成**Wavefront**，那么线程组中的线程数应该设置为64的倍数。因此**建议numthreads值设为64的倍数**，这样可以同时顾及到两大主流的显卡。
 
 在[Direct3D12](https://zhida.zhihu.com/search?content_id=169975694&content_type=Article&match_order=1&q=Direct3D12&zhida_source=entity)中，可以通过**ID3D12GraphicsCommandList::Dispatch(gX,gY,gZ)** 方法创建gX*gY*gZ个**线程组**。**注意顺序，先numthreads定义好每个核函数对应线程组里线程的数量（tX*tY*tZ），再用Dispatch定义用多少线程组(gX*gY*gZ)来处理这个核函数**。
 
