@@ -4,6 +4,7 @@ type: Literature
 status: done
 Creation Date: 2024-02-18 13:50
 tags:
+  - linker-exclude
 ---
 HTTP（Hypertext Transfer Protocol）是一种用于传输超文本数据的应用层协议，它是互联网上用于在客户端和服务器之间传输数据的基础协议之一。HTTP 是一个无状态的协议，意味着它不会在不同的请求之间保持状态信息。它通常基于请求-响应模型，客户端发送请求到服务器，服务器处理请求并返回响应。
 
