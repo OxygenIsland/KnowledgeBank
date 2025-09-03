@@ -7,7 +7,7 @@ tags:
 ---
 Artists must be strong now: From a computers perspective(看法、视角), your assets are just lists of vertex- and texture data. Converting this raw data into a next-gen( next-generation,此处翻译为最终) image, is mainly done by your system processor (**CPU**) and your graphics processor (**GPU**).
 ## 1 . Copy the data into system memory for fast access（快速访问）
-At first all necessary data is loaded from your hard drive (**HDD**) into the system memory (**RAM**) for faster access. Now the necessary meshes and textures are loaded into the memory on the graphic card (**VRAM**). This is because the graphic card can access the VRAM (显存) a lot faster. ![[copy_data_from_hdd_to_ram_vram_01.webm]] If a texture isn’t needed anymore (after loading it into the VRAM), it can be thrown out of the RAM (but you should be sure, that you won’t need it again soon, because reloading it from HDD costs a lot time). The meshes should stay in the RAM because it’s most likely that the CPU wants to have access to them e.g. for collision detection.(碰撞检测)
+At first(最初) all necessary data is loaded from your hard drive (**HDD**) into the system memory (**RAM**) for faster access. Now(现在) the necessary meshes and textures are loaded into the memory on the graphic card (**VRAM**). This is because the graphic card can access the VRAM (显存) a lot faster. ![[copy_data_from_hdd_to_ram_vram_01.webm]] If a texture isn’t needed anymore (after loading it into the VRAM), it can be thrown out of the RAM (but you should be sure, that you won’t need it again soon, because reloading it from HDD costs a lot time). The meshes should stay in the RAM because it’s most likely that the CPU wants to have access to them e.g. for collision detection.(碰撞检测)
 ![[delete_data_in_ram.webm]]
 Now the data is on the graphic card (in the VRAM). But the transfer speed(传输速度) from VRAM to GPU is still too slow. The GPU can work a lot faster than the data can be delivered.
 Therefore the hardware engineers put small memory **directly inside** the processor chips, typically called ==on-chip caches==(片上缓存). It’s not a lot of memory because it’s crazy expensive to put it inside the processor chip. The GPU copies currently necessary data in small portions(部分) there.
@@ -25,7 +25,14 @@ A render state is kind of a global definition of **how** meshes are rendered. 
 
 > “vertex and pixel shader, texture, material, lighting, transparency, etc. […]” [b01 page 711]
 
-==**Important:**== Each mesh, which the CPU commands the GPU to draw, will be rendered under these conditions! You can render a stone, a chair or a sword – they all get the same render values assigned (e.g. the material) if you don’t change the render state before rendering the next mesh. ![[renderstate.webm]]After the preparation is done, the CPU can finally call the GPU and tell it what to draw. This command is known as: ==**Draw Call**==.
+==**Important:**== Each mesh, which the CPU commands the GPU to draw, will be rendered under these conditions! You can render a stone, a chair or a sword – they all get the same render values assigned (e.g. the material) if you don’t change the render state before rendering the next mesh. ![[renderstate.webm]]
+> [!note]+ unity中的材质球
+> **材质球（Material）是render state中的一个重要组成部分，但render state不等于材质球**。
+>- **材质球（Material）**：是定义物体表面视觉属性（如颜色、纹理、反射等）的数据集合。在Unity中，材质球是资源的表现形式，你可以创建和编辑它们。
+>- **Render State（渲染状态）**：是一个更宽泛的概念，它包含了一次绘制调用（Draw Call）所需的所有配置信息，而材质球只是这些配置信息中的一个关键部分。
+>- 当CPU告诉GPU绘制一个网格时，它会提供一个render state给GPU。这个render state告诉GPU应该使用哪个着色器、哪个纹理、**哪个材质球**，以及其他所有渲染参数。
+
+After the preparation is done, the CPU can finally call the GPU and tell it what to draw. This command is known as: ==**Draw Call**==.
 ## 3 . Draw Call  
 A draw call is a command to render **one** mesh. It is given by the CPU. It is received by the GPU. The command only points to a mesh which shall be rendered and **doesn’t** contain any material information since these are already defined via the render state. The mesh resides(居住) at this point(在此时) in the memory of your graphic card (VRAM).
 ![[cpu_calls_gpu.webm]]
@@ -42,7 +49,7 @@ It’s necessary to be able to compute a lot of that stuff **at the same time**
 
 现代的 CPU 有4-8个 Core，每个 Core 可以同时执行4-8个浮点操作，因此我们假设 CPU 有64个浮点执行单元，然而 GPU 却可以有上千个这样的执行单元。仅仅只是比较 GPU 和 CPU 的 Core 数量是不公平的，因为它们的职能不同，组织形式也不同。GPU 厂商倾向于使用 Core 作为最小的执行单元，而 CPU 厂商则倾向于使用更高级的单元。在 Book II 中将会阐述 GPU 内部由高到低执行单元组织形式的更多细节。
 
-When data (e.g. a heap of vertices) is put into a pipeline stage, the work of transforming the points/pixels is divided onto several cores, so that a lot of those small elements are formed parallel (并行的) to a big picture:
+When data (e.g. a heap of vertices) is put into a pipeline stage, the work of transforming the points/pixels is divided onto several cores, so that a lot of those small elements are formed ==parallel== (并行的) to a big picture:
 ![[pipeline_overview_multicore.webm]]
 Now we know, that the GPU can work on stuff in parallel. But what’s about the communication between CPU and GPU? Does the CPU has to wait until the GPU finished the job before it can receive new commands?
 ![[tut_cpu_commands_gpu_zzz.gif|500]]
