@@ -22,8 +22,7 @@
     "render_markdown": true,
     "show_full_path": false,
     "exclude_blocks_from_source_connections": false,
-    "expanded_view": false,
-    "results_limit": "20"
+    "expanded_view": false
   },
   "excluded_headings": "",
   "language": "en",
@@ -34,7 +33,7 @@
       "adapter": "ollama",
       "ollama": {}
     },
-    "active_thread_key": "Untitled Chat 2025-08-12 17-16-38",
+    "active_thread_key": "",
     "system_prompt": "",
     "detect_self_referential": true,
     "review_context": true,
