@@ -1,7 +1,7 @@
 ---
 title: "[[ComputeShader做视锥剔除（View Frustum Culling）]]"
 type: Reference
-status: ing
+status: done
 Creation Date: 2025-06-08 10:15
 tags:
 ---
