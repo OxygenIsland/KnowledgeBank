@@ -4,6 +4,7 @@ type: Reference
 status: done
 Creation Date: 2025-09-04 15:27
 tags:
+  - linker-exclude
 ---
 如果说SLAM是机器人的“大脑算法”，那么**ROS 2就是机器人的“神经系统”**。
 
