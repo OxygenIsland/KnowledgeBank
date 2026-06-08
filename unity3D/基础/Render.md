@@ -4,6 +4,7 @@ type: Reference
 status: done
 Creation Date: 2025-09-20 15:01
 tags:
+  - linker-exclude
 ---
 ## Unity中的渲染器（Renderer）组件详解
 

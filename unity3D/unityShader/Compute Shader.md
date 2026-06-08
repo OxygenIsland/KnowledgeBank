@@ -107,7 +107,7 @@ gX，gY，gZ在不同的版本里有如下的约束：
 |SV_DispatchThreadID|int3|当前线程在所有线程组中的所有线程里的ID，取值范围为(0,0,0)到(gX*tX-1, gY*tY-1, gZ*tZ-1)。|假设该线程的SV_GroupID=(a, b, c)，SV_GroupThreadID=(i, j, k) 那么SV_DispatchThreadID=(a*tX+i, b*tY+j, c*tZ+k)|
 |SV_GroupIndex|int|当前线程在所在线程组内的下标，取值范围为0到tX*tY*tZ-1。|假设该线程的SV_GroupThreadID=(i, j, k) 那么SV_GroupIndex=k*tX*tY+j*tX+i|
 
-这里需要注意的是，不管是group还是thread，它们的**顺序都是先X再Y最后Z**，用表格的理解就是先行(X)再列(Y)然后下一个表(Z)，例如我们tX=5，tY=6那么第1个thread的SV_GroupThreadID=(0,0,0)，第2个的SV_GroupThreadID=(1,0,0)，第6个的SV_GroupThreadID=(0,1,0)，第30个的SV_GroupThreadID=(4,5,0)，第31个的SV_GroupThreadID=(0,0,1)。group同理，搞清顺序后，SV_GroupIndex的计算公式就很好理解了。
+这里需要注意的是，不管是group还是thread，它们的**顺序都是先X再Y最后Z**，用表格的理解就是先行(X)再列(Y)然后下一个表(Z)，例如，tX=5，tY=6，那么第1个thread的SV_GroupThreadID=(0,0,0)，第2个的SV_GroupThreadID=(1,0,0)，第6个的SV_GroupThreadID=(0,1,0)，第30个的SV_GroupThreadID=(4,5,0)，第31个的SV_GroupThreadID=(0,0,1)。group同理，搞清顺序后，SV_GroupIndex的计算公式就很好理解了。
 
 再举个例子，比如SV_GroupID为(0,0,0)和(1,0,0)的两个group，它们内部的第1个thread的SV_GroupThreadID都为(0,0,0)且SV_GroupIndex都为0，但是前者的SV_DispatchThreadID=(0,0,0)而后者的SV_DispatchThreadID=(tX,0,0)。
 
@@ -316,11 +316,14 @@ float Time;
 [numthreads(10, 10, 10)]
 void UpdateParticle(uint3 gid : SV_GroupID, uint index : SV_GroupIndex)
 {
+	//计算粒子在缓冲区中的索引：第 N 组负责第 N×1000 到 N×1000+999 号粒子。
 	int pindex = gid.x * 1000 + index;
 	
+	//根据线程编号计算粒子的 运动方向向量
 	float x = sin(index);
 	float y = sin(index * 1.2f);
 	float3 forward = float3(x, y, -sqrt(1 - x * x - y * y));
+	
 	ParticleBuffer[pindex].color = float4(forward.x, forward.y, cos(index) * 0.5f + 0.5, 1);
 	if (Time > gid.x)
 		ParticleBuffer[pindex].pos += forward * 0.005f;
@@ -412,8 +415,8 @@ Shader "Unlit/ParticleShader"
             
             struct particleData
             {
-		float3 pos;
-		float4 color;
+				float3 pos;
+				float4 color;
             };
 
             StructuredBuffer<particleData> _particleDataBuffer;
@@ -438,7 +441,7 @@ Shader "Unlit/ParticleShader"
 
 前面我们说了ComputeBuffer也可以传递到普通的Shader中，因此我们在Shader中也创建一个结构一样的Struct，然后利用StructuredBuffer\<T>来接收。
 
-**SV_VertexID：**在VertexShader中用它来作为传递进来的参数，代表顶点的下标。我们有多少个粒子即有多少个顶点。顶点数据使用我们在CS中处理过的buffer。
+**SV_VertexID：** 在VertexShader中用它来作为传递进来的参数，代表顶点的下标。我们有多少个粒子即有多少个顶点。顶点数据使用我们在CS中处理过的buffer。
 
 最后我们在C#中关联一个带有上面shader的material，然后将粒子数据传递过去，最终绘制出来。完整代码如下：
 
@@ -550,9 +553,14 @@ Append，Consume或者Counter的buffer会维护一个计数器来存储buffer中
 因此获取buffer中元素数量的代码如下：
 
 ```csharp
+// 1. 准备一个承接计数器值的 IndirectArguments Buffer
 uint[] countBufferData = new uint[1] { 0 };
 var countBuffer = new ComputeBuffer(1, sizeof(uint), ComputeBufferType.IndirectArguments);
+
+// 2. 将 AppendBuffer 的计数器值拷贝到 countBuffer
 ComputeBuffer.CopyCount(buffer, countBuffer, 0);
+
+// 3. 从 GPU 读回到 CPU
 countBuffer.GetData(countBufferData);
 //buffer中的元素数量即为：countBufferData[0]
 ```
@@ -567,8 +575,6 @@ countBuffer.GetData(countBufferData);
 如果我们的RenderTexture不设置enableRandomWrite，或者我们传递一个Texture给RWTexture，那么运行时就会报错：
 
 > the texture wasn't created with the UAV usage flag set!
-
-  
 
 ## groupshared
 
@@ -605,9 +611,7 @@ void CS(int3 groupThreadID : SV_GroupThreadID, int3 dispatchThreadID : SV_Dispat
 }
 ```
 
-其中**GroupMemoryBarrierWithGroupSync**起到组内线程同步的作用。该函数会阻塞线程组中所有线程的执行，直到所有共享内存的访问完成并且线程组中的所有线程都执行到此调用。这样就避免了当我们在读取共享内存的时候，它却还没有写入完成的问题。
-
-  
+其中 **GroupMemoryBarrierWithGroupSync** 起到组内线程同步的作用。该函数会阻塞线程组中所有线程的执行，直到所有共享内存的访问完成并且线程组中的所有线程都执行到此调用。这样就避免了当我们在读取共享内存的时候，它却还没有写入完成的问题。
 
 ## 移动端支持问题
 

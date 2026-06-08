@@ -16,7 +16,7 @@ URN（(Uniform Resource Name 统一资源名称，它命名资源但不指定如
 其中最重要的是<协议><主机域名><路径>
 url（统一资源定位符）的作用就是通过浏览器发送给服务器，告诉服务器我们想要什么资源在什么位置，并发送给我们的浏览器，通过上边的格式，我们举几个例子：
 http://www.baidu.com:80/main/index.html
-这是一个简单的例子，有协议 http，主机域名 www.baidu.com ，资源路径/main/index. Html，其它部分都可以省略
+这是一个简单的例子，有协议 [[Http|http]]，主机域名 www.baidu.com ，资源路径/main/index. Html，其它部分都可以省略
 下面是一个复杂的例子，我们结合下边这个例子具体介绍每一部分的作用和用法
 http://joe:password@www.baidu.com:80/main/index.html;type=a;color=b?Name=bob&id=123#main
 #### 协议

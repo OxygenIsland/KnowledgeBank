@@ -10,6 +10,7 @@ tags:
 ![[Pasted image 20250608101714.png|500]]
 如果我们不做任何的操作，那么场景中**所有的**小树对应数据（顶点，三角面）都会通过CPU提交DrawCall传递到GPU中，并且参与到顶点着色器的计算中，如果有几何着色器同样也会参与到其中的计算，然后才会做剔除的操作。也就是说，**一大堆我们其实并看不见的物体依旧在Rendering Pipeline中耗费着大量的计算，造成了不必要的消耗**。
 > [!note]+ 为什么不用unity的culling，而要自己实现？
+> **Bounds 只解决"整批要不要画"，不解决"批内哪些点要画"**。批内逐点的视锥体剔除只能靠 GPU Compute Shader（即当前的 [FrustumCulling.compute](vscode-file://vscode-app/d:/Users/liubo32/AppData/Local/Programs/Microsoft%20VS%20Code/6a44c352bd/resources/app/out/vs/code/electron-browser/workbench/workbench.html)）来手动完成。
 > 因为unity的culling只能剔除unity用mesh render一个个画出来的物体。  基于GPU instancing的绘制方案，unity无法再进行常规的视锥剔除。gpu instance把相同的合成了一个物体，一次画出，unity当然不能剔除这个整体的局部物体。自己写剔除计算哪些局部需要加到这个整体里。（实际上不画的数据也在，只是index偏移到后面去了，后面的都不画）
 
 并且由于GPU没有单个物体的概念，全部都是顶点和面，因此剔除的效率并不高。比如我有一个人物模型，有上万个顶点和面，那么CPU要剔除它时就需要将所有的顶点和面都计算一遍，来看留下哪些和剔除哪些顶点和面。但是如果我们能够使用一个**包围盒**把这个模型包起来，那么只需要计算包围盒的几个顶点即可判断出是否剔除这个模型。

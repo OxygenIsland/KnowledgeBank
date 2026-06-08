@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "example-skill": {
+      "command": "node",
+      "args": [
+        "path/to/your/skill/server.js"
+      ],
+      "env": {
+        "CUSTOM_VAR": "value"
+      }
+    }
+  }
+}
