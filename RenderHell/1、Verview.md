@@ -38,7 +38,7 @@ A draw call is a command to render **one** mesh. It is given by the CPU. It is
 ![[cpu_calls_gpu.webm]]
 After the command is given, the GPU takes the render state values (material, textures, shader, …) and all the vertex data to convert this information via some code magic into (hopefully) beautiful pixels on your screen. This conversion process is also known as ==**Pipeline**==.
 ## 4. Pipeline
-As i said at the beginning, an asset is more or less just a list of vertex- and texture data. To convert those into a mind blowing image, the Graphic Card has to create triangles out of the vertices（创建三角形）, calculate how they are lit（计算光照效果）, paint texture-pixels on them（映射纹理像素） and a lot more. These actions are called states， Pipeline states.  
+As i said at the beginning, an asset is more or less just a list of vertex- and texture data. To convert those into a mind blowing image, the Graphic Card has to create triangles out of （表示“原材料”或“来源”） the vertices（创建三角形）, calculate how they are lit（计算光照效果）, paint texture-pixels on them（映射纹理像素） and a lot more. These actions are called states， Pipeline states.  
 
 Depending on where you read, you’ll find that most of the stuff is done by the GPU. But sometimes they say, that for example the triangle creation & fragment creation is done by other parts of the graphic card.
 Here are some example steps the hardware does for **one** triangle:
