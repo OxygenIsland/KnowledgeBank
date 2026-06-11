@@ -2,5 +2,6 @@
   "attachmentFolderPath": "./attachments",
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "showUnsupportedFiles": true
+  "showUnsupportedFiles": true,
+  "autoConvertHtml": true
 }

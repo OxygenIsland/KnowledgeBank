@@ -7,5 +7,7 @@
   "virtual-linker",
   "templater-obsidian",
   "copilot",
-  "smart-connections"
+  "smart-connections",
+  "execute-code",
+  "obsidian-columns"
 ]
