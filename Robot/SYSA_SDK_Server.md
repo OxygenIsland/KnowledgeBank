@@ -21,6 +21,7 @@ Robot SDK Server 是一个中间件服务，为控制和监控六足机器人 (I
 - Logging：系统诊断和调试
 ## SDK Server 架构
 
+![[3155236598c40d0a8f34b608bf142931.png]]
 ### 构建命令
 ```
 ./build.sh [ARCH] [ROBOT_TYPE]

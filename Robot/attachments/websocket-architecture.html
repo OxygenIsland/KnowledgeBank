@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebSocket 连接通信整体框架</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1a1a2e;
+    color: #c8c8d0;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    padding: 24px;
+    line-height: 1.5;
+  }
+  h1 {
+    color: #e8e8f0;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== LAYER CONTAINERS ===== */
+  .layer {
+    border: 1px dashed #4a4a6a;
+    border-radius: 6px;
+    padding: 16px 16px 20px;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .layer-label {
+    color: #a8a8c0;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ===== COMPONENT BOXES ===== */
+  .component-box {
+    border: 1px dashed #5a5a7a;
+    border-radius: 4px;
+    padding: 12px 14px 14px;
+    margin-bottom: 12px;
+  }
+  .component-title {
+    color: #d8d8ea;
+    font-size: 13px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* ===== 3-COLUMN GRID ===== */
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .sub-box {
+    border: 1px dashed #5a5a7a;
+    border-radius: 4px;
+    padding: 10px 12px 12px;
+  }
+  .sub-title {
+    color: #c8c8d8;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .sub-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sub-box ul li {
+    color: #9898b8;
+    font-size: 11.5px;
+    padding: 1.5px 0;
+  }
+  .sub-box ul li::before {
+    content: "• ";
+    color: #6868a0;
+  }
+
+  /* ===== ARROWS ===== */
+  .arrow-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2px 0;
+  }
+  .arrow-label {
+    color: #8888a8;
+    font-size: 11.5px;
+    margin-bottom: 2px;
+  }
+  .arrow-line {
+    width: 1px;
+    height: 18px;
+    background: #5a5a7a;
+    position: relative;
+  }
+  .arrow-line::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #5a5a7a;
+  }
+  .arrow-spacer { height: 8px; }
+
+  /* ===== DECISION / PROCESS BOXES ===== */
+  .decision-box {
+    border: 1px dashed #5a5a7a;
+    border-radius: 4px;
+    padding: 10px 18px;
+    text-align: center;
+    color: #a8a8c0;
+    font-size: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .process-box {
+    border: 1px dashed #5a5a7a;
+    border-radius: 4px;
+    padding: 9px 18px;
+    text-align: center;
+    color: #a8a8c0;
+    font-size: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .yes-label {
+    color: #8888a8;
+    font-size: 11.5px;
+    text-align: center;
+    margin: 2px 0;
+  }
+
+  /* ===== EVENT CALLBACKS ===== */
+  .event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .event-left {
+    padding: 8px 12px;
+    border-right: 1px dashed #5a5a7a;
+  }
+  .event-right {
+    padding: 8px 12px;
+  }
+  .event-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .event-row:last-child { margin-bottom: 0; }
+  .event-name {
+    color: #b8b8d0;
+    font-size: 12px;
+    min-width: 160px;
+    padding-top: 2px;
+  }
+  .event-arrow {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    margin: 0 4px;
+    color: #6868a0;
+    font-size: 14px;
+  }
+  .event-handler {
+    flex: 1;
+  }
+  .event-handler-title {
+    color: #c8c8d8;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .event-handler ul {
+    list-style: none;
+    padding: 0;
+  }
+  .event-handler ul li {
+    color: #9898b8;
+    font-size: 11.5px;
+    padding: 1px 0;
+  }
+  .event-handler ul li::before {
+    content: "• ";
+    color: #6868a0;
+  }
+  .tag-reconnect {
+    color: #8888a8;
+    font-size: 11px;
+    font-style: normal;
+  }
+
+  /* ===== TRANSPORT / NETWORK LAYERS ===== */
+  .mono-box {
+    border: 1px solid #3a3a5a;
+    border-radius: 4px;
+    padding: 12px 16px;
+    background: #151525;
+    margin: 8px auto;
+    max-width: 460px;
+    font-size: 12px;
+    color: #9898b8;
+    line-height: 1.7;
+  }
+  .mono-box pre {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 12px;
+    color: #9898b8;
+    margin: 0;
+  }
+  .removed-logic {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    background: #1e1020;
+  }
+  .removed-title {
+    color: #c06080;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .removed-title span { margin-right: 4px; }
+  .removed-logic ul {
+    list-style: none;
+    padding: 0;
+  }
+  .removed-logic ul li {
+    color: #8878a0;
+    font-size: 11.5px;
+    padding: 2px 0;
+  }
+  .removed-logic ul li::before {
+    content: "• ";
+    color: #a06080;
+  }
+
+  /* ===== NETWORK LAYER ===== */
+  .net-box {
+    border: 1px dashed #5a5a7a;
+    border-radius: 4px;
+    padding: 14px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .net-title {
+    color: #c8c8d8;
+    font-size: 12.5px;
+    margin-bottom: 4px;
+  }
+  .net-sub {
+    color: #9898b8;
+    font-size: 12px;
+  }
+
+  /* ===== SEPARATOR ===== */
+  .layer-sep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0;
+  }
+  .sep-line {
+    width: 1px;
+    height: 24px;
+    background: #4a4a6a;
+    position: relative;
+  }
+  .sep-line::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #4a4a6a;
+  }
+</style>
+</head>
+<body>
+
+<h1>WebSocket 连接通信整体框架</h1>
+
+<!-- ===== APPLICATION LAYER ===== -->
+<div class="layer">
+  <div class="layer-label">应用层 (Application Layer)</div>
+
+  <div class="component-box">
+    <div class="component-title">WebSocketEngine</div>
+
+    <div class="three-col">
+      <div class="sub-box">
+        <div class="sub-title">业务接口</div>
+        <ul>
+          <li>CallService()</li>
+          <li>NavigateTo()</li>
+          <li>SetPtzPosition</li>
+          <li>SubscribeTopic</li>
+          <li>...</li>
+        </ul>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">心跳管理</div>
+        <ul>
+          <li>StartHeartbeat</li>
+          <li>StopHeartbeat</li>
+          <li>SendPing()</li>
+          <li>OnHeartbeatTimer</li>
+        </ul>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">消息处理</div>
+        <ul>
+          <li>HandlePing()</li>
+          <li>HandlePong()</li>
+          <li>HandlePublish()</li>
+          <li>HandleServiceResp</li>
+          <li>...</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- heartbeat timeout detection -->
+    <div class="arrow-down">
+      <div class="arrow-label">超时检测</div>
+      <div class="arrow-line"></div>
+    </div>
+    <div class="arrow-spacer"></div>
+
+    <div class="decision-box">
+      _lastPongReceived 超时？<br>
+      (超过 N 个心跳间隔未收到)
+    </div>
+
+    <div class="arrow-down" style="margin-top:8px">
+      <div class="yes-label">是</div>
+      <div class="arrow-line"></div>
+    </div>
+    <div class="arrow-spacer"></div>
+
+    <div class="process-box">webSocketClient.TriggerReconnect()</div>
+
+    <!-- event callbacks section -->
+    <div style="margin-top: 18px;">
+      <div class="component-box" style="margin-bottom:0">
+        <div class="sub-title" style="margin-bottom:10px; color:#b0b0c8;">事件回调</div>
+        <div>
+          <div class="event-row">
+            <div class="event-name">OnConnectionRestored ——</div>
+            <div style="flex:1">
+              <div class="event-handler-title">OnWebSocketConnected()</div>
+              <ul class="event-handler">
+                <li>AdvertisePtzTopic()</li>
+                <li>StartHeartbeat() <span class="tag-reconnect">← 重连后重启</span></li>
+                <li>通知上层连接恢复</li>
+              </ul>
+            </div>
+          </div>
+          <div class="event-row">
+            <div class="event-name">OnConnectionLost ——</div>
+            <div style="flex:1">
+              <div class="event-handler-title">OnWebSocketDisconnected()</div>
+              <ul class="event-handler">
+                <li>StopHeartbeat()</li>
+                <li>通知上层连接丢失</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- arrow between layers -->
+<div class="layer-sep">
+  <div class="sep-line"></div>
+</div>
+
+<!-- ===== TRANSPORT LAYER ===== -->
+<div class="layer">
+  <div class="layer-label">传输层 (Transport Layer)</div>
+
+  <div class="component-box">
+    <div class="component-title">WebSocketClient</div>
+
+    <div class="three-col">
+      <div class="sub-box">
+        <div class="sub-title">连接管理</div>
+        <ul>
+          <li>InitWebSocket</li>
+          <li>CloseWebSocket</li>
+          <li>IsConnected</li>
+          <li>TriggerReconnect</li>
+        </ul>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">重连管理</div>
+        <ul>
+          <li>needReconnect</li>
+          <li>reconnectTimer</li>
+          <li>AttemptReconnect</li>
+          <li>maxReconnectAttempts</li>
+        </ul>
+      </div>
+      <div class="sub-box">
+        <div class="sub-title">收发消息</div>
+        <ul>
+          <li>SendMessage()</li>
+          <li>SendMessageAsync()</li>
+          <li>ReceiveLoop()</li>
+          <li>SendBinaryMessage()</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="arrow-down">
+      <div class="arrow-line"></div>
+    </div>
+    <div class="arrow-spacer"></div>
+
+    <div class="mono-box">
+      <div style="color:#c8c8d8; margin-bottom:6px; font-size:12px;">MonitorLoopAsync()<br><span style="color:#8888a8; font-size:11px;">(简化版 - 仅连接状态监控)</span></div>
+      <pre>
+while (!cancelled)
+{
+    if (socket not open)
+    {
+        if (needReconnect)
+            AttemptReconnectAsync
+    }
+    await Delay(500ms)
+}
+      </pre>
+    </div>
+
+    <div class="removed-logic">
+      <div class="removed-title"><span>✕</span> 移除的逻辑：</div>
+      <ul>
+        <li>SendHeartBeatAsync() - {"op":"heartbeat"} 服务器不支持</li>
+        <li>lastHeartbeatTime / lastHeartbeatResponseTime 超时检测</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- arrow between layers -->
+<div class="layer-sep">
+  <div class="sep-line"></div>
+</div>
+
+<!-- ===== NETWORK LAYER ===== -->
+<div class="layer">
+  <div class="layer-label">网络层 (Network Layer)</div>
+
+  <div class="net-box">
+    <div class="net-title">System.Net.WebSockets</div>
+    <div class="net-sub">ClientWebSocket</div>
+  </div>
+
+  <div class="arrow-down">
+    <div class="arrow-line"></div>
+  </div>
+  <div class="arrow-spacer"></div>
+
+  <div class="net-box">
+    <div class="net-title">服务端</div>
+    <div class="net-sub">SYSB WebSocket Server</div>
+    <div class="net-sub" style="margin-top:2px;">(支持 ping/pong 协议)</div>
+  </div>
+</div>
+
+</body>
+</html>
