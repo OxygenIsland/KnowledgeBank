@@ -3,5 +3,11 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "showUnsupportedFiles": true,
-  "autoConvertHtml": true
+  "autoConvertHtml": true,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 84
+  }
 }
