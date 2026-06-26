@@ -1,5 +1,5 @@
 ---
-ti[[WebSocket]]YSB_SDK_Server]]"
+title: "[[SYSB_SDK_Server]]"
 type: Permanent
 status: ing
 Creation Date: 2026-06-11 15:37
