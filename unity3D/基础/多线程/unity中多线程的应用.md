@@ -95,14 +95,14 @@ async/await 语法实际上就是建立在 Task 之上的。
 2. **处理任务结果**：
     - **轮询检查**：可以在主线程的 Update 中检查任务的 IsCompleted 属性。任务完成后，通过 task.Result 获取返回值。**注意**：在任务完成前访问 task.Result 会阻塞主线程。
     - **使用回调（ContinueWith）**：可以为任务附加一个延续任务。ContinueWith 会在原任务完成后自动执行。
-  ```csharp
+```csharp
         task.ContinueWith(t => {
             int result = t.Result;
             // 注意：ContinueWith 的代码默认也在后台线程执行！
             // 需要手动调度回主线程。
         });
-    ```
-        
+```
+  
 3. **调度回主线程**：这是在 Unity 中使用 Task 的关键和难点。由于 ContinueWith 或 await task 之后的代码默认在后台线程，你必须自己实现将逻辑调度回主线程的机制。常见的模式是创建一个主线程任务调度器。
     - UniTask 库已经完美地解决了这个问题，这也是为什么推荐使用 UniTask 的核心原因之一。
 ### 3. ​**​Job System​**​（推荐）：
@@ -167,7 +167,7 @@ void Start() {
 #### ​**​1. 使用主线程调度器​**​：
 MainDispatcher 是一个 DW中自定义的一个 工具类，用于在主线程上调度和执行动作(Action)，支持延迟执行和线程安全操作。
 ```csharp
-namespace Lenovo.XR.StARstudio.PluginsInstance.ARPackage.Tool
+namespace Company.Tool
 {
     public class MainDispatcher : MonoBehaviour
     {

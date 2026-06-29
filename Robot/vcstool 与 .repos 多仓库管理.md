@@ -176,17 +176,17 @@ vcs status src     # 看到它的 git 状态
 repositories:
   comm:
     type: git
-    url: https://gitlab.xpaas.lenovo.com/lrsh-sds-robot/rms/comm.git
+    url: https://gitlab.xpaas.company.com/lrsh-sds-robot/rms/comm.git
     version: sdk_server          # 跟踪 sdk_server 分支
 
   navigation_msgs:
     type: git
-    url: https://gitlab.xpaas.lenovo.com/lrsh-sds-robot/navigation/navigation_msgs
+    url: https://gitlab.xpaas.company.com/lrsh-sds-robot/navigation/navigation_msgs
     version: rms2.0-interfaces    # 不同仓库可以用不同分支
 
   daystar_api:
     type: git
-    url: https://gitlab.xpaas.lenovo.com/lrsh-sds-bsp/projects/robot-sdk/daystar_api.git
+    url: https://gitlab.xpaas.company.com/lrsh-sds-bsp/projects/robot-sdk/daystar_api.git
     version: sdk_server
 ```
 
@@ -258,14 +258,14 @@ vcs custom sdk_server --git --args checkout release-branch
 ## 9. 安全提示：凭据不要硬编码
 本项目的 `.repos` 里出现了这种写法：
 ```yaml
-url: https://oauth2:<真实token>@gitlab.xpaas.lenovo.com/.../comm.git
+url: https://oauth2:<真实token>@gitlab.xpaas.company.com/.../comm.git
 ```
 把访问令牌（token）直接写进会被提交的文件里，是一个**安全隐患**：
 - 任何能看到这个仓库的人都拿到了凭据
 - token 泄露后可访问对应的所有私有仓库
 - Git 历史里会永久留存，即使后来删掉也能翻出来
 **更安全的做法（按推荐度排序）：**
-1. **用 SSH 地址 + SSH key**：`git@gitlab.xpaas.lenovo.com:lrsh-.../comm.git`，凭据放在本地 SSH key，不进文件。
+1. **用 SSH 地址 + SSH key**：`git@gitlab.xpaas.company.com:lrsh-.../comm.git`，凭据放在本地 SSH key，不进文件。
 2. **用 git credential helper**：把 token 交给系统凭据管理器，`.repos` 里只放纯净 https url。
 3. **CI 里用环境变量注入**：`.repos` 用占位 url，CI 运行时通过 `git config` 的 `url.<base>.insteadOf` 动态拼接 token。
 > 如果这些 token 已经提交过，建议尽快在 GitLab 后台**吊销并轮换**，因为它已经存在于 Git 历史中。

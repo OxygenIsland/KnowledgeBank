@@ -62,7 +62,7 @@ NUC 平台：﻿/home/daystarm/systema-sdk-server/robot-service-midware/lib/x86_
 
 将构建好的文件部署到机器人设备：
 1. 停止服务	
-	`sudo systemctl stop lenovo-sdk.service`
+	`sudo systemctl stop company-sdk.service`
 2. 复制文件到机器人设备
 	将可执行文件和依赖库复制到机器人的 ﻿~/share/sdk/bin/﻿目录：
 	```
@@ -80,10 +80,10 @@ NUC 平台：﻿/home/daystarm/systema-sdk-server/robot-service-midware/lib/x86_
 	cp robot-service-midware/lib/x86_64/librps_api.so ~/share/sdk/bin/
 	```
 3. 重启服务
-	`sudo systemctl start lenovo-sdk.service`
+	`sudo systemctl start company-sdk.service`
 4. 验证部署
 	检查服务状态：
-	`sudo systemctl status lenovo-sdk.service`
+	`sudo systemctl status company-sdk.service`
 	检查 SDK server 版本和子模块：
 	```
 	cd ~/share/sdk/bin/
@@ -266,7 +266,7 @@ systema-sdk-server/
 - 网络访问: 用于 gRPC 通信
 ## 配置 (Configuration)
 服务配置通过以下方式管理：
-- SystemD 服务文件: ﻿/etc/systemd/system/lenovo-sdk.service﻿
+- SystemD 服务文件: ﻿/etc/systemd/system/company-sdk.service﻿
 - 运行时参数: 通过命令行或环境变量传递
 - gRPC 端口: 可通过服务参数配置
 
@@ -277,8 +277,8 @@ systema-sdk-server/
 1. 服务启动失败
 ```
 # 检查服务状态和日志
-sudo systemctl status lenovo-sdk.service
-sudo journalctl -u lenovo-sdk.service -f
+sudo systemctl status company-sdk.service
+sudo journalctl -u company-sdk.service -f
 ```
 2. 找不到库文件错误
 ```
@@ -296,7 +296,7 @@ sudo chown root:root ~/share/sdk/bin/robot_service_middleware
 ### 日志文件
 - SDK INFO 日志查看:`tail -f /var/log/syslog﻿`
 
-- SDK Total 日志查看（包含Debug日志）：﻿`sudo journalctl -u lenovo-sdk.service -f﻿`
+- SDK Total 日志查看（包含Debug日志）：﻿`sudo journalctl -u company-sdk.service -f﻿`
 
 - 应用程序日志: 检查应用程序特定的日志配置
 

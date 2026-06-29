@@ -220,7 +220,7 @@ tags:
 ## C# SDK Client接口目录结构：
 ```
 📁 Runtime/
-├── 📄 Lenovo.Daystar.Runtime.asmdef          # Assembly Definition文件
+├── 📄 Company.Daystar.Runtime.asmdef          # Assembly Definition文件
 │
 ├── 📁 SDK.API/                                # 🔵 公共API接口层
 │   ├── 📄 IConnectionStateListener.cs         # 连接状态监听接口
