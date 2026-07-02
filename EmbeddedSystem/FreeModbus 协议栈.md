@@ -321,6 +321,131 @@ eMBMasterReqWriteCoil(&mbMasterStack, 3, 0, 0xFF00, 1000);  // 0xFF00=ON, 0x000
 > 请求 API 是**阻塞的、线程安全的**：调用后会一直等到"拿到结果"或"超时"才返回。所以适合放在独立的 FreeRTOS 任务里跑。
 
 **重要：读回来的数据去哪了？** —— 不是靠返回值拿数据，而是协议栈收到响应后，**自动调用回调函数**把数据写进你的数组。你之后从数组里读即可（见下一节）。
+### 3.3 从站实现案例
+#### 第一步：在 `user_mb_app.h` 里定义地址宏
+```c
+/* salve mode: holding register's all address */
+#define S_HD_HOUR           0   // 小时 (0-65535)，读写
+#define S_HD_MIN            1   // 分钟 (0-59)，读写
+#define S_HD_SEC            2   // 秒   (0-59)，读写
+#define S_HD_POWER_STATE    3   // 开关机状态：1=执行软关机，读写
+#define S_HD_BOOT_TYPE      4   // 启动类型：0=冷启动，1=热启动，读写
+```
+> 地址宏只是给自己用的"可读别名"，和 Modbus 报文里的地址数字一一对应，**不需要改协议栈任何东西**。
+#### 第二步：在业务代码里更新缓冲区
+把你的业务数据写进 `usSRegHoldBuf[]`，主站来读时协议栈会自动把这个数组里的值发出去。
+```c
+// 示例：RTC 定时任务，每秒把当前时间刷新到缓冲区
+void vSlave_UpdateTimeTask(void *argument)
+{
+    RTC_TimeTypeDef sTime;
+    RTC_DateTypeDef sDate;
+    for (;;)
+    {
+        HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+        HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);  // 必须读 Date，否则 Time 不更新
+        // 直接写进寄存器缓冲区，主站来读时回调函数会自动把它发出去
+        usSRegHoldBuf[S_HD_HOUR] = sTime.Hours;
+        usSRegHoldBuf[S_HD_MIN]  = sTime.Minutes;
+        usSRegHoldBuf[S_HD_SEC]  = sTime.Seconds;
+
+        // S_HD_POWER_STATE 和 S_HD_BOOT_TYPE 由其他业务逻辑写入
+        osDelay(1000);
+    }
+}
+```
+#### 第三步：在回调里响应主站的"写"操作
+`eMBRegHoldingCB` 在 `user_mb_app.c` 里已经帮你写好了通用模板（把数据拷进/拷出数组）。**你只需要在回调之后（或回调内部）检测业务寄存器是否被修改**，然后触发对应动作：
+```c
+// 方式一（推荐）：在业务任务里轮询寄存器，检测变化后处理
+void vSlave_MonitorTask(void *argument)
+{
+    for (;;)
+    {
+        // 主站写 S_HD_POWER_STATE=1 → 触发软关机
+        if (usSRegHoldBuf[S_HD_POWER_STATE] == 1)
+        {
+            usSRegHoldBuf[S_HD_POWER_STATE] = 0;  // 清标志，避免反复触发
+            // 执行软关机逻辑……
+            StartShutdownCountdown();
+        }
+
+        // 主站写了新时间 → 同步 RTC
+        // （此处可加 dirty flag 机制，避免每次都写 RTC）
+        osDelay(100);
+    }
+}
+```
+
+  
+
+```c
+// 方式二：直接在 eMBRegHoldingCB 的 MB_REG_WRITE 分支末尾加钩子
+
+// （适合实时性要求高的场景，但注意回调在中断/协议栈上下文里，不要做耗时操作）
+case MB_REG_WRITE:
+    while (usNRegs > 0)
+    {
+        pusRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
+        pusRegHoldingBuf[iRegIndex] |= *pucRegBuffer++;
+        iRegIndex++;
+        usNRegs--;
+    }
+
+    // 写完后通知业务任务（用信号量/事件组，不要直接操作外设）
+    osSemaphoreRelease(xSlaveWriteSem);
+    break;
+```
+
+#### 第四步：初始化从站并启动轮询
+```c
+void MB_Slave_poll(void *argument)
+{
+    // ① 配置硬件：从站用 UART2，485 方向脚，定时器 htim7
+    mbStack.hardware.max485.phuart  = &huart2;
+    mbStack.hardware.max485.dirPin  = UART2_DIR_Pin;
+    mbStack.hardware.max485.dirPort = UART2_DIR_GPIO_Port;
+    mbStack.hardware.phtim          = &htim7;
+
+    // ② 初始化：RTU 模式，本机从站地址 3，波特率 9600，无校验
+    eMBInit(&mbStack, MB_RTU, 3, 9600, MB_PAR_NONE);
+
+    // ③ 设置初始值（可选）
+    usSRegHoldBuf[S_HD_BOOT_TYPE]   = 1;  // 默认热启动
+
+    // ④ 使能
+    eMBEnable(&mbStack);
+  
+    // ⑤ 循环轮询（必须一直调，这是协议栈的心跳）
+    for (;;)
+    {
+        eMBPoll(&mbStack);
+        osDelay(5);
+    }
+}
+```
+
+#### 数据流总结
+```
+    主站 MB 发送请求                         PB 从站处理
+    ─────────────────                       ──────────────────────────────────
+    03 03 00 00 00 05 84 2B  ──串口──▶  eMBPoll() 接收并解析帧
+                                              │
+                                              ▼ 自动调用
+                                        eMBRegHoldingCB(..., MB_REG_READ)
+                                              │ 从 usSRegHoldBuf[] 拷贝数据
+                                              ▼
+    03 03 0A [时 分 秒 状态 类型] CRC  ◀──串口──  发出响应帧
+
+    03 10 00 00 00 04 ... CRC  ──串口──▶  eMBPoll() 解析帧
+                                              │
+                                              ▼ 自动调用
+                                        eMBRegHoldingCB(..., MB_REG_WRITE)
+                                              │ 写入 usSRegHoldBuf[]
+                                              ▼
+                                        业务任务检测到 S_HD_POWER_STATE=1
+                                        → 触发软关机
+```
 
 ## 四、数据缓冲区与回调（新手最容易懵的地方）
 FreeModbus 的数据流是"**协议栈 ⇄ 你的数组**"，中间的桥梁就是 **4 个回调函数**。
