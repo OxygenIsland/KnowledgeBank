@@ -536,6 +536,39 @@ typedef MB_M_StackTypeDef *pMB_M_StackTypeDef;
 // 项目里：pMB_M_StackTypeDef pMaster = &mbMasterStack;
 ```
 
+> [!note]+ 为什么要在定义结构体时使用typedef
+> 在 C 语言里，struct 和 typedef 是分开的两件事，通常合并写：
+> ```c
+> // 拆开看就是这两步：
+>// 第一步：定义结构体本身
+>struct BatteryProtocol
+>{
+>    const char *name;
+>    void (*read1)(void);
+>    ...
+>};
+>
+>// 第二步：给这个结构体类型起一个别名
+>typedef struct BatteryProtocol BatteryProtocol_t;
+> ```
+> // 合并写（你代码里的写法）：
+> ```
+> 
+>typedef struct
+>{
+ >   const char *name;
+ >   void (*read1)(void);
+ >   ...
+} BatteryProtocol_t;
+// 等号左边是类型，等号右边是别名
+>```
+>不用 `typedef` 的话，每次声明变量都要写 `struct` 关键字
+>```
+>struct BatteryProtocol proto;          // 没有 typedef，必须写 struct
+>BatteryProtocol_t proto;               // 有了 typedef，可以直接用别名
+>```
+>C++ 不需要这个——C++ 里 `struct BatteryProtocol` 定义后可以直接用 `BatteryProtocol` 作类型名。但 C 语言不行，所以 C 项目里几乎所有结构体都会配一个 `typedef`。
+
 ## 十一、函数基础
 ### 11.1 函数签名
 ```c
