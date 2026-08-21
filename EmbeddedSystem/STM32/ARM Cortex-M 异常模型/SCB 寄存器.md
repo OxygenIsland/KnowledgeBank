@@ -108,7 +108,7 @@ NVIC → 管"外设想打断 CPU 怎么办"（中断优先级）
 ```
 
 ## 实际使用场景
-### 场景 1：读 HardFault 状态
+### 场景 1：读[[HardFault|HardFault]] 状态
 ```c
 // 当 HardFault 发生时，读取：
 uint32_t cfsr = SCB->CFSR;  // fault 分类

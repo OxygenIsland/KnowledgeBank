@@ -15,7 +15,7 @@ tags:
 - 总线协议（Modbus/CAN/I2C）没有自动化验证手段
 - 寄存器文档靠记忆或翻 PDF
 - 固件 bug 和硬件 bug 混在一起，极难定位
-### 1-2 典型 HardFault 调试场景
+### 1-2 典型 [[HardFault|HardFault]]调试场景
 ```c
 // 固件崩溃后，工程师手工操作：
 1. 读 SCB_CFSR → 0x00000002
@@ -46,7 +46,7 @@ tags:
 > AI 写代码 → 编译器检查错误 → 人烧录验证
 - **进步**：消灭语法错误
 - **局限**：烧录和验证仍需人工
-### 2-4 Level 3：MCP 工具链连接（当前主流）
+### 2-4 Level 3：[[MCP]] 工具链连接（当前主流）
 > AI + 串口读取 + 部分寄存器 → 人确认烧录
 - **进步**：部分自动化
 - **局限**：无结构化诊断、无闭环迭代
@@ -99,12 +99,12 @@ tags:
 
 ### 3-2 四大 MCP 服务器职责
 
-| 服务器 | 定位 | 核心能力 |
-|---|---|---|
-| **stm32-build** | 构建 | cmake_full_build / stm32_recompile / RTOS 配置建议 |
-| **stm32-hardware** | 硬件交互 | 烧录 / 寄存器 / 串口 / RTT / 结构化 fault 诊断 |
-| **stm32-diagnostics** | 协议诊断 | Modbus / CAN / I2C / PWM / PID 分析 / 信号处理 |
-| **rag-knowledge** | 知识管理 | 芯片手册 / 协议文档 / 寄存器映射的向量检索 |
+| 服务器                   | 定位   | 核心能力                                           |
+| --------------------- | ---- | ---------------------------------------------- |
+| **stm32-build**       | 构建   | cmake_full_build / stm32_recompile / RTOS 配置建议 |
+| **stm32-hardware**    | 硬件交互 | 烧录 / 寄存器 / 串口 / RTT / 结构化 fault 诊断             |
+| **stm32-diagnostics** | 协议诊断 | Modbus / CAN / I2C / PWM / PID 分析 / 信号处理       |
+| **rag-knowledge**     | 知识管理 | 芯片手册 / 协议文档 / 寄存器映射的向量检索                       |
 
 ### 3-3 Cursor Rules 分层体系
 
