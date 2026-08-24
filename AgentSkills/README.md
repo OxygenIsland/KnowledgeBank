@@ -1,5 +1,3 @@
-# Cursor Skills
-
 这个目录用来存放自用的 Agent Skills，跨设备同步使用。
 
 当前收录：
