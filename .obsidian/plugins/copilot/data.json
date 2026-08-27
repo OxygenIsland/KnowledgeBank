@@ -373,5 +373,5 @@
   "lastDismissedVersion": "3.0.2",
   "passMarkdownImages": true,
   "enableCustomPromptTemplating": true,
-  "suggestedDefaultCommands": false
+  "suggestedDefaultCommands": true
 }
