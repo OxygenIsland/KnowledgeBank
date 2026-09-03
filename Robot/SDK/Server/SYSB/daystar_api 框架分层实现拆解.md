@@ -179,7 +179,7 @@ graph TD
 | 15  | L6  | `daystar_agent/config/runtime/preconditions.yaml`      | `delete_maps: [delete_confirmed]`                                          |
 | 16  | L7  | `system/rms_bringup/params/sdk_server_params.yaml`     | `service_whitelist` 放行                                                     |
 
-> **注意 #11/#12**：MCP backend 是 `protocols`（接口）/ `real`（真机）/ `stub`（假数据）三件套。
+> **注意 \#11/#12**：MCP backend 是 `protocols`（接口）/ `real`（真机）/ `stub`（假数据）三件套。
 > 加 real 不加 stub 会让 `tests/test_delete_interfaces.py` 那类不依赖硬件的测试挂掉。
 
 ## 2. 逐层拆解 `delete_map`
@@ -313,15 +313,12 @@ private:
 DeleteMapResponse Navigation::DeleteMap(const std::string &map_name) {
     DeleteMapResponse response;
     response.result = false;                      // ← ① 默认失败（防止提前 return 时是脏值）
-
     // ② 重置"瞬时状态"：这是本次调用的错误暂存区
     transient_state_ptr_->code = StateCode::success;
-
     // ③ 构造调用签名字符串：既用于日志，也用于 State.describe 的前缀
     std::string funs = FORMAT("%s(map_name=%s)", __FUNCTION__, map_name.c_str());
     INFO("%s", funs.c_str());
-
-    try {
+try {
         // ④ 检查"模块持久状态"：模块初始化失败过就直接短路，不做任何事
         if (state_.code != StateCode::success) {
             response.state = GetState(funs, state_.code);
@@ -332,7 +329,8 @@ DeleteMapResponse Navigation::DeleteMap(const std::string &map_name) {
         if (map_name.empty() ||
             map_name.find('/')  != std::string::npos ||
             map_name.find('\\') != std::string::npos ||
-            map_name.find("..") != std::string::npos) {
+            map_name.find("..") != std::string::npos) 
+        {
             std::string error_msg = "Invalid map_name '" + map_name + "'";
             ERROR("[%s] %s: %s", logger_name_.c_str(), funs.c_str(), error_msg.c_str());
             response.state = GetState(funs, StateCode::fail);
@@ -401,7 +399,6 @@ DeleteMapResponse Navigation::DeleteMap(const std::string &map_name) {
   ret.state = this->GetState(funs, response.success ? StateCode::success
                                                     : transient_state_ptr_->code);
   ```
-  
   所以**每个公开函数入口必须先 `transient_state_ptr_->code = StateCode::success;` 复位**，
   否则会读到上一次调用残留的错误码。
 - **④ `state_` vs `transient_state_ptr_`**：
@@ -413,13 +410,13 @@ DeleteMapResponse Navigation::DeleteMap(const std::string &map_name) {
 | 谁写   | `Base::Init` / `SetState` | 内部私有 Request 函数              |
 | 谁读   | 每个公开函数开头的短路检查             | 公开函数结尾拼 `State`              |
   
-- **⑨ 不抛异常**：L3 是 ABI 边界。往上抛会穿过 pybind（虽然 pybind 能转成 Python 异常）和
+- **⑨ 不抛异常**：L3 是 ABI 边界(C++ 语言与外部调用环境之间的稳定接口边界)。往上抛会穿过 pybind（虽然 pybind 能转成 Python 异常）和
   ROS service callback（会直接崩掉 executor）。所以**统一 try/catch 转成 `State`**。
   唯一的例外是死锁防御（见 [4.5](#45-死锁防御在回调里调阻塞-api-会-throw)），那是刻意要打断调用方的。
 #### 3.4 `GetState` / `SetState` 是什么
 来自基类 `include/api/base.hpp`：
 ```cpp
-State GetState(const std::string& funs, StateCode code) {
+State GetState(const std::string &funs, StateCode code) {
     State ret;
     ret.code = code;
     ret.describe = logger_name_ + "." + funs + " >> " + StateDescribe[code];
@@ -504,10 +501,8 @@ delete_map_service_ = this->create_service<api_msgs::srv::DeleteMap>(
 // onConfigure 里创建的三个组
 service_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
 feedback_callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
-// 第二参数 automatically_add_to_executor_with_node=false：阻止主 executor 通过
-// add_node 自动接管这个组。main 里会把它显式 add 到独立 fast executor。
-// 这样即使主 executor 的线程池被 navigation / mapping 等慢回调占满，
-// fast service 仍由独立 executor 调度，保持响应。
+// 第二参数 automatically_add_to_executor_with_node=false：阻止主 executor 通过add_node 自动接管这个组。main 里会把它显式 add 到独立 fast executor。
+// 这样即使主 executor 的线程池被 navigation / mapping 等慢回调占满，fast service 仍由独立 executor 调度，保持响应。
 fast_service_callback_group_ = this->create_callback_group(
     rclcpp::CallbackGroupType::Reentrant, /*automatically_add_to_executor_with_node=*/false);
 sub_callback_group_ = this->create_callback_group(
@@ -520,9 +515,7 @@ sub_callback_group_ = this->create_callback_group(
 | `fast_service_callback_group_` | 快查询（`get_available_locations`）                  | 纯读缓存，必须秒回      |
 | `feedback_callback_group_`     | 周期发布 timer、话题转发                                 | 单线程串行即可        |
 
-> **踩坑提示**：把慢服务放进 `fast_service_callback_group_`，会拖垮整个"快通道"，
-> 让所有查询类接口一起超时。反过来把快查询放进 `service_callback_group_`，在导航跑起来时
-> 查询会排在慢回调后面。**新增服务时先想清楚它属于哪一类**。
+> **踩坑提示**：把慢服务放进 `fast_service_callback_group_`，会拖垮整个"快通道"，让所有查询类接口一起超时。反过来把快查询放进 `service_callback_group_`，在导航跑起来时查询会排在慢回调后面。**新增服务时先想清楚它属于哪一类**。
 #### 4.3 handler 实现（`src/node/daystar_service_node.cpp`）—— **四行模板**
 ```cpp
 void DaystarServiceNode::handleDeleteMap(
@@ -547,12 +540,10 @@ void DaystarServiceNode::handleDeleteMap(
 }
 ```
 
-**注意 `response->message = result.state.describe`**：这就是"L3 的 State 如何变成对外可读错误"的
-那一步。`describe` 里带了 `Navigation.DeleteMap(map_name=xxx) >> ` 前缀，客户端拿到的错误自带上下文。
-> L4 handler 里**再包一层 try/catch** 不是冗余：L3 理论上不抛，但 pybind/ROS 转换、
-> `shared_ptr` 解引用等仍可能抛。ROS service callback 里逸出异常会杀掉 executor 线程。
+**注意 `response->message = result.state.describe`**：这就是"L3 的 State 如何变成对外可读错误"的那一步。`describe` 里带了 `Navigation.DeleteMap(map_name=xxx) >> ` 前缀，客户端拿到的错误自带上下文。
+> L4 handler 里**再包一层 try/catch** 不是冗余：L3 理论上不抛，但 pybind/ROS 转换、`shared_ptr` 解引用等仍可能抛。ROS service callback 里逸出异常会杀掉 executor 线程。
 
-### L2 · pybind11 绑定层
+### L2 · [[pybind11]] 绑定层
 #### 2.1 模块装配总览
 ```cpp
 // src/api_py/main.cpp
@@ -631,7 +622,6 @@ graph LR
 ```
 
 CMake 里的实现（`compile_and_install.cmake`）：
-
 ```cmake
 add_custom_command(
         OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${_api_name}.pyi"
@@ -699,9 +689,7 @@ void DefineDeleteMapResponse(py::object m) {
     return ToPyString(d);
 });
 ```
-`__repr__` 之所以是硬性要求：任务脚本里 `print(result)` 是最常见的调试手段，
-没有 `__repr__` 打出来就是 `<_lowlevel_skills.DeleteMapResponse object at 0x7f...>`，
-这段输出会经 `[DAYSTAR_USER]` 前缀发到 `/sdk/script_output`，最后被 LLM 读到——等于给模型喂垃圾。
+`__repr__` 之所以是硬性要求：任务脚本里 `print(result)` 是最常见的调试手段，没有 `__repr__` 打出来就是 `<_lowlevel_skills.DeleteMapResponse object at 0x7f...>`，这段输出会经 `[DAYSTAR_USER]` 前缀发到 `/sdk/script_output`，最后被 LLM 读到——等于给模型喂垃圾。
 还要在 `apy.hpp` 声明 + 在 `DefineCommonType` 里注册：
 ```cpp
 // apy.hpp
@@ -757,8 +745,28 @@ DANGEROUS_BUILTINS = frozenset({
 USER_PRINT_PREFIX_STDOUT = "[DAYSTAR_USER] "
 USER_PRINT_PREFIX_STDERR = "[DAYSTAR_USER_ERROR] "
 ```
-子进程 stdout 被 `LinuxExecutor` 通过管道捕获，按前缀分流后发布到 `/sdk/script_output`。
+子进程 stdout 被 `LinuxExecutor` 通过管道捕获，按前缀分流后发布到 `/sdk/script_output`,这是一个 ROS2 话题。其他节点或客户端可以订阅它。
+这里是在讲**任务脚本的输出如何传递**：
+```text
+脚本负责打印信息
+LinuxExecutor 负责捕获信息
+前缀负责区分正常输出和错误输出
+/sdk/script_output 负责对外发布
+```
+所以 `delete_map` 的返回值和打印输出是两条不同的路径：
+```text
+delete_map()
+    ↓
+返回 DeleteMapResponse 给 Python 脚本
 
+print(...)
+    ↓
+stdout/stderr
+    ↓
+LinuxExecutor
+    ↓
+/sdk/script_output
+```
 ### L5 · MCP 工具层
 MCP 层的作用是**把 `/sdk/*` ROS 服务翻译成 LLM 能理解和调用的工具**。它有清晰的三层结构：
 ```
