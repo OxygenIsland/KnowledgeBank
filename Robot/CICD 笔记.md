@@ -125,6 +125,8 @@ CI/CD 经常和 **Docker** 一起出现，因为它正好解决「环境不一�
 - 流水线里构建镜像 → 推送到镜像仓库 → 部署时拉取运行
 - 「在我电脑上能跑」彻底变成「在哪都能跑」
 
+同样的思路也延伸到了**开发阶段**（而不只是构建/部署阶段）：[[Dev Containers 入门|Dev Containers]] 就是把「开发环境」本身也用镜像/容器锁定，团队每个人打开项目都在一致的容器里编码、编译、调试，从源头上减少「在我电脑上能跑」的问题。
+
 ## 三、怎么做（How）—— 动手搭第一条流水线
 ### 3.1 用 GitLab CI/CD 跑通最小示例
 GitLab CI/CD 的约定：在仓库根目录创建一个名为 `.gitlab-ci.yml` 的文件，GitLab 会自动识别并执行。
@@ -264,3 +266,155 @@ flowchart TD
     L -->|部署: 自动| M
 
 ```
+## 五、进阶实战：解析一份真实项目的 `.gitlab-ci.yml`
+
+下面结合项目里实际用到的一份 GitLab CI 配置（多阶段镜像发布 + 文档部署 + MCP Server stub 部署），补充第二、三节里没展开的知识点。
+
+### 5.1 YAML 锚点（Anchor）与别名（Alias）—— 配置复用
+
+```yaml
+.image_changes: &image_changes
+  - ".gitlab-ci.yml"
+  - "CHANGELOG.rst"
+  - "CI.bash"
+  - "VERSION"
+  - "*.repos"
+  - "docker/**"
+
+release_image:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      changes: *image_changes
+      when: manual
+```
+
+- `&锚点名` 给一段 YAML 内容打标记，`*锚点名` 在别处原样引用，避免同一份 `changes` 列表在 `release_image` / `arm_release_image` 里复制粘贴两遍。
+- Job 名以 **`.` 开头**（如 `.image_changes`、`.build_before_script`）会被 GitLab 当作**隐藏 Job**，不会被调度执行，专门用来当"配置模板"存放锚点内容。
+- 除了锚点，GitLab 还提供关键字 **`extends`** 实现类似的"继承/复用"效果（`extends: .some_template`），二者可以按需选用：锚点更贴近原生 YAML、复用整段任意结构；`extends` 是 GitLab 专属关键字、支持多层继承和深度合并。
+
+### 5.2 `rules` 触发规则：`if` / `changes` / `when` 组合
+
+```yaml
+rules:
+  - if: '$CI_COMMIT_BRANCH == "main"'
+    changes: *image_changes
+    when: manual
+  - when: never
+```
+
+| 关键字 | 作用 |
+|---|---|
+| `if` | 条件表达式，为真才继续判断该规则（常用预定义变量如 `$CI_COMMIT_BRANCH`） |
+| `changes` | 只有命中的文件路径发生变更时才触发（配合 `if` 使用，避免无关改动也跑一遍构建） |
+| `when: manual` | 条件满足时该 Job 出现在流水线里，但需要**人工点击**才会真正运行（对应第二节里"持续交付"的人工发布按钮） |
+| `when: never` | 明确不运行（常放在规则列表最后一条，作为"其余情况都不跑"的兜底） |
+| `when: on_success`（默认值） | 不写 `when` 时的默认行为：前置阶段成功就自动运行 |
+
+`rules` 是新一代写法，功能上完全覆盖并取代了旧的 **`only` / `except`**（本配置里 `build_docs` 用的是 `only: refs / changes`，是旧写法，两者可以在同一个 `.gitlab-ci.yml` 里混用，但官方建议新配置统一使用 `rules`）。
+
+### 5.3 `needs`：打破 Stage 顺序限制，组成 DAG 流水线
+
+```yaml
+build_docs:
+  stage: docs
+  needs: []
+```
+
+- 默认情况下，Stage 是**严格顺序执行**的：`release` 阶段所有 Job 都成功了，`docs` 阶段才会开始。
+- `needs: []` 显式声明"我不依赖任何前置 Job"，GitLab 会把该 Job 提前到依赖满足时就立即调度，从顺序流水线变成 **DAG（有向无环图）流水线**，缩短总耗时。
+- 本配置里 `build_docs` 和 `deploy_mcp_stub` 都用 `needs: []`，是因为它们（文档、MCP stub）与 `release` 阶段的 ROS2 镜像构建**互不依赖**，没必要等镜像发布完才开始。
+
+### 5.4 `variables`：全局变量、Job 级覆盖、预定义变量
+
+```yaml
+variables:
+  RELEASE_TYPE: "alpha"
+  GIT_STRATEGY: fetch          # 全局默认拉代码策略
+
+dev_release_image:
+  variables:
+    SDK_REPOS_FILE: "sdk_server.dev.repos"   # Job 级变量，覆盖/补充全局变量
+```
+
+- 顶层 `variables` 对所有 Job 生效；Job 内的 `variables` 只在该 Job 生效，同名时覆盖全局值。
+- `GIT_STRATEGY: fetch` 控制 Runner 每次跑 Job 前**用 `git fetch` 增量更新工作区**，而不是 `clone` 全新克隆，配合下面的 `cache` 能显著加速大仓库/带子模块项目的流水线。
+- **预定义变量**（GitLab 自动注入，无需声明）在本配置里用到的有 `$CI_COMMIT_BRANCH`（当前分支名）、`$CI_COMMIT_REF_NAME`（分支/Tag 名，用作 cache key）；此前第三节示例里用到的 `$CI_COMMIT_SHORT_SHA` 同理。
+
+### 5.5 `cache`：跨流水线复用依赖，加速构建
+
+```yaml
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    - sdk_server/
+    - third_party/
+    - ros2/
+```
+
+- `cache` 和 `artifacts` 容易混淆：**`artifacts` 是本次流水线产物、传给下游 Stage 用**（如 `build_docs` 里的 HTML 文档）；**`cache` 是跨次流水线复用、给同一分支下次跑加速用**（如 `third_party/` 编译产物不用每次重新拉取/编译）。
+- `key` 决定缓存的"槽位"，这里用分支名做 key，保证不同分支的缓存互不覆盖、互不干扰。
+
+### 5.6 `artifacts.expire_in`：产物保留期限
+
+```yaml
+artifacts:
+  paths:
+    - sdk_server/daystar_api/docs/sphinx/_build/html
+  expire_in: 1 year
+```
+
+对应第三节"产物只构建一次、可回滚"的原则：产物默认会一直占用 GitLab 存储空间，`expire_in` 显式声明过期时间，避免历史产物无限堆积。
+
+### 5.7 `tags`：指定由哪些 Runner 执行
+
+```yaml
+tags:
+  - Bot_SDK
+```
+
+当一个 GitLab 实例注册了多个 Runner（例如不同架构、不同网络环境的机器）时，`tags` 用来精确指定"这个 Job 必须调度到打了 `Bot_SDK` 标签的 Runner 上"，避免被随机分配到不满足条件（如缺少 Docker、连不到内网 registry）的 Runner。
+
+### 5.8 Job 级 `image`：为单个 Job 指定专属执行环境
+
+```yaml
+release_image:
+  image: docker:stable
+```
+
+和第三节"镜像与 CI/CD 的关系"呼应：这里的 `image` 不是被构建的产物镜像，而是 **Job 自身运行所在的容器**（相当于"在哪个环境里执行 script"）；因为该 Job 要执行 `docker build`，所以选用自带 Docker CLI 的 `docker:stable` 镜像。
+
+### 5.9 `before_script` / `script` / `after_script` 的职责划分
+
+- `before_script`：环境准备，如 `chmod +x`、配置 SSH、清理旧进程——失败会让整个 Job 直接失败。
+- `script`：真正的业务逻辑（构建、部署）。
+- `after_script`：**无论 `script` 成功与否都会执行**的收尾步骤，常用来打印诊断信息（本例中列出构建产物目录），不应放关键业务逻辑。
+
+### 5.10 CI 里的密钥管理与 SSH 免交互登录模式
+
+```bash
+eval $(ssh-agent -s)
+echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+ssh-keyscan -p $REMOTE_PORT $REMOTE_HOST >> ~/.ssh/known_hosts
+```
+
+对应第三节"密钥用 Secrets 管理"原则的具体落地：
+- `SSH_PRIVATE_KEY` 私钥本身**不出现在 YAML 里**，而是提前配置在 GitLab 的 **Settings → CI/CD → Variables**（并勾选 Masked/Protected），流水线运行时以环境变量形式注入，日志里也不会明文打印。
+- `ssh-agent` + `ssh-add` 把私钥加载进内存代理，后续 `scp`/`ssh` 命令无需再交互输入密码。
+- `ssh-keyscan` 提前把目标机公钥写入 `known_hosts`，避免 `ssh`/`scp` 首次连接时卡在"是否信任该主机"的交互确认上（CI 环境没有终端可以手动输入 yes）。
+
+### 5.11 一个仓库拆出多个互不依赖的部署目标
+
+这份配置把 `release`（ROS2 完整镜像）、`docs`（Sphinx 文档站）、`deploy_mcp`（stub 版 MCP Server）三类完全不同的产物放在同一条流水线里，但通过 `needs: []` + 各自独立的 `rules`/`changes` 让它们互不阻塞、按需触发——这是"流水线设计的实用原则"里"每个环境隔离"思想的延伸：**不仅环境要隔离，同一仓库里方向不同的多个交付物，也应该在流水线层面解耦**，避免为了发文档而被迫等一次不相关的镜像构建跑完。
+
+### 5.12 脚本健壮性：`set -euo pipefail`
+
+```bash
+set -euo pipefail
+```
+
+在 CI 的 `script` 多行 Shell 块里加上这行，是常见的防御性写法：
+- `-e`：任意命令失败立即退出，不会"错误被忽略、继续往下跑出更难排查的二次错误"。
+- `-u`：引用未定义变量时报错退出，而不是当空字符串处理。
+- `-o pipefail`：管道中任意一环失败，整个管道判定为失败（默认 Shell 只看管道最后一条命令的返回码）。
+
+这能让 CI 脚本"该失败时就快速失败"，避免第三节提到的"Fail Fast"原则在 Shell 脚本层面被破坏。

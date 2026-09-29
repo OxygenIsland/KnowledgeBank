@@ -1,5 +1,5 @@
 ---
-title: "[[Promotion]]"
+title: "[[Promotion7.1]]"
 type: Permanent
 status: ing
 Creation Date: 2025-09-30 16:09
